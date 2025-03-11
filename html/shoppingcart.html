@@ -37,7 +37,7 @@
     <section id="cart">
         <div class="cart-item">
             <img src="book1.png" alt="Kniha 1"/>
-            <div id="item-title">
+            <div class="item-title">
                 <h1>Názov knihy</h1>
                 <h2>Autor knihy</h2>
             </div>
@@ -50,16 +50,17 @@
                 <p id="item-price-net">xy€</p>
             </div>
             <div id="item-control">
-                <input id="item-count" type="number"/>
-                <button id="item-delete">
-                    <img src="delete.png" alt="Vymazanie z košíku">
-                </button>
+                <label>
+                    Počet: 
+                    <input class="item-count" type="number" min="1" max="10" value="1">
+                </label>
+                <button class="item-delete">❌</button>
             </div>
         </div>
 
         <div class="cart-item">
             <img src="book2.png" alt="Kniha 2"/>
-            <div id="item-title">
+            <div class="item-title">
                 <h1>Názov knihy</h1>
                 <h2>Autor knihy</h2>
             </div>
@@ -69,21 +70,24 @@
             </div>
             <div id="item-prices">
                 <p id="item-price-gross">xy€</p>
-                <p id="item-price-net">xy€ bez dph</p>
+                <p id="item-price-net">xy€</p>
             </div>
             <div id="item-control">
-                <input id="item-count" type="number"/>
-                <button id="item-delete">
-                    <img src="delete.png" alt="Vymazanie z košíku">
-                </button>
+                <label>
+                    Počet: 
+                    <input class="item-count" type="number" min="1" max="10" value="1">
+                </label>
+                <button class="item-delete">❌</button>
             </div>
         </div>
         <!-- more items in cart -->
 
-        <div id="total-prices">
-            <p id="total-price-gross">xy€</p>
-            <p id="total-price-net">xy€ bez dph</p>
-        </div>
+        <section id="cart-summary">
+            <p id="total-price-gross">Suma: xy€</p>
+            <p id="total-price-net">xy€ bez DPH</p>
+        </section>
+
+        <button id="move-to-payment">Pokračovať na platbu</button>
     </section>
 </main>
 
