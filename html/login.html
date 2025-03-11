@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Kníhkupectvo LR - Prihlásenie</title>
+</head>
+<body>
+
+<header>
+    <h1 id="site-title"><a href="/html/main.html">Kníhkupectvo LR</a></h1>
+
+    <div id="search-bar">
+        <input id="search-input" type="text" placeholder="Hľadať...">
+        <button id="search-button">
+            <img src="search-icon.png" alt="Hľadať">
+        </button>
+    </div>
+
+    <div id="user-panel">
+        <button>
+            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
+        </button>
+        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+    </div>
+
+    <div id="cart-panel">
+        <button id="cart-button">
+            <img src="cart-icon.png" alt="Košík">
+        </button>
+        <button id="logout-button">
+            <img src="logout-icon.png" alt="Odhlásenie">
+        </button>
+    </div>
+</header>
+
+<main>
+    <section id="login-screen">
+        <h1>Prihlásenie</h1>
+
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Prihlasovacie meno</label>
+                <input type="text" id="username" name="username" required autocomplete="username"/>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Heslo</label>
+                <div id="password-wrapper">
+                    <input type="password" id="password" name="password" required autocomplete="current-password"/>
+                    <button type="button" id="uncover-pass">
+                        <img src="eye-icon.png" alt="Zobraziť heslo">
+                    </button>
+                </div>
+            </div>
+
+            <p id="login-error" class="error-message" style="color: red; display: none;">
+                Používateľské meno alebo heslo sú nesprávne!
+            </p>
+
+            <div id="login-info">
+                <p>Nemáte konto? <a href="/html/register.html">Zaregistrujte sa</a></p>
+            </div>
+
+            <button type="submit">Prihlásiť sa</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <section id="footer-info">
+        <p><a href="#">O nás</a></p>
+        <p><a href="#">Kontakt</a></p>
+    </section>
+
+    <section id="footer-authors">
+        <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+    </section>
+
+    <section id="back-to-top">
+        <button id="back-to-top-button">Späť ▲</button>
+    </section>
+</footer>
+</body>
+</html>

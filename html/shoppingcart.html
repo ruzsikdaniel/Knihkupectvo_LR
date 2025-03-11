@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Kníhkupectvo LR - WTECH</title>
+</head>
+<body>
+
+<header>
+    <h1 id="site-title"><a href="/html/main.html">Kníhkupectvo LR</a></h1>
+
+    <div id="search-bar">
+        <input id="search-input" type="text" placeholder="Hľadať...">
+        <button id="search-button">
+            <img src="search-icon.png" alt="Hľadať">
+        </button>
+    </div>
+
+    <div id="user-panel">
+        <button>
+            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
+        </button>
+        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+    </div>
+
+    <div id="cart-panel">
+        <button id="cart-button">
+            <img src="cart-icon.png" alt="Košík">
+        </button>
+        <button id="logout-button">
+            <img src="logout-icon.png" alt="Odhlásenie">
+        </button>
+    </div>
+</header>
+
+<main>
+    <h1>Nákupny košík</h1>
+    <section id="cart">
+        <div class="cart-item">
+            <img src="book1.png" alt="Kniha 1"/>
+            <div id="item-title">
+                <h1>Názov knihy</h1>
+                <h2>Autor knihy</h2>
+            </div>
+            <div id="item-stock">
+                <p class="book-in-stock">xy na sklade</p>
+                <p class="book-out-of-stock">nie je na sklade</p>
+            </div>
+            <div id="item-prices">
+                <p id="item-price-gross">xy€</p>
+                <p id="item-price-net">xy€</p>
+            </div>
+            <div id="item-control">
+                <input id="item-count" type="number"/>
+                <button id="item-delete">
+                    <img src="delete.png" alt="Vymazanie z košíku">
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="book2.png" alt="Kniha 2"/>
+            <div id="item-title">
+                <h1>Názov knihy</h1>
+                <h2>Autor knihy</h2>
+            </div>
+            <div id="item-stock">
+                <p class="book-in-stock">xy na sklade</p>
+                <p class="book-out-of-stock">nie je na sklade</p>
+            </div>
+            <div id="item-prices">
+                <p id="item-price-gross">xy€</p>
+                <p id="item-price-net">xy€ bez dph</p>
+            </div>
+            <div id="item-control">
+                <input id="item-count" type="number"/>
+                <button id="item-delete">
+                    <img src="delete.png" alt="Vymazanie z košíku">
+                </button>
+            </div>
+        </div>
+        <!-- more items in cart -->
+
+        <div id="total-prices">
+            <p id="total-price-gross">xy€</p>
+            <p id="total-price-net">xy€ bez dph</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <section id="panel-info">
+        <p id="aboutus">O nás</p>
+        <p id="contacts">Kontakt</p>
+    </section>
+    <section id="authors">
+        <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+    </section>
+    <section id="back-to-top">
+        <button id="btnBackToTop">Späť ▲</button>
+    </section>
+</footer>
+
+</body>
+</html>

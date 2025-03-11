@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Kníhkupectvo LR - WTECH</title>
+</head>
+<body>
+
+<header>
+    <h1 id="site-title"><a href="/html/main.html">Kníhkupectvo LR</a></h1>
+
+    <div id="search-bar">
+        <input id="search-input" type="text" placeholder="Hľadať...">
+        <button id="search-button">
+            <img src="search-icon.png" alt="Hľadať">
+        </button>
+    </div>
+
+    <div id="user-panel">
+        <button>
+            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
+        </button>
+        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+    </div>
+
+    <div id="cart-panel">
+        <button id="cart-button">
+            <img src="cart-icon.png" alt="Košík">
+        </button>
+        <button id="logout-button">
+            <img src="logout-icon.png" alt="Odhlásenie">
+        </button>
+    </div>
+</header>
+
+
+<main>
+    <section id="category">
+        <h1>Category name</h1>
+
+        <div id="filters">
+            <button class="filter">Filter 1</button>
+            <button class="filter">Filter 2</button>
+            <button class="filter">Filter 3</button>
+        </div>
+    </section>
+
+    <section id="book-page">
+        <ul id="book-grid">
+            <!-- generate n book items-->
+            <li class="book-item">
+                <img src="" alt="">
+                
+                <div class="book-info">
+                    <p class="book-title">Book 1</p>
+                    <p class="book-author">Author 1</p>
+                </div>
+
+                <div class="book-purchase">
+                    <p class="book-price">Price: xy €</p>
+                    <button class="add-to-cart">
+                        <img src="cart-icon.png" alt="Pridať do košíka">
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <div id="pagination">
+            <button id="prev-page" aria-label="Predchádzajúca stránka"></button>
+            <ul id="pagination-list">
+                <!-- generate n <li> elements-->
+                    <li class="page-item"><a href="">n</a></li>
+            </ul>
+            <button id="next-page" aria-label="Ďalšia stránka"></button>
+        </div>
+    </section>
+    
+</main>
+
+<footer>
+    <section id="footer-info">
+        <p><a href="">O nás</a></p>
+        <p><a href="">Kontakt</a></p>
+    </section>
+
+    <section id="footer-authors">
+        <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+    </section>
+
+    <section id="back-to-top">
+        <button id="back-to-top-button">Späť ▲</button>
+    </section>
+</footer>
+
+</body>
+</html>

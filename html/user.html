@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Kníhkupectvo LR - WTECH</title>
+</head>
+<body>
+
+<header>
+    <h1 id="site-title"><a href="/html/main.html">Kníhkupectvo LR</a></h1>
+
+    <div id="search-bar">
+        <input id="search-input" type="text" placeholder="Hľadať...">
+        <button id="search-button">
+            <img src="search-icon.png" alt="Hľadať">
+        </button>
+    </div>
+
+    <div id="user-panel">
+        <button>
+            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
+        </button>
+        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+    </div>
+
+    <div id="cart-panel">
+        <button id="cart-button">
+            <img src="cart-icon.png" alt="Košík">
+        </button>
+        <button id="logout-button">
+            <img src="logout-icon.png" alt="Odhlásenie">
+        </button>
+    </div>
+</header>
+
+<main>
+    <section id="user-info">
+        <form action="/update-profile" method="POST">
+            <div class="form-group">
+                <label for="username">Prihlasovacie meno:</label>
+                <input type="text" id="username" name="username" value="jozkomrkvicka">
+            </div>
+            <div class="form-group">
+                <label for="firstname">Meno:</label>
+                <input type="text" id="firstname" name="firstname" value="Jozko">
+            </div>
+
+            <div class="form-group">
+                <label for="surname">Priezvisko:</label>
+                <input type="text" id="surname" name="surname" value="Mrkvicka">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" value="jozko@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Adresa:</label>
+                <input type="text" id="address" name="address" value="Mrkvicova 15">
+            </div>
+
+            <div class="form-group">
+                <label for="town">Mesto/dedina:</label>
+                <input type="text" id="town" name="town" value="Mrkvicova">
+            </div>
+
+            <div class="form-group">
+                <label for="zipcode">PSČ:</label>
+                <input type="text" id="zipcode" name="zipcode" value="111">
+            </div>
+
+            <div id="user-buttons">
+                <button type="submit">Uložiť zmeny</button>
+                <button type="button" id="delete-account">Vymazať účet</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <section id="footer-info">
+        <p><a href="#">O nás</a></p>
+        <p><a href="#">Kontakt</a></p>
+    </section>
+
+    <section id="footer-authors">
+        <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+    </section>
+
+    <section id="back-to-top">
+        <button id="back-to-top-button">Späť ▲</button>
+    </section>
+</footer>
+
+</body>
+</html>
