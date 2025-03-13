@@ -1,0 +1,36 @@
+header{
+    display: grid;
+    top: 0;
+    width: 100%;
+    grid-template-columns: 2fr 5fr 1fr 1fr;
+}
+
+header *{
+    padding-inline: 15px;
+    position: relative;
+    max-height: fit-content;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+header div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header div#search-bar{
+    grid-template-columns: 4fr 30px;
+}
+
+#search-input{
+    height: 2em
+}
+
+header a{
+    color:#000;   
+}
+
+header button{
+    width: 30px;
+    height: 30px;
+}
