@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Kníhkupectvo LR - WTECH</title>
+</head>
+<body>
+
+<header>
+    <h1 id="site-title"><a href="homepageadmin.html">Kníhkupectvo LR</a></h1>
+
+    <div id="search-bar">
+        <input id="search-input" type="text" placeholder="Hľadať...">
+        <button id="search-button">
+            <img src="search-icon.png" alt="Hľadať">
+        </button>
+    </div>
+
+    <div id="user-panel">
+        <button>
+            <a href="homepageadmin.html"><img src="user-icon.png" alt="Prihláseny"></a>
+        </button>
+        
+        <p id="username"><a href="homepageadmin.html">Administrator</a></p>
+    </div>
+
+    <div id="cart-panel">
+        <!--
+        <button id="cart-button">
+            <img src="cart-icon.png" alt="Košík">
+        </buttonz>
+    -->
+        <button id="logout-button">
+            <img src="logout-icon.png" alt="Odhlásenie">
+        </button>
+    </div>
+</header>
+
+<main>
+    <section id="book-add">
+        <form action="/add" method="POST">
+            <section id="item-gallery"> <!--Pridat moznost pridania knihy-->
+                <img src="book-cover.png" alt="Obalka knihy"/>
+                <div id="thumbnail-gallery"> 
+                    <img src="thumb1.jpg" alt="Miniatúra 1">
+                    <img src="thumb2.jpg" alt="Miniatúra 2">
+                    <img src="thumb3.jpg" alt="Miniatúra 3">
+                    <img src="thumb4.jpg" alt="Miniatúra 4">
+                </div>
+            </section>
+            <section id="item-page">
+                <div id="item-title">
+                    <label for="add-book-title">Názov knihy</label>
+                    <input id = "add-book-title" type="text" maxlength="20">
+                    <br>
+                    <label for="add-book-author">Autor knihy</label>
+                    <input id="add-book-author" type="text" maxlength="20">
+                </div>
+                <div id="item-status">
+                    <div id="item-stock">
+                        <label for="stock">Stav</label>
+                        <br>
+                        <label for="ano">je na sklade</label>
+                        <input id="ano" type="radio" value="1" name="stock">
+
+                        <label for="nie">nie je na sklade</label>
+                        <input id="nie" type="radio" value="2" name="stock">
+                    </div>
+                    <div id="item-price">
+                        <label for="book-price-gross">Cena: xy€</label>
+                        <input id="item-count" type="number" min="1" max="10000" value="1">
+                        <label for="book-price-net">xy€ bez DPH</label>
+                        <input class="item-count" type="number" min="1" max="100000" value="1">
+                    </div>
+                </div>
+            </section>
+            <!--ZMENIT UDAJE - typ nazov a t.d.-->
+            <section id="item-details">
+                <h1>Základné údaje</h1>
+                <dl id="book-details">
+                    <dt>Žáner:</dt>
+                    <dd id="book-genre"><input id = "add-book-genre" type="text" maxlength="30"></dd>
+        
+                    <dt>Jazyk:</dt>
+                    <dd id="book-lang"><input id = "add-book-lang" type="text" maxlength="14"></dd>
+        
+                    <dt>Počet strán:</dt>
+                    <dd id="book-pages"><input id = "add-book-pages" type="text" maxlength="20"></dd>
+        
+                    <dt>Vydavateľstvo:</dt>
+                    <dd id="book-publisher"><input id = "add-book-publisher" type="text" maxlength="15"></dd>
+        
+                    <dt>Rok vydania:</dt>
+                    <dd id="book-year"><input id = "add-book-year" type="text" minlength="4" maxlength="4"></dd>
+                </dl>
+            </section>
+            <section id="item-desc">
+                <label for="book-more">Popis</label>
+                <input id="book-more" type="text" min="1" max="1500" value="1">
+            </section>
+            <section id="submit">
+                <button id="add-to-cart">Pridať do košíka</button>
+            </section>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <section id="panel-info">
+        <p id="aboutus">O nás</p>
+        <p id="contacts">Kontakt</p>
+    </section>
+    <section id="authors">
+        <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+    </section>
+    <section id="back-to-top">
+        <button id="btnBackToTop">Späť ▲</button>
+    </section>
+</footer>
+
+</body>
+</html>
