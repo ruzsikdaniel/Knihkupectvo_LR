@@ -4,14 +4,15 @@ header {
     grid-template-columns: 1fr 5fr 0.5fr 0.5fr;
     align-items: center;
     border-bottom: 2px solid #ddd;
-    background-color: #f8f8f8d0;
-    padding: 10px 20px;
+    background-color: #f8f8f8;
+    padding: 20px;
 }
 
-header * {
+header *{
     display: grid;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 #site-title {
@@ -30,7 +31,7 @@ header * {
 #search-panel {
     padding: 0 5em;
     justify-content: center;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 1fr;
     display: grid;
 }
 
@@ -38,17 +39,22 @@ header * {
     padding-inline: 1em;
 }
 
-#user-panel{
+#user-panel {
     display: flex;
+}
+
+#user-panel p{
+    margin: 0;
 }
 
 #cart-panel {
     grid-template-columns: 1fr 1fr;
     display: grid;
-    justify-content: center;
 }
 
 #search-icon {
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
     justify-content: center;
 }

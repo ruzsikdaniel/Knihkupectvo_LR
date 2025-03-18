@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <title>Kníhkupectvo LR - WTECH</title>
+    <title>Kníhkupectvo LR - Zaregistrujte sa</title>
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
@@ -12,7 +12,7 @@
 
     <div id="search-panel">
         <input id="search-input" type="text" placeholder="Hľadať...">  
-        <img id="search-icon" src="/images/search-icon.png" alt="Hľadať">
+        <a id="search-icon"><img src="/images/search-icon.png" alt="Hľadať"></a>
     </div>
 
     <div id="user-panel">
@@ -20,12 +20,12 @@
     </div>
 
     <div id="cart-panel">
-        <a href="/html/shoppingcart.html">
-            <img id="cart-icon" src="/images/cart-icon.png" alt="Košík">
-        </a>
-        <a>
-            <img id="logout-icon" src="/images/logout-icon.png" alt="Odhlásenie">
-        </a>
+        <button id="cart-button">
+            <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+        </button>
+        <button id="logout-button">
+            <img src="/images/logout-icon.png" alt="Odhlásenie">
+        </button>
     </div>
 </header>
     
