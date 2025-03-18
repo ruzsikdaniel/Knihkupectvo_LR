@@ -1,48 +1,65 @@
-header{
+header {
     display: grid;
     top: 0;
-    grid-template-columns: 1fr 5fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr 0.5fr 0.5fr;
     align-items: center;
     border-bottom: 2px solid #ddd;
+    background-color: #f8f8f8d0;
+    padding: 10px 20px;
 }
 
-header *{
+header * {
     display: grid;
     align-items: center;
     justify-content: center;
-    padding: 0em 0.5em;
 }
 
-#site-title{
+#site-title {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25em;
+    font-weight: bold;
 }
 
-#search-panel{
-    padding: 0 2em; 
-    grid-template-columns: 5fr 1fr;
+#site-title a {
+    text-decoration: none;
+    color: #333;
+}
+
+#search-panel {
+    padding: 0 5em;
+    justify-content: center;
+    grid-template-columns: 3fr 1fr;
+    display: grid;
+}
+
+#search-panel * {
+    padding-inline: 1em;
 }
 
 #user-panel{
-    grid-template-columns: 1fr 1fr;
+    display: flex;
 }
 
-#cart-panel{
+#cart-panel {
     grid-template-columns: 1fr 1fr;
+    display: grid;
+    justify-content: center;
 }
 
-#search-icon{
-    width: 30px;
-    height: 30px;
+#search-icon {
     vertical-align: middle;
     justify-content: center;
 }
 
-#user-panel
-
-header div{
+header div {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }

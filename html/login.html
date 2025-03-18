@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <title>Kníhkupectvo LR - Prihlásenie</title>
+    <title>Kníhkupectvo LR - WTECH</title>
+    <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
 
 <header>
     <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
 
-    <div id="search-bar">
-        <input id="search-input" type="text" placeholder="Hľadať...">
-        <button id="search-button">
-            <img src="search-icon.png" alt="Hľadať">
-        </button>
+    <div id="search-panel">
+        <input id="search-input" type="text" placeholder="Hľadať...">  
+        <img id="search-icon" src="/images/search-icon.png" alt="Hľadať">
     </div>
 
     <div id="user-panel">
-        <button>
-            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
-        </button>
-        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+        <p id="username"><a href="/html/login.html">Prihláste sa</a></p>
     </div>
 
     <div id="cart-panel">
-        <button id="cart-button">
-            <a href="/html/shoppingcart.html"><img src="cart-icon.png" alt="Košík"></a>
-        </button>
-        <button id="logout-button">
-            <img src="logout-icon.png" alt="Odhlásenie">
-        </button>
+        <a href="/html/shoppingcart.html">
+            <img id="cart-icon" src="/images/cart-icon.png" alt="Košík">
+        </a>
+        <a>
+            <img id="logout-icon" src="/images/logout-icon.png" alt="Odhlásenie">
+        </a>
     </div>
 </header>
-    
 
 <main>
     <section id="login-screen">
