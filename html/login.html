@@ -6,7 +6,7 @@
 <body>
 
 <header>
-    <h1 id="site-title"><a href="/html/main.html">Kníhkupectvo LR</a></h1>
+    <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
 
     <div id="search-bar">
         <input id="search-input" type="text" placeholder="Hľadať...">
@@ -24,13 +24,14 @@
 
     <div id="cart-panel">
         <button id="cart-button">
-            <img src="cart-icon.png" alt="Košík">
+            <a href="/html/shoppingcart.html"><img src="cart-icon.png" alt="Košík"></a>
         </button>
         <button id="logout-button">
             <img src="logout-icon.png" alt="Odhlásenie">
         </button>
     </div>
 </header>
+    
 
 <main>
     <section id="login-screen">
@@ -66,17 +67,15 @@
 </main>
 
 <footer>
-    <section id="footer-info">
-        <p><a href="#">O nás</a></p>
-        <p><a href="#">Kontakt</a></p>
+    <section id="panel-info">
+        <p id="aboutus">O nás</p>
+        <p id="contacts">Kontakt</p>
     </section>
-
-    <section id="footer-authors">
+    <section id="authors">
         <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
     </section>
-
     <section id="back-to-top">
-        <button id="back-to-top-button">Späť ▲</button>
+        <button id="btnBackToTop">Späť ▲</button>
     </section>
 </footer>
 </body>

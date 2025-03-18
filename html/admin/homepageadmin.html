@@ -2,12 +2,12 @@
 <html lang="sk">
 <head>
     <title>Kníhkupectvo LR - WTECH</title>
-    <link rel="stylesheet" type="text/css" href="/css/test.css">
+    <link rel="stylesheet" type="text/css" href="../css/test.css">
 </head>
 <body>
 
 <header>
-    <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+    <h1 id="site-title"><a href="/html/admin/homepageadmin.html">Kníhkupectvo LR</a></h1>
 
     <div id="search-bar">
         <input id="search-input" type="text" placeholder="Hľadať...">
@@ -18,15 +18,18 @@
 
     <div id="user-panel">
         <button>
-            <a href="/html/login.html"><img src="user-icon.png" alt="Prihlásiť sa"></a>
+            <a href="/html/admin/homepageadmin.html"><img src="user-icon.png" alt="Prihláseny"></a>
         </button>
-        <p id="username"><a href="/html/user.html">Meno Priezvisko</a></p>
+        
+        <p id="username"><a href="/html/admin/homepageadmin.html">Administrator</a></p>
     </div>
 
     <div id="cart-panel">
+        <!--
         <button id="cart-button">
-            <a href="/html/shoppingcart.html"><img src="cart-icon.png" alt="Košík"></a>
-        </button>
+            <img src="cart-icon.png" alt="Košík">
+        </buttonz>
+    -->
         <button id="logout-button">
             <img src="logout-icon.png" alt="Odhlásenie">
         </button>
@@ -41,7 +44,7 @@
 
     <section id="category">
         <div id="category-header">
-            <h2 id="category-name"><a href="/html/category.html">Kategória 1</a></h2>
+            <h2 id="category-name"><a href="category.html">Kategória 1</a></h2>
             <button class="filter">Filter 1</button>
             <button class="filter">Filter 2</button>
             <button class="filter">Filter 3</button>
@@ -57,6 +60,12 @@
                 <li class="book-item"><img src="book5.jpg" alt="Kniha 5"></li>
             </ul>
             <button id="button-right" aria-label="Posun doprava">❯</button>
+        </div>
+    </section>
+    <section id="books">
+        <div id="books-change">
+            <button onclick="window.location.href='addbook.html';" id="add-book" aria-label="Pridať Knihu">Pridať Knihu</button>
+            <button onclick="window.location.href='changebook.html';" id="change-book" aria-label="Upraviť knihu">Upraviť knihu</button>
         </div>
     </section>
 </main>
