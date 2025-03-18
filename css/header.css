@@ -1,0 +1,48 @@
+header{
+    display: grid;
+    top: 0;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+header *{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 0.5em;
+}
+
+#site-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25em;
+}
+
+#search-panel{
+    padding: 0 2em; 
+    grid-template-columns: 5fr 1fr;
+}
+
+#user-panel{
+    grid-template-columns: 1fr 1fr;
+}
+
+#cart-panel{
+    grid-template-columns: 1fr 1fr;
+}
+
+#search-icon{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+#user-panel
+
+header div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
