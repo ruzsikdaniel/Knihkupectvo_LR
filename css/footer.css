@@ -1,0 +1,19 @@
+footer{
+    background-color: #f8f8f8;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;  
+    border-top: 2px solid #ddd;
+}
+footer *{
+    padding-inline: 15px;
+    position: relative;
+    max-height: fit-content;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#footer-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
