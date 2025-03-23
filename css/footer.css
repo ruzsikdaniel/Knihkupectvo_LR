@@ -17,3 +17,8 @@ footer *{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+/*style for button to top of the page*/
+#back-to-top{
+    text-align: center;
+    float:right;
+}
