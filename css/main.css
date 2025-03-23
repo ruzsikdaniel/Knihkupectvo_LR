@@ -64,7 +64,20 @@ ul#carousel-list{
     text-align: center;
     float:right;
 }
+/*style for buttons*/
+#books-change{    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
+#add-book{
+    width:fit-content;
+    margin: 5% 20%;
+}
+#change-book{
+    width:fit-content;
+    margin: 5% 20%;
+}
 /*default style for the document*/
 body{
     font-family: 'Times New Roman', Times, Georgia, serif;
