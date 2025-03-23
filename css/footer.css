@@ -13,7 +13,7 @@ footer *{
     margin-bottom: 15px;
 }
 
-#footer-info{
+#panel-info{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
