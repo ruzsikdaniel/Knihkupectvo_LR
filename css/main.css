@@ -1,3 +1,73 @@
+/*style for buttons*/
+button{
+    color: #963235;
+    background-color: #E7E7E7; 
+    font-size:1rem;
+    border-radius: 5px;
+    border:none;
+}
+button:hover{
+    color:#b83e42;
+    background-color: #d6d4d4;
+    border:none;
+}
+
+button.filter{
+    color:#E7E7E7;
+    background-color: #963235;
+    border:none;
+    border-radius: 10px;
+}
+
+button.filter:hover{
+    text-decoration: underline;
+}
+
+/*style for links*/
+a:link{
+    color: #0000EE;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#551A8B;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/*style for list of the book in the carousel*/
+#carousel{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+ul#carousel-list{
+    list-style-type: none;
+    list-style-position: inside;
+}
+.book-item{
+    display:inline-block;
+    background-color: #969696;
+    padding: 10px;
+    margin: 5px;
+
+}
+
+#button-left, #button-left{
+    margin: 0 5px;
+}
+
+/*style for button to top of the page*/
+#back-to-top-button{
+    text-align: center;
+    float:right;
+}
+
+/*default style for the document*/
 body{
-    margin: 0;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background-color: #ffffffbe;
+    margin:0;
 }
