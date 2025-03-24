@@ -4,6 +4,7 @@ footer{
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;  
     border-top: 2px solid #ddd;
+    bottom: 0;
 }
 footer *{
     padding-inline: 15px;
