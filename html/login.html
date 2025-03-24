@@ -39,7 +39,9 @@
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Prihlasovacie meno</label>
+                <div id="username-wrapper">
                 <input type="text" id="username" name="username" required autocomplete="username"/>
+                </div>
             </div>
 
             <div class="form-group">
@@ -60,7 +62,7 @@
                 <p>Nemáte konto? <a href="/html/register.html">Zaregistrujte sa</a></p>
             </div>
 
-            <button type="submit">Prihlásiť sa</button>
+            <button type="submit" id="submit-password-button">Prihlásiť sa</button>
         </form>
     </section>
 </main>
