@@ -132,16 +132,8 @@ border-style: solid;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.form-group #pay-group{
+#payment-screen .pay-group{
     place-self: center;
     display: block;
     margin: 5px;
-}
-
-
-/*default style for the document*/
-body{
-    font-family: 'Times New Roman', Times, Georgia, serif;
-    background-color: #ffffffbe;
-    margin:0;
 }
