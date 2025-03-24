@@ -90,14 +90,58 @@ ul#carousel-list{
 /*style for login page*/
 #login-screen{
     display: block;
+    place-self: center;
     place-items: center;
+    margin: 5px;
+    border-style: solid;
+    border-radius: 1px;
+    width: 50%;
+    padding: 5px;
+    background-color: #969696;
 }
 
-.form-group{
-    display:block;
+#login-screen .form-group{
+    display: grid;
 }
-#submit-password-button{
+#login-screen .form-group input{
+border-style: solid;
+}
+#login-screen #submit-password-button{
     place-self: center;
     display: block;
     margin: 5px;
+}
+
+/*style for checkout page*/
+#payment-screen{
+    display: block;
+    place-self: center;
+    place-items: center;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 1px;
+    width: 50%;
+    background-color: #969696;
+}
+#payment-screen .form-group input{
+    border-style: solid;
+}
+
+#payment-screen .form-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form-group #pay-group{
+    place-self: center;
+    display: block;
+    margin: 5px;
+}
+
+
+/*default style for the document*/
+body{
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background-color: #ffffffbe;
+    margin:0;
 }
