@@ -154,7 +154,7 @@ border-style: solid;
     place-self: center;
     place-items: center;
     margin: 5px;
-    padding: 5px;
+    padding: 20px;
     border-style: solid;
     border-radius: 1px;
     width: 50%;
@@ -172,4 +172,8 @@ border-style: solid;
     place-self: center;
     display: block;
     margin: 5px;
+}
+
+.register-error{
+    color: transparent; /* basically not show the error message */
 }
