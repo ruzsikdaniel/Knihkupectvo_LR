@@ -137,3 +137,29 @@ border-style: solid;
     display: block;
     margin: 5px;
 }
+
+/*style for register page*/
+#register-screen{
+    display: block;
+    place-self: center;
+    place-items: center;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 1px;
+    width: 50%;
+    background-color: #969696;
+}
+#register-screen .form-group input{
+    border-style: solid;
+}
+
+#register-screen .form-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#register-screen .submit-registration-button{
+    place-self: center;
+    display: block;
+    margin: 5px;
+}
