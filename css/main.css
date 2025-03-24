@@ -1,3 +1,10 @@
+/*default style for the document*/
+body{
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background-color: #ffffffbe;
+    margin:0;
+}
+
 /*style for buttons*/
 button{
     color: #963235;
@@ -79,9 +86,18 @@ ul#carousel-list{
     width:fit-content;
     margin: 5% 20%;
 }
-/*default style for the document*/
-body{
-    font-family: 'Times New Roman', Times, Georgia, serif;
-    background-color: #ffffffbe;
-    margin:0;
+
+/*style for login page*/
+#login-screen{
+    display: block;
+    place-items: center;
+}
+
+.form-group{
+    display:block;
+}
+#submit-password-button{
+    place-self: center;
+    display: block;
+    margin: 5px;
 }
