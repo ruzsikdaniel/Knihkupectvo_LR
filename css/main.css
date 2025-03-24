@@ -1,8 +1,17 @@
 /*default style for the document*/
+html, body, main{
+    height: 100%;
+    margin: 0;
+}
+
 body{
     font-family: 'Times New Roman', Times, Georgia, serif;
     background-color: #ffffffbe;
-    margin:0;
+}
+
+main{
+    margin-block: 2em;
+    margin-inline: 5em;
 }
 
 /*style for buttons*/
