@@ -221,7 +221,7 @@ ul#carousel-list{
 
 .cart-item{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-style: solid;
     border-radius: 1px;
     margin: 0.5em;
@@ -233,6 +233,13 @@ ul#carousel-list{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cart-item .item-icon{
+    display: block;
+    place-self: center;
+    height: fit-content;
+    width: fit-content;
 }
 
 .item-control{
@@ -260,6 +267,8 @@ ul#carousel-list{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-style: solid;
+    border-radius: 1px;
 }
 
 #navigation-buttons{
