@@ -12,6 +12,8 @@ body{
 main{
     margin-block: 2em;
     margin-inline: 5em;
+    border-color: black;
+    border-width: 5;
 }
 
 /*style for buttons*/
@@ -175,5 +177,30 @@ border-style: solid;
 }
 
 .register-error{
-    color: transparent; /* basically not show the error message */
+    color: transparent; /* basically hide the error message */
 }
+
+#cart{
+    display: grid;
+}
+
+.cart-item{
+    display: grid;
+    grid-template-columns: 15% 25% 30% 15% 15%;
+    border-width: 2;
+    border-color: black;
+}
+
+#item-control{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.book-in-stock{
+    color: green;
+}
+
+.book-out-of-stock{
+    color: red;
+}
+
