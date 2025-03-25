@@ -33,7 +33,7 @@
       
 
 <main>
-    <h1>Nákupny košík</h1>
+    <h1>Nákupný košík</h1>
     <section id="cart">
         <div class="cart-item">
             <img src="book1.png" alt="Kniha 1"/>
@@ -41,15 +41,15 @@
                 <h1>Názov knihy</h1>
                 <h2>Autor knihy</h2>
             </div>
-            <div id="item-stock">
+            <div class="item-stock">
                 <p class="book-in-stock">xy na sklade</p>
                 <p class="book-out-of-stock">nie je na sklade</p>
             </div>
-            <div id="item-prices">
+            <div class="item-prices">
                 <p id="item-price-gross">xy€</p>
                 <p id="item-price-net">xy€</p>
             </div>
-            <div id="item-control">
+            <div class="item-control">
                 <label>
                     Počet: 
                     <input class="item-count" type="number" min="1" max="10" value="1">
@@ -64,15 +64,15 @@
                 <h1>Názov knihy</h1>
                 <h2>Autor knihy</h2>
             </div>
-            <div id="item-stock">
+            <div class="item-stock">
                 <p class="book-in-stock">xy na sklade</p>
                 <p class="book-out-of-stock">nie je na sklade</p>
             </div>
-            <div id="item-prices">
+            <div class="item-prices">
                 <p id="item-price-gross">xy€</p>
                 <p id="item-price-net">xy€</p>
             </div>
-            <div id="item-control">
+            <div class="item-control">
                 <label>
                     Počet: 
                     <input class="item-count" type="number" min="1" max="10" value="1">
@@ -83,8 +83,10 @@
         <!-- more items in cart -->
 
         <section id="cart-summary">
-            <p id="total-price-gross">Suma: xy€</p>
-            <p id="total-price-net">xy€ bez DPH</p>
+            <div id="sum-prices">
+                <p id="total-price-gross">Suma: xy€</p>
+                <p id="total-price-net">xy€ bez DPH</p>
+            </div>
         </section>
 
         <button id="move-to-payment">Pokračovať na platbu</button>

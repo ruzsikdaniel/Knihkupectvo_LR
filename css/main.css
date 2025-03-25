@@ -185,15 +185,24 @@ border-style: solid;
 }
 
 .cart-item{
-    display: grid;
-    grid-template-columns: 15% 25% 30% 15% 15%;
-    border-width: 2;
-    border-color: black;
+    display: flex;
+    justify-content: space-between;
 }
 
-#item-control{
-    display: grid;
-    grid-template-columns: 50% 50%;
+.cart-item *{
+    display: flex;
+    padding: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-control{
+    flex-direction: row;
+}
+
+.item-control *{
+    flex-direction: row;
 }
 
 .book-in-stock{
@@ -204,3 +213,18 @@ border-style: solid;
     color: red;
 }
 
+#cart-summary{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#sum-prices{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#move-to-payment{
+    display: flex;
+    justify-content: center;
+}
