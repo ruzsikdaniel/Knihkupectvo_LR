@@ -18,8 +18,13 @@ footer *{
     grid-template-columns: 1fr 1fr;
 }
 /*style for button to top of the page*/
+
 #back-to-top{
     text-align: center;
+}
+#back-to-top-button{
+    text-align: center;
+    float:right;
 }
 
 footer section *{

@@ -12,8 +12,6 @@ body{
 main{
     margin-block: 2em;
     margin-inline: 5em;
-    border-color: black;
-    border-width: 5;
 }
 
 /*style for buttons*/
@@ -79,12 +77,7 @@ ul#carousel-list{
     margin: 0 5px;
 }
 
-/*style for button to top of the page*/
-#back-to-top-button{
-    text-align: center;
-    float:right;
-}
-/*style for buttons*/
+/*style for buttons */
 #books-change{    
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -99,7 +92,7 @@ ul#carousel-list{
     margin: 5% 20%;
 }
 
-/*style for login page*/
+/*style for login.html */
 #login-screen{
     display: block;
     place-self: center;
@@ -107,24 +100,54 @@ ul#carousel-list{
     margin: 5px;
     border-style: solid;
     border-radius: 1px;
-    width: 50%;
+    width: 65%;
     padding: 5px;
     background-color: #969696;
 }
 
+#login-screen *{
+    display: flex;
+    flex-direction: column;
+}
+
+#login-screen p{
+    margin-block: 0.5em;
+}
+
 #login-screen .form-group{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
 }
+
 #login-screen .form-group input{
-border-style: solid;
+    border-style: solid;
 }
+
 #login-screen #submit-password-button{
     place-self: center;
     display: block;
     margin: 5px;
 }
 
-/*style for checkout page*/
+#login-screen #password-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#login-info *{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0.5em;
+}
+
+#login-error{
+    text-align: center;
+}
+
+
+/*style for checkout.html */
 #payment-screen{
     display: block;
     place-self: center;
@@ -133,7 +156,7 @@ border-style: solid;
     padding: 5px;
     border-style: solid;
     border-radius: 1px;
-    width: 50%;
+    width: 65%;
     background-color: #969696;
 }
 #payment-screen .form-group input{
@@ -150,7 +173,7 @@ border-style: solid;
     margin: 5px;
 }
 
-/*style for register page*/
+/*style for register.html */
 #register-screen{
     display: block;
     place-self: center;
@@ -159,9 +182,15 @@ border-style: solid;
     padding: 20px;
     border-style: solid;
     border-radius: 1px;
-    width: 50%;
+    width: 65%;
     background-color: #969696;
 }
+
+#register-screen form{
+    display: flex;
+    flex-direction: column;
+}
+
 #register-screen .form-group input{
     border-style: solid;
 }
@@ -169,24 +198,33 @@ border-style: solid;
 #register-screen .form-group{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin: 1em;
 }
+
 #register-screen .submit-registration-button{
     place-self: center;
     display: block;
     margin: 5px;
 }
 
-.register-error{
-    color: transparent; /* basically hide the error message */
+#register-error{
+    display: none; /* basically hide the error message */
 }
 
+/*styles for shoppingcart.html */
 #cart{
     display: grid;
+    border-style: solid;
+    border-radius: 1px;
+    padding: 5px;
 }
 
 .cart-item{
     display: flex;
     justify-content: space-between;
+    border-style: solid;
+    border-radius: 1px;
+    margin: 0.5em;
 }
 
 .cart-item *{
@@ -222,6 +260,15 @@ border-style: solid;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#navigation-buttons{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#navigation-buttons *{
+    margin-inline: 0.5em;
 }
 
 #move-to-payment{
