@@ -1,18 +1,18 @@
 header {
-    display: grid;
     top: 0;
-    grid-template-columns: 1fr 5fr 0.5fr 0.5fr;
     align-items: center;
     border-bottom: 2px solid #ddd;
     background-color: #f8f8f8;
     padding: 20px;
+    
 }
 
 header *{
-    display: grid;
     align-items: center;
     justify-content: center;
     margin: 0;
+      width: fit-content; 
+
 }
 
 #site-title {
@@ -29,7 +29,6 @@ header *{
 }
 
 #search-panel {
-    padding: 0 5em;
     justify-content: center;
     grid-template-columns: 5fr 1fr;
     display: grid;
@@ -37,10 +36,12 @@ header *{
 
 #search-panel * {
     padding-inline: 1em;
+    
 }
 
 #user-panel {
     display: flex;
+    
 }
 
 #user-panel p{
@@ -59,10 +60,6 @@ header *{
     justify-content: center;
 }
 
-header div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
 
 header button {
     background: none;
