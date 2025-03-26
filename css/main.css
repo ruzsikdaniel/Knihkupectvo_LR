@@ -258,6 +258,10 @@ ul#carousel-list{
     color: red;
 }
 
+#cart > *{
+    margin: 0.5em;
+}
+
 #cart-summary{
     display: flex;
     justify-content: flex-end;

@@ -11,36 +11,35 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+    <header class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-3">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+          </div>
+          <div class="col-12 col-md-5">
+            <div id="search-panel" class="d-flex">
+              <input id="search-input" type="text" class="form-control me-2" placeholder="Hľadať...">  
+              <a id="search-icon" class="d-flex align-items-center">
+                <img src="/images/search-icon.png" alt="Hľadať">
+              </a>
             </div>
-            <div class="col-lg-5">
-                <div id="search-panel">
-                    <input id="search-input" type="text" placeholder="Hľadať...">  
-                    <a id="search-icon"><img src="/images/search-icon.png" alt="Hľadať"></a>
-                </div>
+          </div>
+          <div class="col-6 col-md-2 text-end">
+            <p id="username"><a href="/html/login.html">Prihláste sa</a></p>
+          </div>
+          <div class="col-6 col-md-2 justify-content-end">
+            <div id="cart-panel" class="d-flex justify-content-end">
+              <button id="cart-button" class="btn">
+                <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+              </button>
+              <button id="logout-button" class="btn">
+                <img src="/images/logout-icon.png" alt="Odhlásenie">
+              </button>
             </div>
-            <div class="col">
-                <div id="user-panel">
-                    <p id="username"><a href="/html/login.html">Prihláste sa</a></p>
-                </div>
-            </div>
-            <div class="col">
-                <div id="cart-panel">
-                    <button id="cart-button">
-                        <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
-                    </button>
-                    <button id="logout-button">
-                        <img src="/images/logout-icon.png" alt="Odhlásenie">
-                    </button>
-                </div>
-            </div>
-        </div>    
-    </div>
-</header>
+          </div>
+        </div>
+      </header>
+      
       
 
 <main>

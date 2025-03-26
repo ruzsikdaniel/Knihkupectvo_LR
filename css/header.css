@@ -1,10 +1,6 @@
 header {
     top: 0;
-    align-items: center;
-    display: flex;
     width: 100%;
-    justify-content: space-between;
-
     border-bottom: 2px solid #ddd;
     background-color: #f8f8f8;
     padding: 20px;
@@ -46,16 +42,14 @@ header *{
 
 #user-panel {
     display: flex;
-    
 }
 
-#user-panel p{
+.col-6 p{
     margin: 0;
 }
 
-#cart-panel {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+.justify-content-end #cart-panel > *{
+    margin-inline: 0.5em;
 }
 
 #search-icon {
@@ -64,7 +58,6 @@ header *{
     vertical-align: middle;
     justify-content: center;
 }
-
 
 header button {
     background: none;
