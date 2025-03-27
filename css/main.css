@@ -297,11 +297,12 @@ ul#carousel-list{
 }
 
 #sum-prices{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border-style: solid;
     border-radius: 1px;
+}
+
+#total-price-gross{
+    font-weight: bolder;
 }
 
 #navigation-buttons{
