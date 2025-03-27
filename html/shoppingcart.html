@@ -11,36 +11,57 @@
 </head>
 <body>
 
-    <header class="container">
-        <div class="row align-items-center">
-          <div class="col-6 col-md-3">
+<header class="container">
+    <article class="d-none d-lg-flex align-items-center">
+        <div class="col-lg-4">
             <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
-          </div>
-          <div class="col-12 col-md-5">
-            <div id="search-panel" class="d-flex">
-              <input id="search-input" type="text" class="form-control me-2" placeholder="Hľadať...">  
-              <a id="search-icon" class="d-flex align-items-center">
-                <img src="/images/search-icon.png" alt="Hľadať">
-              </a>
-            </div>
-          </div>
-          <div class="col-6 col-md-2 text-end">
-            <p id="username"><a href="/html/login.html">Prihláste sa</a></p>
-          </div>
-          <div class="col-6 col-md-2 justify-content-end">
-            <div id="cart-panel" class="d-flex justify-content-end">
-              <button id="cart-button" class="btn">
-                <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
-              </button>
-              <button id="logout-button" class="btn">
-                <img src="/images/logout-icon.png" alt="Odhlásenie">
-              </button>
-            </div>
-          </div>
         </div>
-      </header>
-      
-      
+        <div class="col-lg-4">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary" type="button">
+                  <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
+            <a href="/html/login.html" class="btn btn-link">Prihláste sa</a>
+            <div id="cart-panel">
+                <button id="cart-button" class="btn btn-link">
+                    <a href="/html/shoppingcart.html">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </a>
+                </button>
+                <button id="logout-button" class="btn btn-link">
+                    <img src="/images/logout-icon.png" alt="Odhlásenie">
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <article class="d-lg-none">
+        <div class="col-12">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+        </div>
+        <div class="col-12">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">  
+                <button class="btn btn-outline-secondary">
+                    <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
+            </div>
+        </div>
+        <div class="col-12 text-center mt-2">
+            <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
+            <button id="cart-button" class="btn btn-link">
+                <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+            </button>
+            <button id="logout-button" class="btn btn-link">
+                <img src="/images/logout-icon.png" alt="Odhlásenie">
+            </button>
+        </div>
+    </article>
+</header>
 
 <main>
     <div class="container">
@@ -109,28 +130,46 @@
 </div>
 </main>
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-        <section id="panel-info">
-            <p id="aboutus">O nás</p>
-            <p id="contacts">Kontakt</p>
+<footer class="container-fluid">
+    <article class="d-none d-lg-flex justify-content-center align-items-center">
+        <section class="col-lg-3">
+            <div id="panel-info" class="d-lg-flex justify-content-around align-items-center">
+                <a href="#" id="aboutus" class="mx-3">O nás</a>
+                <a href="#" id="contacts" class="mx-3">Kontakt</a>
+            </div>
         </section>
-        </div>
-        <div class="col">
-        <section id="authors">
-            <p>Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+        <section class="col-lg-6">
+            <div id="authors">
+                <p id="authors-text">Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+            </div>
         </section>
-        </div>
-        <div class="col">
-        <section id="back-to-top">
-            <button id="btnBackToTop">Späť ▲</button>
+        <section class="col-lg-3 d-flex justify-content-around">
+            <button id="btnBackToTop" class="btn">Späť ▲</button>
         </section>
+    </article>
+
+    <article class="d-lg-none">
+        <div class="row d-flex justify-content-center">
+            <section class="col-3 ">
+                <div id="panel-info" class="d-lg-flex justify-content-around align-items-center">
+                    <a href="#" id="aboutus" class="mx-3">O nás</a>
+                    <a href="#" id="contacts" class="mx-3">Kontakt</a>
+                </div>
+            </section>
         </div>
+        <div class="row d-flex justify-content-center">
+            <section class="d-none d-md-flex col-6 d-flex align-items-center">
+                <div id="authors">
+                    <p id="authors-text">Maria Lytvynova, Dániel Ruzsik - WTECH 2025</p>
+                </div>
+            </section>
+            <section class="col-3 d-flex justify-content-around">
+                <button id="btnBackToTop" class="btn">Späť ▲</button>
+            </section>
         </div>
-    </div>
+    </article>
 </footer>
+  
 
 </body>
 </html>

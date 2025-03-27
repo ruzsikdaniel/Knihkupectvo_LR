@@ -1,23 +1,12 @@
 footer{
     background-color: #f8f8f8;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
     border-top: 2px solid #ddd;
-}
-footer *{
-    padding-inline: 15px;
-    position: relative;
-    max-height: fit-content;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding: 0.5rem;
 }
 
-#panel-info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#authors-text{
+    margin-bottom: 0;
 }
-/*style for button to top of the page*/
 
 #back-to-top{
     text-align: center;
