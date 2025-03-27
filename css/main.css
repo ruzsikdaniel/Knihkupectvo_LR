@@ -4,14 +4,17 @@ html, body, main{
     margin: 0;
 }
 
+main{
+    padding-block: 2rem;
+}
+
+p{
+    margin-bottom: 0 !important;
+}
+
 body{
     font-family: 'Times New Roman', Times, Georgia, serif;
     background-color: #ffffffbe;
-}
-
-main{
-    margin-block: 2em;
-    margin-inline: 5em;
 }
 
 /*style for buttons*/
@@ -216,50 +219,62 @@ ul#carousel-list{
     display: grid;
     border-style: solid;
     border-radius: 1px;
-    padding: 5px;
+    padding: 1rem;
 }
 
-.cart-item{
-    display: flex;
-    justify-content: space-around;
+@media (max-width: 768px) {
+    #cart-item {
+        flex-direction: row;
+    }
+  }
+
+#cart-item{
     border-style: solid;
     border-radius: 1px;
-    margin: 0.5em;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
 }
 
-.cart-item *{
-    display: flex;
+#cart-item > *{
     padding: 0.5em;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.cart-item .item-icon{
-    display: block;
-    place-self: center;
-    height: fit-content;
-    width: fit-content;
+#item-title{
+    margin: 0;
 }
 
-.item-control{
+#item-icon{
+    max-width: 128px;
+    min-width: 128px;
+    width: auto;
+    height: auto;
+    margin-right: 2rem;
+}
+
+#item-data{
+    display: flex;
     flex-direction: row;
 }
 
-.item-control *{
+#item-control{
     flex-direction: row;
 }
 
-.book-in-stock{
+#item-control > *{
+    padding-inline: 0.5rem;
+}
+
+#in-stock{
     color: green;
 }
 
-.book-out-of-stock{
+#out-of-stock{
     color: red;
 }
 
-#cart > *{
-    margin: 0.5em;
+#item-price-gross{
+    font-weight: bold;
 }
 
 #cart-summary{
@@ -276,15 +291,9 @@ ul#carousel-list{
 }
 
 #navigation-buttons{
-    display: grid;
-    grid-template-columns: 50% 50%;
+    margin-top: 3em;
 }
 
 #navigation-buttons *{
     margin-inline: 0.5em;
-}
-
-#move-to-payment{
-    display: flex;
-    justify-content: center;
 }

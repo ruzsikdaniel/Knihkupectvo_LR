@@ -51,7 +51,7 @@
                 </button>
             </div>
         </div>
-        <div class="col-12 text-center mt-2">
+        <div class="col-12 text-center">
             <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
             <button id="cart-button" class="btn btn-link">
                 <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
@@ -63,71 +63,123 @@
     </article>
 </header>
 
-<main>
-    <div class="container">
+<main class="container">
     <h1>Nákupný košík</h1>
-    <section id="cart">
-        <div class="cart-item">
-            <img class="item-icon" src="/images/book_128.png" alt="Kniha 1"/>
-            <div class="item-title">
-                <h1>Názov knihy</h1>
-                <h2>Autor knihy</h2>
-            </div>
-            <div class="item-stock">
-                <p class="book-in-stock">xy na sklade</p>
-                <p class="book-out-of-stock">nie je na sklade</p>
-            </div>
-            <div class="item-prices">
-                <p id="item-price-gross">xy€</p>
-                <p id="item-price-net">xy€</p>
-            </div>
-            <div class="item-control">
+    <article id="cart">
+        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
+            <span id="item-data" class="d-flex align-items-center justify-content-start">
+                <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
+                <div class="col-12">
+                    <p id="item-title">
+                        <a href="/html/item.html">Názov knihy</a>
+                        <br>Autor knihy
+                    </p>
+                </div>
+            </span>
+            <span id="item-control" class="d-flex justify-content-end align-items-center">
+                <div id="stock-info">
+                    <p id="in-stock">5 na sklade</p>
+                </div>
                 <label>
-                    Počet: 
-                    <input class="item-count" type="number" min="1" max="10" value="1">
+                    <input id="item-count" type="number" min="1" max="10" value="1">
                 </label>
-                <button class="item-delete"><img src="/images/delete.png"/></button>
-            </div>
-        </div>
+                <button id="item-delete" class="btn">
+                    <img src="/images/delete.png"/>
+                </button>
+                <p id="item-price-gross">19,99€</p>
+            </span>
+        </section>
 
-        <div class="cart-item">
-            <img class="item-icon" src="/images/book_128.png" alt="Kniha 2"/>
-            <div class="item-title">
-                <h1>Názov knihy</h1>
-                <h2>Autor knihy</h2>
-            </div>
-            <div class="item-stock">
-                <p class="book-in-stock">xy na sklade</p>
-                <p class="book-out-of-stock">nie je na sklade</p>
-            </div>
-            <div class="item-prices">
-                <p id="item-price-gross">xy€</p>
-                <p id="item-price-net">xy€</p>
-            </div>
-            <div class="item-control">
+        <section id="cart-item" class="d-lg-none justify-content-between align-items-center">
+            <span id="item-data" class="d-flex align-items-center justify-content-between">
+                <div class="d-flex flex-row">
+                    <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
+                    <div class="d-flex align-items-center">
+                        <p id="item-title">
+                            <a href="/html/item.html">Názov knihy</a>
+                            <br>Autor knihy
+                        </p>
+                    </div>
+                </div>
+                <p id="item-price-gross">19,99€</p>
+            </span>
+            <span id="item-control" class="d-flex justify-content-start">
+                <div id="stock-info" class="d-flex align-items-center gap-3">
+                    <p id="in-stock">5 na sklade</p>
+                    <label>
+                        <input id="item-count" type="number" min="1" max="10" value="1">
+                    </label>
+                    <button id="item-delete" class="btn">
+                        <img src="/images/delete.png"/>
+                    </button>
+                </div>
+            </span>
+        </section>
+
+
+
+        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
+            <span id="item-data" class="d-flex align-items-center justify-content-start">
+                <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
+                <div class="col-12">
+                    <p id="item-title">
+                        <a href="/html/item.html">Názov knihy</a>
+                        <br>Autor knihy
+                    </p>
+                </div>
+            </span>
+            <span id="item-control" class="d-flex justify-content-end align-items-center">
+                <div id="stock-info">
+                    <p id="in-stock">5 na sklade</p>
+                </div>
                 <label>
-                    Počet: 
-                    <input class="item-count" type="number" min="1" max="10" value="1">
+                    <input id="item-count" type="number" min="1" max="10" value="1">
                 </label>
-                <button class="item-delete"><img src="/images/delete.png"/></button>
-            </div>
-        </div>
-        <!-- more items in cart -->
+                <button id="item-delete" class="btn">
+                    <img src="/images/delete.png"/>
+                </button>
+                <p id="item-price-gross">19,99€</p>
+            </span>
+        </section>
 
-        <section id="cart-summary">
+        <section id="cart-item" class="d-lg-none justify-content-between align-items-center">
+            <span id="item-data" class="d-flex align-items-center justify-content-between">
+                <div class="d-flex flex-row">
+                    <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
+                    <div class="d-flex align-items-center">
+                        <p id="item-title">
+                            <a href="/html/item.html">Názov knihy</a>
+                            <br>Autor knihy
+                        </p>
+                    </div>
+                </div>
+                <p id="item-price-gross">19,99€</p>
+            </span>
+            <span id="item-control" class="d-flex justify-content-start">
+                <div id="stock-info" class="d-flex align-items-center gap-3">
+                    <p id="in-stock">5 na sklade</p>
+                    <label>
+                        <input id="item-count" type="number" min="1" max="10" value="1">
+                    </label>
+                    <button id="item-delete" class="btn">
+                        <img src="/images/delete.png"/>
+                    </button>
+                </div>
+            </span>
+        </section>
+
+        <section id="cart-summary" class="d-flex justify-content-end">
             <div id="sum-prices">
-                <p id="total-price-gross">Suma: xy€</p>
-                <p id="total-price-net">xy€ bez DPH</p>
+                <p id="total-price-gross">Suma: 39,98€</p>
             </div>
         </section>
-        
-        <section id="navigation-buttons">
-            <button id="back-to-shopping">Späť na nákup</button>
-            <button id="move-to-payment">Pokračovať na platbu</button>
+
+        <section id="navigation-buttons" class="d-flex">
+            <button id="back-to-shopping" class="flex-fill">Späť na nákup</button>
+            <button id="move-to-payment" class="flex-fill">Pokračovať na platbu</button>
         </section>
 
-    </section>
-</div>
+    </article>
 </main>
 
 <footer class="container-fluid">
@@ -144,7 +196,7 @@
             </div>
         </section>
         <section class="col-lg-3 d-flex justify-content-around">
-            <button id="btnBackToTop" class="btn">Späť ▲</button>
+            <button id="btnBackToTop">Späť ▲</button>
         </section>
     </article>
 
@@ -164,7 +216,7 @@
                 </div>
             </section>
             <section class="col-3 d-flex justify-content-around">
-                <button id="btnBackToTop" class="btn">Späť ▲</button>
+                <button id="btnBackToTop">Späť ▲</button>
             </section>
         </div>
     </article>
