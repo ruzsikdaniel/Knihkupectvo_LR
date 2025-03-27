@@ -4,18 +4,22 @@ html, body, main{
     margin: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background-color: #ffffffbe;
+}
+
 main{
     padding-block: 2rem;
+    flex: 1;
 }
 
 p{
     margin-bottom: 0 !important;
 }
 
-body{
-    font-family: 'Times New Roman', Times, Georgia, serif;
-    background-color: #ffffffbe;
-}
 
 /*style for buttons*/
 button{
@@ -250,6 +254,16 @@ ul#carousel-list{
     width: auto;
     height: auto;
     margin-right: 2rem;
+}
+
+@media (max-width: 991px) {
+    #item-icon{
+        max-width: 64px;
+        min-width: 64px;
+        width: auto;
+        height: auto;
+        margin-right: 2rem;
+    }
 }
 
 #item-data{
