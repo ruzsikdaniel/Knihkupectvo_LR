@@ -10,100 +10,190 @@
 </head>
 <body>
 
-    <header class="container-fluid">
-        <article class="d-none d-lg-flex align-items-center">
-            <div class="col-lg-4">
-                <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+<header class="container">
+    <article class="d-none d-lg-flex align-items-center">
+        <div class="col-lg-4">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+        </div>
+        <div class="col-lg-4">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary">
+                    <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
             </div>
-            <div class="col-lg-4">
-                <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                    <input type="text" class="form-control" placeholder="Hľadať...">
-                    <button class="btn btn-outline-secondary" type="button">
-                      <img src="/images/search-icon.png" alt="Hľadať">
-                    </button>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
-                <a href="/html/login.html" class="btn btn-link">Prihláste sa</a>
-                <div id="cart-panel">
-                    <button id="cart-button" class="btn btn-link">
-                        <a href="/html/shoppingcart.html">
-                            <img src="/images/cart-icon.png" alt="Košík">
-                        </a>
-                    </button>
-                    <button id="logout-button" class="btn btn-link">
-                        <img src="/images/logout-icon.png" alt="Odhlásenie">
-                    </button>
-                </div>
-            </div>
-        </article>
-    
-        <article class="d-lg-none">
-            <div class="col-12">
-                <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
-            </div>
-            <div class="col-12">
-                <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                    <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">  
-                    <button class="btn btn-outline-secondary">
-                        <img src="/images/search-icon.png" alt="Hľadať">
-                    </button>
-                </div>
-            </div>
-            <div class="col-12 text-center">
-                <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
+            <a href="/html/login.html" class="btn btn-link">Prihláste sa</a>
+            <div id="cart-panel">
                 <button id="cart-button" class="btn btn-link">
-                    <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+                    <a href="/html/shoppingcart.html">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </a>
                 </button>
                 <button id="logout-button" class="btn btn-link">
                     <img src="/images/logout-icon.png" alt="Odhlásenie">
                 </button>
             </div>
-        </article>
-    </header>
-  
+        </div>
+    </article>
 
-<main>
-    <section id="category">
-        <h1>Category name</h1>
+    <article class="d-lg-none">
+        <div class="col-12">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+        </div>
+        <div class="col-12">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary">
+                    <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
+            <button id="cart-button" class="btn btn-link">
+                <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+            </button>
+            <button id="logout-button" class="btn btn-link">
+                <img src="/images/logout-icon.png" alt="Odhlásenie">
+            </button>
+        </div>
+    </article>
+</header>
 
-        <div id="filters">
+<main class="container">
+    <article id="category">
+        <h1>Názov kategórie</h1>
+        <section id="filters">
             <button class="filter">Filter 1</button>
             <button class="filter">Filter 2</button>
             <button class="filter">Filter 3</button>
-        </div>
-    </section>
+        </section>   
 
-    <section id="book-page">
-        <ul id="book-grid">
-            <!-- generate n book items-->
-            <li class="book-item">
-                <img src="" alt="">
-                
-                <div class="book-info">
-                    <p class="book-title">Book 1</p>
-                    <p class="book-author">Author 1</p>
+        <section id="category-grid">
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
                 </div>
 
-                <div class="book-purchase">
-                    <p class="book-price">Price: xy €</p>
-                    <button class="add-to-cart">
-                        <img src="cart-icon.png" alt="Pridať do košíka">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
                     </button>
                 </div>
-            </li>
-        </ul>
+            </span>
 
-        <div id="pagination">
-            <button id="prev-page" aria-label="Predchádzajúca stránka"></button>
-            <ul id="pagination-list">
-                <!-- generate n <li> elements-->
-                    <li class="page-item"><a href="">n</a></li>
-            </ul>
-            <button id="next-page" aria-label="Ďalšia stránka"></button>
-        </div>
-    </section>
-    
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+
+            <span id="grid-item" class="d-flex flex-column border">
+                <img src="/images/book_128.png" alt="Obálka knihy" class="img-fluid">
+
+                <div class="d-flex flex-column text-left">
+                    <p id="item-title"><a href="/html/item.html">Názov knihy</a></p>
+                    <p class="text-muted">Autor knihy</p>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <p id="item-price-gross">19,99€</p>
+                    <button class="btn btn-outline-secondary">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </button>
+                </div>
+            </span>
+        </section>
+
+        <section id="pagination" class="mt-4 d-flex justify-content-center">
+            <button class="btn btn-outline-secondary me-2" aria-label="Previous page">❮</button>
+                <span id="page"><a href="#">1</a></span>
+                <span id="page"><a href="#">2</a></span>
+                <span id="page"><a href="#">3</a></span>
+                <span id="page"><a href="#">4</a></span>
+            <button class="btn btn-outline-secondary ms-2" aria-label="Next page">❯</button>
+        </section>
+    </article>
 </main>
 
 <footer class="container-fluid">

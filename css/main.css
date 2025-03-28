@@ -59,6 +59,23 @@ a:hover{
     text-decoration: underline;
 }
 
+/*style for category.html*/
+#category-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    justify-items: center;
+}
+
+#grid-item > *{
+    padding: 0.5rem;
+}
+
+#page{
+    padding-inline: 0.5rem;
+}
+
+
 /*style for item*/
 #item-main{
     place-self: center;
@@ -106,12 +123,12 @@ main, main article > section{
     max-width: 60px;
 }
 
-#book-image{
+#item-image{
     max-height: 180px;
     max-width: 120px;
 }
 
-#book-details{
+#item-details{
     margin-top: 1rem;
     padding: 0.5rem;
 }
