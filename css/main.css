@@ -1,22 +1,21 @@
 /*default style for the document*/
-html, body, main{
+html, body{
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin: 0;
 }
 
 body{
-    display: flex;
-    flex-direction: column;
     font-family: 'Times New Roman', Times, Georgia, serif;
     background-color: #ffffffbe;
 }
 
 main{
-    padding-block: 2rem;
     flex: 1;
 }
 
-p{
+p, h1{
     margin-bottom: 0 !important;
 }
 
@@ -60,6 +59,83 @@ a:hover{
     text-decoration: underline;
 }
 
+/*style for item*/
+#item-main{
+    place-self: center;
+    place-items: center;
+    margin-top: 2rem !important;
+    margin: 1rem;
+    padding: 1rem;
+    border-style: solid;
+    border-radius: 1px;
+}
+
+main, main article > section{
+    border-style: ridge;
+    border-radius: 0.5px;
+    border-color: #969696;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+#item{
+    padding: 1rem;
+    align-items: start;
+}
+
+#item article> *{
+    margin: 1rem;
+}
+
+#item-gallery, #item-details{
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    margin-inline: 2rem;
+}
+
+#thumbnail-gallery{
+    margin: 0.5rem;
+    margin-inline: 1rem;
+}
+
+#thumbnail-gallery > *{
+    max-height: 90px;
+    max-width: 60px;
+}
+
+#book-image{
+    max-height: 180px;
+    max-width: 120px;
+}
+
+#book-details{
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+#item-page{
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#item-abstract{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#item-status{
+    border-style: ridge;
+    border-radius: 1px;
+    padding: 0.5rem;
+}
+
+#item-desc > p{
+    margin-top: 0.5rem;
+}
+
 /*style for list of the book in the carousel*/
 #carousel{
     display: flex;
@@ -72,12 +148,12 @@ ul#carousel-list{
     list-style-type: none;
     list-style-position: inside;
 }
+
 .book-item{
     display:inline-block;
     background-color: #969696;
     padding: 10px;
     margin: 5px;
-
 }
 
 #button-left, #button-left{
@@ -219,11 +295,9 @@ ul#carousel-list{
 }
 
 /*styles for shoppingcart.html */
-#cart{
-    display: grid;
-    border-style: solid;
-    border-radius: 1px;
+#cart, #cart > *{
     padding: 1rem;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -233,9 +307,6 @@ ul#carousel-list{
   }
 
 #cart-item{
-    border-style: solid;
-    border-radius: 1px;
-    margin-bottom: 0.5rem;
     padding: 1rem;
 }
 
@@ -296,17 +367,13 @@ ul#carousel-list{
     justify-content: flex-end;
 }
 
-#sum-prices{
-    border-style: solid;
-    border-radius: 1px;
-}
-
 #total-price-gross{
     font-weight: bolder;
 }
 
 #navigation-buttons{
     margin-top: 3em;
+    border-style: none;
 }
 
 #navigation-buttons *{
