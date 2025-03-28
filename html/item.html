@@ -22,8 +22,8 @@
         </div>
         <div class="col-lg-4">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <input type="text" class="form-control" placeholder="Hľadať...">
-                <button class="btn btn-outline-secondary" type="button">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary">
                     <img src="/images/search-icon.png" alt="Hľadať">
                 </button>
             </div>
@@ -71,7 +71,7 @@
     <div class="row d-none d-md-flex" id="item">
         <article class="col-md-6 d-flex flex-column align-items-center">
             <section id="item-gallery" class="d-flex flex-column align-items-center">
-                <img src="/images/book_128.png" alt="Obalka knihy" class="img-fluid" id="book-image"/>
+                <img src="/images/book_128.png" alt="Obalka knihy" class="img-fluid" id="book-image" />
                 <div id="thumbnail-gallery" class="">
                     <img src="/images/book_32.png" alt="Miniatúra 1" class="img-thumbnail" />
                     <img src="/images/book_32.png" alt="Miniatúra 2" class="img-thumbnail" />
@@ -104,27 +104,33 @@
                 </div>
                 <div id="item-abstract">
                     <p><strong>Abstrakt</strong></p>
-                    <p>Toto je abstrakt pútavej knihy, ktorá čitateľov pozýva do sveta predstavivosti, poznania alebo objavovania. Vďaka pútavému štýlu písania a podmanivému rozprávaniu príbehu je skvelým doplnkom každej knižnej zbierky. Kliknutím na tlačítko napravo Vás stránka nasmeruje na časť Popis, kde uvidíte celý abstrakt, ako aj iné údaje o knihe. ...viac</p>
+                    <p>Toto je abstrakt pútavej knihy, ktorá čitateľov pozýva do sveta predstavivosti, poznania
+                        alebo objavovania. Vďaka pútavému štýlu písania a podmanivému rozprávaniu príbehu je skvelým
+                        doplnkom každej knižnej zbierky. Kliknutím na tlačítko napravo Vás stránka nasmeruje na časť
+                        Popis, kde uvidíte celý abstrakt, ako aj iné údaje o knihe.</p>
                     <p>...viac</p>
                 </div>
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">5 na sklade</p>    
+                            <p id="in-stock">5 na sklade</p>
                         </div>
-                        <div id="item-price"> 
-                            <p id="book-price-gross"><h3>19,99€</h3></p>    
+                        <div id="item-price">
+                            <p id="book-price-gross">
+                            <h3>19,99€</h3>
+                            </p>
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
                         <button id="add-to-cart">Pridať do košíka</button>
                     </div>
                 </div>
-            
+
             </section>
             <section id="item-desc">
                 <h1>Popis</h1>
-                <p>Toto je úplný popis vyššie uvedenej knihy. Obsahuje abstrakt a ďalšie informácie o knihe v kompaktnej a ucelenej forme, usporiadané do viacerých bodov a zoznamov.</p>
+                <p>Toto je úplný popis vyššie uvedenej knihy. Obsahuje abstrakt a ďalšie informácie o knihe v
+                    kompaktnej a ucelenej forme, usporiadané do viacerých bodov a zoznamov.</p>
                 <p>...viac</p>
             </section>
         </article>
@@ -150,16 +156,21 @@
                 </div>
                 <div id="item-abstract">
                     <p><strong>Abstrakt</strong></p>
-                    <p>Toto je abstrakt pútavej knihy, ktorá čitateľov pozýva do sveta predstavivosti, poznania alebo objavovania. Vďaka pútavému štýlu písania a podmanivému rozprávaniu príbehu je skvelým doplnkom každej knižnej zbierky. Kliknutím na tlačítko napravo Vás stránka nasmeruje na časť Popis, kde uvidíte celý abstrakt, ako aj iné údaje o knihe. ...viac</p>
+                    <p>Toto je abstrakt pútavej knihy, ktorá čitateľov pozýva do sveta predstavivosti, poznania
+                        alebo objavovania. Vďaka pútavému štýlu písania a podmanivému rozprávaniu príbehu je skvelým
+                        doplnkom každej knižnej zbierky. Kliknutím na tlačítko napravo Vás stránka nasmeruje na časť
+                        Popis, kde uvidíte celý abstrakt, ako aj iné údaje o knihe. ...viac</p>
                     <p>...viac</p>
                 </div>
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">5 na sklade</p>    
+                            <p id="in-stock">5 na sklade</p>
                         </div>
-                        <div id="item-price"> 
-                            <p id="book-price-gross"><h3>19,99€</h3></p>    
+                        <div id="item-price">
+                            <p id="book-price-gross">
+                            <h3>19,99€</h3>
+                            </p>
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
@@ -167,7 +178,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="item-details">
                 <h1>Základné údaje</h1>
                 <dl id="book-details">
@@ -183,10 +194,11 @@
                     <dd id="book-year">XXXX</dd>
                 </dl>
             </section>
-            
+
             <section id="item-desc">
                 <h1>Popis</h1>
-                <p>Toto je úplný popis vyššie uvedenej knihy. Obsahuje abstrakt a ďalšie informácie o knihe v kompaktnej a ucelenej forme, usporiadané do viacerých bodov a zoznamov.</p>
+                <p>Toto je úplný popis vyššie uvedenej knihy. Obsahuje abstrakt a ďalšie informácie o knihe v
+                    kompaktnej a ucelenej forme, usporiadané do viacerých bodov a zoznamov.</p>
                 <p>...viac</p>
             </section>
         </article>
@@ -214,18 +226,17 @@
     </article>
 
     <article class="d-lg-none d-flex justify-content-between align-items-end">
-    <section class="d-flex">
-        <div id="panel-info" class="d-lg-flex flex-row justify-content-around align-items-center">
-            <a href="#" id="aboutus" class="mx-3">O nás</a>
-            <a href="#" id="contacts" class="mx-3">Kontakt</a>
-        </div>
-    </section>
-    <section>
-        <button id="btnBackToTop">Späť ▲</button>
-    </section>
-</article>
+        <section class="d-flex">
+            <div id="panel-info" class="d-lg-flex flex-row justify-content-around align-items-center">
+                <a href="#" id="aboutus" class="mx-3">O nás</a>
+                <a href="#" id="contacts" class="mx-3">Kontakt</a>
+            </div>
+        </section>
+        <section>
+            <button id="btnBackToTop">Späť ▲</button>
+        </section>
+    </article>
 </footer>
 
 </body>
-
 </html>
