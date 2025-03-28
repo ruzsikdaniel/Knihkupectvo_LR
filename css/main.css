@@ -104,53 +104,39 @@ ul#carousel-list{
     display: block;
     place-self: center;
     place-items: center;
-    margin: 5px;
+    margin: 0.5em;
+    padding: 1rem;
     border-style: solid;
     border-radius: 1px;
     width: 65%;
-    padding: 5px;
     background-color: #969696;
 }
 
-#login-screen *{
-    display: flex;
-    flex-direction: column;
-}
-
-#login-screen p{
-    margin-block: 0.5em;
-}
-
-#login-screen .form-group{
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
+@media (max-width: 991px){
+    #login-screen{
+        display: block;
+        place-self: center;
+        place-items: center;
+        margin: 0.5em;
+        padding: 1rem;
+        border-style: solid;
+        border-radius: 1px;
+        width: 100%;
+        background-color: #969696;
+    }
 }
 
 #login-screen .form-group input{
     border-style: solid;
 }
 
-#login-screen #submit-password-button{
-    place-self: center;
-    display: block;
-    margin: 5px;
+#login-title{
+    margin-bottom: 2rem;
 }
 
-#login-screen #password-wrapper{
-    display: flex;
-    flex-direction: row;
-}
-
-#login-info *{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-inline: 0.5em;
-}
-
-#login-error{
-    text-align: center;
+#login-info{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -180,32 +166,34 @@ ul#carousel-list{
     margin: 5px;
 }
 
-/*style for register.html */
 #register-screen{
     display: block;
     place-self: center;
     place-items: center;
-    margin: 5px;
-    padding: 20px;
+    margin: 0.5em;
+    padding: 1rem;
     border-style: solid;
     border-radius: 1px;
-    width: 65%;
+    width: 75%;
     background-color: #969696;
 }
 
-#register-screen form{
-    display: flex;
-    flex-direction: column;
+@media (max-width: 991px){
+    #register-screen{
+        display: block;
+        place-self: center;
+        place-items: center;
+        margin: 0.5em;
+        padding: 1rem;
+        border-style: solid;
+        border-radius: 1px;
+        width: 100%;
+        background-color: #969696;
+    }
 }
 
 #register-screen .form-group input{
     border-style: solid;
-}
-
-#register-screen .form-group{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 1em;
 }
 
 #register-screen .submit-registration-button{
@@ -214,8 +202,20 @@ ul#carousel-list{
     margin: 5px;
 }
 
+#form-group {
+    margin-bottom: 1rem;
+}
+
+#register-title{
+    margin-bottom: 2rem;
+}
+
 #register-error{
     display: none; /* basically hide the error message */
+}
+
+#btn-register{
+    margin-top: 2rem;
 }
 
 /*styles for shoppingcart.html */

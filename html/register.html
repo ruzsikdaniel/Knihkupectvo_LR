@@ -11,97 +11,100 @@
 </head>
 <body>
 
-    <header class="container">
-        <article class="d-none d-lg-flex align-items-center">
-            <div class="col-lg-4">
-                <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+<header class="container">
+    <article class="d-none d-lg-flex align-items-center">
+        <div class="col-lg-4">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+        </div>
+        <div class="col-lg-4">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary" type="button">
+                    <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
             </div>
-            <div class="col-lg-4">
-                <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                    <input type="text" class="form-control" placeholder="Hľadať...">
-                    <button class="btn btn-outline-secondary" type="button">
-                      <img src="/images/search-icon.png" alt="Hľadať">
-                    </button>
-                </div>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
-                <a href="/html/login.html" class="btn btn-link">Prihláste sa</a>
-                <div id="cart-panel">
-                    <button id="cart-button" class="btn btn-link">
-                        <a href="/html/shoppingcart.html">
-                            <img src="/images/cart-icon.png" alt="Košík">
-                        </a>
-                    </button>
-                    <button id="logout-button" class="btn btn-link">
-                        <img src="/images/logout-icon.png" alt="Odhlásenie">
-                    </button>
-                </div>
-            </div>
-        </article>
-    
-        <article class="d-lg-none">
-            <div class="col-12">
-                <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
-            </div>
-            <div class="col-12">
-                <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                    <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">  
-                    <button class="btn btn-outline-secondary">
-                        <img src="/images/search-icon.png" alt="Hľadať">
-                    </button>
-                </div>
-            </div>
-            <div class="col-12 text-center">
-                <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
+            <a href="/html/login.html" class="btn btn-link">Prihláste sa</a>
+            <div id="cart-panel">
                 <button id="cart-button" class="btn btn-link">
-                    <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+                    <a href="/html/shoppingcart.html">
+                        <img src="/images/cart-icon.png" alt="Košík">
+                    </a>
                 </button>
                 <button id="logout-button" class="btn btn-link">
                     <img src="/images/logout-icon.png" alt="Odhlásenie">
                 </button>
             </div>
-        </article>
-    </header>
+        </div>
+    </article>
+
+    <article class="d-lg-none">
+        <div class="col-12">
+            <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
+        </div>
+        <div class="col-12">
+            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">  
+                <button class="btn btn-outline-secondary">
+                    <img src="/images/search-icon.png" alt="Hľadať">
+                </button>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <a href="/html/login.html" class="btn btn-link" id="username">Prihláste sa</a>
+            <button id="cart-button" class="btn btn-link">
+                <a href="/html/shoppingcart.html"><img src="/images/cart-icon.png" alt="Košík"></a>
+            </button>
+            <button id="logout-button" class="btn btn-link">
+                <img src="/images/logout-icon.png" alt="Odhlásenie">
+            </button>
+        </div>
+    </article>
+</header>
     
 
-<main>
+<main class="container">
     <section id="register-screen">
-        <h1>Registrácia</h1>
+        <h1 id="register-title">Registrácia</h1>
 
         <form action="/register" method="POST">
-            <div class="form-group">
-                <label for="username">Prihlasovacie meno</label>
-                <input type="text" id="username" name="username" required autocomplete="username"/>
+            <div id="form-group" class="row align-items-center">
+                <label for="username" class="col-md-4 col-form-label">Prihlasovacie meno</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="username" name="username" required autocomplete="username">
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="password">Heslo</label>
-                <div id="password-wrapper">
-                    <input type="password" id="password" name="password" required autocomplete="current-password"/>
-                    <button type="button" id="uncover-pass">
+            <div id="form-group" class="row align-items-center">
+                <label for="password" class="col-md-4 col-form-label">Heslo</label>
+                <div class="col-md-8 d-flex">
+                    <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
+                    <button type="button" id="uncover-pass" class="btn btn-outline-secondary ms-2">
                         <img src="/images/eye-icon.png" alt="Zobraziť heslo">
                     </button>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="pwdRepeat">Opakujte heslo</label>
-                <div id="pwdRepeat">
-                    <input type="password" id="password" name="password" required autocomplete="current-password"/>
-                    <button type="button" id="uncover-pass">
+            <div id="form-group" class="row align-items-center">
+                <label for="pwdRepeat" class="col-md-4 col-form-label">Opakujte heslo</label>
+                <div class="col-md-8 d-flex">
+                    <input type="password" class="form-control" id="pwdRepeat" name="pwdRepeat" required autocomplete="current-password">
+                    <button type="button" id="uncover-pass-repeat" class="btn btn-outline-secondary ms-2">
                         <img src="/images/eye-icon.png" alt="Zobraziť heslo">
                     </button>
                 </div>
             </div>
 
-            <p id="register-error">Chyba pri registrovaní!</p>
+            <p id="register-error" class="text-danger">Chyba pri registrovaní!</p>
 
-            <div class="submit-registration-button">
-            <button type="submit">Zaregistrovať sa!</button>
+            <div id="btn-register" class="text-center">
+                <button type="submit">Zaregistrovať sa!</button>
             </div>
         </form>
     </section>
 </main>
+      
 
 <footer class="container-fluid">
     <article class="d-none d-lg-flex justify-content-center align-items-center">
