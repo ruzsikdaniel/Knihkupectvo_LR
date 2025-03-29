@@ -364,6 +364,9 @@ ul#carousel-list{
     justify-content: space-around; 
     align-items: flex-start; 
 }
+#book-add-galery-foto *{
+    margin: 5px;
+}
 #book-add-galery-foto{
     display: inline-block;
 }
@@ -376,4 +379,18 @@ div .foto-add-book{
     display: flex;
     justify-content: center; 
     align-items: center; 
+}
+
+/*style for */
+#item-page{
+    margin: 5px;
+}
+#item-details{
+    margin: 5px;
+}
+#ano{
+    margin: 5px;
+}
+#nie{
+    margin: 5px;
 }
