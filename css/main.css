@@ -384,6 +384,10 @@ ul #carousel-list{
 }
 #book-add-galery-foto{
     display: inline-block;
+    /*border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    */
 }
 div .foto-add-book{
     height: 50%;
@@ -396,16 +400,29 @@ div .foto-add-book{
     align-items: center; 
 }
 
-/*style for */
 #item-page{
     margin: 5px;
 }
 #item-details{
     margin: 5px;
 }
-#ano{
+.book-about-add{
     margin: 5px;
 }
-#nie{
+
+#submit-to-catalog{
+    place-self: center;
+    display: block;
     margin: 5px;
+}
+#add-book-title, #add-book-author, #add-book-genre, #add-book-lang, #add-book-pages, #add-book-publisher, #add-book-year, #book-more{
+    width: 50%;
+}
+
+#item-page-add{
+    /*
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    */
 }
