@@ -4,7 +4,6 @@ html, body, main{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
 }
 
 body{
@@ -64,6 +63,23 @@ a:hover{
     text-decoration: underline;
 }
 
+/*style for category.html*/
+#category-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    justify-items: center;
+}
+
+#grid-item > *{
+    padding: 0.5rem;
+}
+
+#page{
+    padding-inline: 0.5rem;
+}
+
+
 /*style for list of the book in the carousel*/
 #carousel{
     display: flex;
@@ -81,7 +97,6 @@ ul#carousel-list{
     background-color: #969696;
     padding: 10px;
     margin: 5px;
-
 }
 
 #button-left, #button-left{
@@ -318,7 +333,7 @@ ul#carousel-list{
 }
 
 
-/*style for add foto */
+/*style for add photo*/
 #foto-add-label{
     color: #963235;
     background-color: #E7E7E7; 
