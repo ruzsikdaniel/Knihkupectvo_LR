@@ -348,7 +348,7 @@ ul #carousel-list{
 }
 
 
-/*style for add photo*/
+/*style for add book page*/
 #foto-add-label{
     color: #963235;
     background-color: #E7E7E7; 
@@ -384,10 +384,9 @@ ul #carousel-list{
 }
 #book-add-galery-foto{
     display: inline-block;
-    /*border-width: 1px;
+    border-width: 1px;
     border-style: solid;
-    border-radius: 1px;
-    */
+    border-radius: 1px; 
 }
 div .foto-add-book{
     height: 50%;
@@ -400,11 +399,8 @@ div .foto-add-book{
     align-items: center; 
 }
 
-#item-page{
-    margin: 5px;
-}
-#item-details{
-    margin: 5px;
+#item-page, #item-details, #item-status, #item-status p{
+    margin: 5px; 
 }
 .book-about-add{
     margin: 5px;
@@ -419,10 +415,16 @@ div .foto-add-book{
     width: 50%;
 }
 
-#item-page-add{
-    /*
+#item-page-add, #item-status{
+    
     border-width: 1px;
     border-style: solid;
     border-radius: 1px;
-    */
+    
+}
+.book-about-add #ano-stock{
+    color: #198754;
+}
+.book-about-add #nie-stock{
+    color: #dc3545;
 }
