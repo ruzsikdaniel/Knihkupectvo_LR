@@ -355,7 +355,7 @@ ul #carousel-list{
     font-size:2rem;
     border-radius: 5px;
     border:none;
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1/1; 
     text-align: center;
     display: flex;
