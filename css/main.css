@@ -67,12 +67,35 @@ a:hover{
 #carousel-list {
     display: flex;
     width: 100%;
-    gap: clamp(0.5rem, 2vw, 2rem);
+    gap: clamp(0.5rem, 2vw, 1rem);
+    padding-left: 0;
 }
 
 .book-item {
     flex: 1 1 auto;
     max-width: 150px;
+}
+
+#carousel{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+ul #carousel-list{
+    padding-inline-start: 0;
+    list-style-type: none;
+    list-style-position: inside;
+}
+.book-item{
+    display:inline-block;
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin: 5px;
+}
+
+#button-left, #button-left{
+    margin: 0 5px;
 }
 
 /*style for category.html*/
@@ -93,27 +116,7 @@ a:hover{
 
 
 /*style for list of the book in the carousel*/
-#carousel{
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
 
-ul#carousel-list{
-    padding-inline-start: 0;
-    list-style-type: none;
-    list-style-position: inside;
-}
-.book-item{
-    display:inline-block;
-    background-color: #969696;
-    padding: 10px;
-    margin: 5px;
-}
-
-#button-left, #button-left{
-    margin: 0 5px;
-}
 
 /*style for buttons */
 #books-change{    
@@ -376,6 +379,9 @@ ul#carousel-list{
     justify-content: space-around; 
     align-items: flex-start; 
 }
+#book-add-galery-foto *{
+    margin: 5px;
+}
 #book-add-galery-foto{
     display: inline-block;
 }
@@ -388,4 +394,18 @@ div .foto-add-book{
     display: flex;
     justify-content: center; 
     align-items: center; 
+}
+
+/*style for */
+#item-page{
+    margin: 5px;
+}
+#item-details{
+    margin: 5px;
+}
+#ano{
+    margin: 5px;
+}
+#nie{
+    margin: 5px;
 }

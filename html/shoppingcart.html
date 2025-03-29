@@ -65,6 +65,7 @@
 <main class="container">
     <h1 id="">Nákupný košík</h1>
     <article id="cart">
+        
         <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
             <span id="item-data" class="d-flex align-items-center justify-content-start">
                 <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
@@ -88,6 +89,31 @@
                 <p id="item-price-gross">19,99€</p>
             </span>
         </section>
+
+        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
+            <span id="item-data" class="d-flex align-items-center justify-content-start">
+                <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
+                <div class="col-12">
+                    <p id="item-title">
+                        <a href="/html/item.html">Názov knihy</a>
+                        <br>Autor knihy
+                    </p>
+                </div>
+            </span>
+            <span id="item-control" class="d-flex justify-content-end align-items-center">
+                <div id="stock-info">
+                    <p id="out-of-stock">nie je na sklade</p>
+                </div>
+                <label>
+                    <input id="item-count" type="number" min="1" max="10" value="1">
+                </label>
+                <button id="item-delete" class="btn">
+                    <img src="/images/delete.png"/>
+                </button>
+                <p id="item-price-gross">19,99€</p>
+            </span>
+        </section>
+        
 
         <section id="cart-item" class="d-lg-none justify-content-between align-items-center">
             <span id="item-data" class="d-flex align-items-center justify-content-between">
@@ -112,32 +138,6 @@
                         <img src="/images/delete.png"/>
                     </button>
                 </div>
-            </span>
-        </section>
-
-
-
-        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
-            <span id="item-data" class="d-flex align-items-center justify-content-start">
-                <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
-                <div class="col-12">
-                    <p id="item-title">
-                        <a href="/html/item.html">Názov knihy</a>
-                        <br>Autor knihy
-                    </p>
-                </div>
-            </span>
-            <span id="item-control" class="d-flex justify-content-end align-items-center">
-                <div id="stock-info">
-                    <p id="in-stock">5 na sklade</p>
-                </div>
-                <label>
-                    <input id="item-count" type="number" min="1" max="10" value="1">
-                </label>
-                <button id="item-delete" class="btn">
-                    <img src="/images/delete.png"/>
-                </button>
-                <p id="item-price-gross">19,99€</p>
             </span>
         </section>
 

@@ -83,22 +83,25 @@
             </div>   
             <div class="col-6">
                 <section id="item-page">
+                    <h1>Základné údaje</h1>
                     <div id="item-title">
-                        <label for="add-book-title">Názov knihy</label>
-                        <input id = "add-book-title" type="text" maxlength="20">
-                        <br>
-                        <label for="add-book-author">Autor knihy</label>
-                        <input id="add-book-author" type="text" maxlength="20">
+                        <dl>
+                            <dt><label for="add-book-title">Názov knihy</label></dt>
+                            <dd><input id = "add-book-title" type="text" maxlength="20"></dd>
+                            <dt><label for="add-book-author">Autor knihy</label></dt>
+                            <dd><input id="add-book-author" type="text" maxlength="20"></dd>
+                        </dl>
                     </div>
                     <div id="item-status">
                         <div id="item-stock">
-                            <label for="stock">Stav</label>
+                            <label for="stock"><b>Stav</b></label>
                             <br>
-                            <label for="ano">je na sklade</label>
-                            <input id="ano" type="radio" value="1" name="stock">
-
+                            <div class="col">
+                                <label for="ano">je na sklade</label>
+                                <input id="ano" type="radio" value="1" name="stock">
+                            </div>
                             <label for="nie">nie je na sklade</label>
-                            <input id="nie" type="radio" value="2" name="stock">
+                            <input id="nie" type="radio" value="2" name="stock" class="col">
                         </div>
                         <div id="item-price">
                             <label for="book-price-gross">Cena: xy€</label>
@@ -109,7 +112,6 @@
                     </div>
                 </section>
                 <section id="item-details">
-                    <h1>Základné údaje</h1>
                     <dl id="book-details">
                         <dt>Žáner:</dt>
                         <dd id="book-genre"><input id = "add-book-genre" type="text" maxlength="30"></dd>
