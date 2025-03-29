@@ -1,21 +1,26 @@
 /*default style for the document*/
-html, body{
+html, body, main{
+    margin: 0;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    margin: 0;
+    min-height: 100vh;
+
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'Times New Roman', Times, Georgia, serif;
     background-color: #ffffffbe;
 }
 
 main{
-    flex: 1;
+    padding-block: 2rem;
+    flex-grow: 1;
 }
 
-p, h1{
+p{
     margin-bottom: 0 !important;
 }
 
@@ -59,100 +64,6 @@ a:hover{
     text-decoration: underline;
 }
 
-/*style for category.html*/
-#category-grid{
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-    justify-items: center;
-}
-
-#grid-item > *{
-    padding: 0.5rem;
-}
-
-#page{
-    padding-inline: 0.5rem;
-}
-
-
-/*style for item*/
-#item-main{
-    place-self: center;
-    place-items: center;
-    margin-top: 2rem !important;
-    margin: 1rem;
-    padding: 1rem;
-    border-style: solid;
-    border-radius: 1px;
-}
-
-main, main article > section{
-    border-style: ridge;
-    border-radius: 0.5px;
-    border-color: #969696;
-    background-color: #f8f8f8;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-
-#item{
-    padding: 1rem;
-    align-items: start;
-}
-
-#item article> *{
-    margin: 1rem;
-}
-
-#item-gallery, #item-details{
-    padding: 0.5rem;
-    padding-inline: 1rem;
-    margin-inline: 2rem;
-}
-
-#thumbnail-gallery{
-    margin: 0.5rem;
-    margin-inline: 1rem;
-}
-
-#thumbnail-gallery > *{
-    max-height: 90px;
-    max-width: 60px;
-}
-
-#item-image{
-    max-height: 180px;
-    max-width: 120px;
-}
-
-#item-details{
-    margin-top: 1rem;
-    padding: 0.5rem;
-}
-
-#item-page{
-    margin: 1rem;
-    padding: 0.5rem;
-}
-
-#item-abstract{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-#item-status{
-    border-style: ridge;
-    border-radius: 1px;
-    padding: 0.5rem;
-}
-
-#item-desc > p{
-    margin-top: 0.5rem;
-}
-
 /*style for list of the book in the carousel*/
 #carousel{
     display: flex;
@@ -165,12 +76,12 @@ ul#carousel-list{
     list-style-type: none;
     list-style-position: inside;
 }
-
 .book-item{
     display:inline-block;
     background-color: #969696;
     padding: 10px;
     margin: 5px;
+
 }
 
 #button-left, #button-left{
@@ -197,39 +108,53 @@ ul#carousel-list{
     display: block;
     place-self: center;
     place-items: center;
-    margin: 0.5em;
-    padding: 1rem;
+    margin: 5px;
     border-style: solid;
     border-radius: 1px;
     width: 65%;
+    padding: 5px;
     background-color: #969696;
 }
 
-@media (max-width: 991px){
-    #login-screen{
-        display: block;
-        place-self: center;
-        place-items: center;
-        margin: 0.5em;
-        padding: 1rem;
-        border-style: solid;
-        border-radius: 1px;
-        width: 100%;
-        background-color: #969696;
-    }
+#login-screen *{
+    display: flex;
+    flex-direction: column;
+}
+
+#login-screen p{
+    margin-block: 0.5em;
+}
+
+#login-screen .form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
 }
 
 #login-screen .form-group input{
     border-style: solid;
 }
 
-#login-title{
-    margin-bottom: 2rem;
+#login-screen #submit-password-button{
+    place-self: center;
+    display: block;
+    margin: 5px;
 }
 
-#login-info{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+#login-screen #password-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#login-info *{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0.5em;
+}
+
+#login-error{
+    text-align: center;
 }
 
 
@@ -259,34 +184,32 @@ ul#carousel-list{
     margin: 5px;
 }
 
+/*style for register.html */
 #register-screen{
     display: block;
     place-self: center;
     place-items: center;
-    margin: 0.5em;
-    padding: 1rem;
+    margin: 5px;
+    padding: 20px;
     border-style: solid;
     border-radius: 1px;
-    width: 75%;
+    width: 65%;
     background-color: #969696;
 }
 
-@media (max-width: 991px){
-    #register-screen{
-        display: block;
-        place-self: center;
-        place-items: center;
-        margin: 0.5em;
-        padding: 1rem;
-        border-style: solid;
-        border-radius: 1px;
-        width: 100%;
-        background-color: #969696;
-    }
+#register-screen form{
+    display: flex;
+    flex-direction: column;
 }
 
 #register-screen .form-group input{
     border-style: solid;
+}
+
+#register-screen .form-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1em;
 }
 
 #register-screen .submit-registration-button{
@@ -295,26 +218,16 @@ ul#carousel-list{
     margin: 5px;
 }
 
-#form-group {
-    margin-bottom: 1rem;
-}
-
-#register-title{
-    margin-bottom: 2rem;
-}
-
 #register-error{
     display: none; /* basically hide the error message */
 }
 
-#btn-register{
-    margin-top: 2rem;
-}
-
 /*styles for shoppingcart.html */
-#cart, #cart > *{
+#cart{
+    display: grid;
+    border-style: solid;
+    border-radius: 1px;
     padding: 1rem;
-    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -324,6 +237,9 @@ ul#carousel-list{
   }
 
 #cart-item{
+    border-style: solid;
+    border-radius: 1px;
+    margin-bottom: 0.5rem;
     padding: 1rem;
 }
 
@@ -384,15 +300,65 @@ ul#carousel-list{
     justify-content: flex-end;
 }
 
+#sum-prices{
+    border-style: solid;
+    border-radius: 1px;
+}
+
 #total-price-gross{
     font-weight: bolder;
 }
 
 #navigation-buttons{
     margin-top: 3em;
-    border-style: none;
 }
 
 #navigation-buttons *{
     margin-inline: 0.5em;
+}
+
+
+/*style for add foto */
+#foto-add-label{
+    color: #963235;
+    background-color: #E7E7E7; 
+    font-size:2rem;
+    border-radius: 5px;
+    border:none;
+    width: 80%;
+    aspect-ratio: 1/1; 
+    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-content: center; 
+    align-items: center; 
+}
+#foto-add-label:hover{
+    color:#b83e42;
+    background-color: #d6d4d4;
+    border:none;
+}
+
+#add-book-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#book-add-galery{
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+}
+#book-add-galery-foto{
+    display: inline-block;
+}
+div .foto-add-book{
+    height: 50%;
+    width: 50%;
+}
+
+#dd-foto-center{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
