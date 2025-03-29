@@ -63,6 +63,18 @@ a:hover{
     text-decoration: underline;
 }
 
+/*style for homepage.html*/
+#carousel-list {
+    display: flex;
+    width: 100%;
+    gap: clamp(0.5rem, 2vw, 2rem);
+}
+
+.book-item {
+    flex: 1 1 auto;
+    max-width: 150px;
+}
+
 /*style for category.html*/
 #category-grid{
     display: grid;
