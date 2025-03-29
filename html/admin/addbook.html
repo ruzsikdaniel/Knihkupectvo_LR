@@ -66,77 +66,87 @@
     <section id="book-add">
         <form action="/add" method="POST">
             <div id="book-add-galery">
-                <div id="book-add-galery-foto" class="col-5">
-                <section id="item-gallery"> <!--moznost pridania knihy-->
-                    <div id="add-foto-center">
-                        <label for="foto-add" id="foto-add-label">+</label>
-                        <input id="foto-add" name="foto-books" type="file" accept="image/jpeg, image/png, image/jpg" style="display: none;">
-                    </div>
-                    <div id="thumbnail-gallery"> 
-                        <img src="/images/thumb.jpg" alt="Obalka knihy" id="foto-1" class="img-fluid book-thumbnail">
-                        <img src="/images/thumb.jpg" alt="Miniatúra 1" id="foto-2" class="img-fluid book-thumbnail">
-                        <img src="/images/thumb.jpg" alt="Miniatúra 2" id="foto-3" class="img-fluid book-thumbnail">
-                        <img src="/images/thumb.jpg" alt="Miniatúra 3" id="foto-4" class="img-fluid book-thumbnail">
-                        <img src="/images/thumb.jpg" alt="Miniatúra 4" id="foto-5" class="img-fluid book-thumbnail">
-                    </div>
-                </section>
-            </div>   
-            <div class="col-6">
-                <section id="item-page">
-                    <h1>Základné údaje</h1>
-                    <div id="item-title">
-                        <dl>
-                            <dt><label for="add-book-title">Názov knihy</label></dt>
-                            <dd><input id = "add-book-title" type="text" maxlength="20"></dd>
-                            <dt><label for="add-book-author">Autor knihy</label></dt>
-                            <dd><input id="add-book-author" type="text" maxlength="20"></dd>
+                <div id="book-add-galery-foto" class="col-5 col-lg-4">
+                    <section id="item-gallery"> <!--moznost pridania knihy-->
+                        <div id="add-foto-center">
+                            <label for="foto-add" id="foto-add-label">+</label>
+                            <input id="foto-add" name="foto-books" type="file" accept="image/jpeg, image/png, image/jpg" style="display: none;">
+                        </div>
+                        <div id="thumbnail-gallery"> 
+                            <img src="/images/thumb.jpg" alt="Obalka knihy" id="foto-1" class="img-fluid book-thumbnail">
+                            <img src="/images/thumb.jpg" alt="Miniatúra 1" id="foto-2" class="img-fluid book-thumbnail">
+                            <img src="/images/thumb.jpg" alt="Miniatúra 2" id="foto-3" class="img-fluid book-thumbnail">
+                            <img src="/images/thumb.jpg" alt="Miniatúra 3" id="foto-4" class="img-fluid book-thumbnail">
+                            <img src="/images/thumb.jpg" alt="Miniatúra 4" id="foto-5" class="img-fluid book-thumbnail">
+                        </div>
+                    </section>
+                </div>   
+                <div class="col-6 col-sm-7" id="item-page-add">
+                    <section id="item-page">
+                        <h1>Základné údaje</h1>
+                        <div id="item-title">
+                            <dl>
+                                <dt><label for="add-book-title">Názov knihy:</label></dt>
+                                <dd><input id = "add-book-title" type="text" maxlength="20"></dd>
+                                <dt><label for="add-book-author">Autor knihy:</label></dt>
+                                <dd><input id="add-book-author" type="text" maxlength="20"></dd>
+                            </dl>
+                        </div>
+                    </section>
+                    <section id="item-details">
+                        <dl id="book-details">
+                            <dt>Žáner:</dt>
+                            <dd id="book-genre"><input id = "add-book-genre" type="text" maxlength="30"></dd>
+                
+                            <dt>Jazyk:</dt>
+                            <dd id="book-lang"><input id = "add-book-lang" type="text" maxlength="14"></dd>
+                
+                            <dt>Počet strán:</dt>
+                            <dd id="book-pages"><input id = "add-book-pages" type="text" maxlength="20"></dd>
+                
+                            <dt>Vydavateľstvo:</dt>
+                            <dd id="book-publisher"><input id = "add-book-publisher" type="text" maxlength="15"></dd>
+                
+                            <dt>Rok vydania:</dt>
+                            <dd id="book-year"><input id = "add-book-year" type="text" minlength="4" maxlength="4"></dd>
+                            
+                            <dt><label for="book-more">Popis:</label></dt>
+                            <dd><textarea id="book-more" rows="5" cols="25" maxlength="1500" required></textarea></dd>                    
                         </dl>
-                    </div>
+                    </section>
                     <div id="item-status">
                         <div id="item-stock">
-                            <label for="stock"><b>Stav</b></label>
-                            <br>
-                            <div class="col">
-                                <label for="ano">je na sklade</label>
+                            <div class="book-about-add">
+                                <label for="stock"><b>Stav</b></label>
+                                <br>
+                                <label for="ano" id="ano-stock">je na sklade</label>
                                 <input id="ano" type="radio" value="1" name="stock">
+                                <input id="number-ano" type="number" placeholder="Pocet" value="3" name="stock">
                             </div>
-                            <label for="nie">nie je na sklade</label>
-                            <input id="nie" type="radio" value="2" name="stock" class="col">
+                            <div class="book-about-add">
+                                <label for="nie" id="nie-stock">nie je na sklade</label>
+                                <input id="nie" type="radio" value="2" name="stock" class="col">
+                            </div>
                         </div>
                         <div id="item-price">
-                            <label for="book-price-gross">Cena: xy€</label>
-                            <input id="item-count" type="number" min="1" max="10000" value="1">
-                            <label for="book-price-net">xy€ bez DPH</label>
-                            <input class="item-count" type="number" min="1" max="100000" value="1">
+                            <p><b>Cena:</b></p>
+                            <div class="book-about-add">
+                                <input id="item-count" type="number" min="1" max="10000" value="1">
+                                <label for="book-price-gross">€</label>
+
+                            </div>
+                            <div class="book-about-add">
+                                <input class="item-count" type="number" min="1" max="100000" value="1">
+                                <label for="book-price-net">€ bez DPH</label>
+                            </div>
                         </div>
+                        <section id="submit-to-catalog">
+                            <button id="add-to-catalog">Pridať do katalogu</button>
+                        </section>
                     </div>
-                </section>
-                <section id="item-details">
-                    <dl id="book-details">
-                        <dt>Žáner:</dt>
-                        <dd id="book-genre"><input id = "add-book-genre" type="text" maxlength="30"></dd>
-            
-                        <dt>Jazyk:</dt>
-                        <dd id="book-lang"><input id = "add-book-lang" type="text" maxlength="14"></dd>
-            
-                        <dt>Počet strán:</dt>
-                        <dd id="book-pages"><input id = "add-book-pages" type="text" maxlength="20"></dd>
-            
-                        <dt>Vydavateľstvo:</dt>
-                        <dd id="book-publisher"><input id = "add-book-publisher" type="text" maxlength="15"></dd>
-            
-                        <dt>Rok vydania:</dt>
-                        <dd id="book-year"><input id = "add-book-year" type="text" minlength="4" maxlength="4"></dd>
-                    </dl>
-                </section>
-                <section id="item-desc">
-                    <label for="book-more">Popis</label>
-                    <input id="book-more" type="text" min="1" max="1500" value="1">
-                </section>
-                <section id="submit">
-                    <button id="add-to-cart">Pridať do katalogu</button>
-                </section>
-            </div>
+                    
+                </div>
+
             </div>
         </form>
     </section>
