@@ -63,11 +63,12 @@
 </header>
 
 <main class="container">
-    <h1 id="">Nákupný košík</h1>
-    <article id="cart">
-        
-        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
-            <span id="item-data" class="d-flex align-items-center justify-content-start">
+    <section>
+        <h1>Nákupný košík</h1>
+    </section>
+    <article id="cart" class="d-none d-lg-flex flex-column">
+        <section id="cart-item" class="d-flex justify-content-between align-items-center">
+            <span id="item-data" class="d-flex justify-content-start align-items-center">
                 <img id="item-icon" class="col-3" src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Kniha 1"/>
                 <div class="col-12">
                     <p id="item-title">
@@ -90,8 +91,8 @@
             </span>
         </section>
 
-        <section id="cart-item" class="d-none d-lg-flex justify-content-between align-items-center">
-            <span id="item-data" class="d-flex align-items-center justify-content-start">
+        <section id="cart-item" class="d-flex justify-content-between align-items-center">
+            <span id="item-data" class="d-flex justify-content-start align-items-center">
                 <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
                 <div class="col-12">
                     <p id="item-title">
@@ -113,10 +114,11 @@
                 <p id="item-price-gross">0,00€</p>
             </span>
         </section>
-        
+    </article>
 
-        <section id="cart-item" class="d-lg-none justify-content-between align-items-center">
-            <span id="item-data" class="d-flex align-items-center justify-content-between">
+    <article id="cart" class="d-lg-none">
+        <section id="cart-item">
+            <span id="item-data" class="d-flex justify-content-between align-items-center">
                 <div class="d-flex flex-row">
                     <img id="item-icon" class="col-3" src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Kniha 1"/>
                     <div class="d-flex align-items-center">
@@ -141,8 +143,8 @@
             </span>
         </section>
 
-        <section id="cart-item" class="d-lg-none justify-content-between align-items-center">
-            <span id="item-data" class="d-flex align-items-center justify-content-between">
+        <section id="cart-item">
+            <span id="item-data" class="d-flex justify-content-between align-items-center">
                 <div class="d-flex flex-row">
                     <img id="item-icon" class="col-3" src="/images/book_128.png" alt="Kniha 2"/>
                     <div class="d-flex align-items-center">
@@ -174,13 +176,14 @@
                 <p id="total-price-gross">Suma: 21,28€</p>
             </div>
         </section>
-
-        <section id="navigation-buttons" class="d-flex">
-            <button id="back-to-shopping" class="flex-fill">Späť na nákup</button>
-            <button id="move-to-payment" class="flex-fill" onclick="window.location.href='/html/deliver.html'">Pokračovať na platbu</button>
-        </section>
-
     </article>
+
+    <section id="navigation-buttons" class="d-flex">
+        <button id="back-to-shopping" class="flex-fill" 
+            onclick="window.location.href='/html/homepage.html'">Späť na nákup</button>
+        <button id="move-to-payment" class="flex-fill" 
+            onclick="window.location.href='/html/deliver.html'">Pokračovať na platbu</button>
+    </section>
 </main>
 
 <footer class="container-fluid">

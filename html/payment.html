@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-    <title>Prihlásenie - Kníhkupectvo LR</title>
+    <title>Kníhkupectvo LR - Kategória</title>
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </head>
 <body>
 
-<header class="container-fluid">
+<header class="container">
     <article class="d-none d-lg-flex align-items-center">
         <div class="col-lg-4">
             <h1 id="site-title"><a href="/html/homepage.html">Kníhkupectvo LR</a></h1>
         </div>
         <div class="col-lg-4">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <input type="text" class="form-control" placeholder="Hľadať...">
-                <button class="btn btn-outline-secondary" type="button">
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                <button class="btn btn-outline-secondary">
                     <img src="/images/search-icon.png" alt="Hľadať">
                 </button>
             </div>
@@ -45,7 +44,7 @@
         </div>
         <div class="col-12">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">  
+                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
                 <button class="btn btn-outline-secondary">
                     <img src="/images/search-icon.png" alt="Hľadať">
                 </button>
@@ -63,46 +62,21 @@
     </article>
 </header>
 
-
 <main class="container">
     <article>
-        <section id="login-screen">
-            <h1 id="login-title">Prihlásenie</h1>
-    
-            <form action="/login" method="POST">
-                <div id="form-group" class="row align-items-center">
-                    <label for="username" class="col-md-4 col-form-label">Prihlasovacie meno</label>
-                    <div class="col-md-8">
-                        <input type="text" id="username" class="form-control" name="username" required autocomplete="username"/>
-                    </div>
-                </div>
-    
-                <div id="form-group" class="row align-items-center">
-                    <label for="password" class="col-md-4 col-form-label">Heslo</label>
-                    <div id="password-wrapper" class="col-md-8 d-flex">
-                        <input type="password" id="password" class="form-control" name="password" required autocomplete="current-password"/>
-                        <button type="button" id="uncover-pass" class="btn btn-outline-secondary ms-2">
-                            <img src="/images/eye-icon.png" alt="Zobraziť heslo">
-                        </button>
-                    </div>
-                </div>
-    
-                <p id="login-error" class="error-message" style="color: red; display: none;">
-                    Používateľské meno alebo heslo sú nesprávne!
-                </p>
-    
-                <div id="login-info" class="text-center">
-                    <p>Nemáte konto? <a href="/html/register.html">Zaregistrujte sa</a></p>
-                </div>
-    
-                <div id="btn-login" class="text-center">
-                    <button type="submit" >Prihlásiť sa</button>
-                </div>
-                
-            </form>
-        </section>
-
+        <a id="text">Meno:</a>
+        <input type="text" placeholder="">
+        <a id="text">Priezvisko:</a>
+        <a id="text">Telefónne číslo:</a>
+        <a id="text">E-mail:</a>
+        <a id="text">Adresa:</a>
+        <a id="text">Obec</a>
+        <a id="text">PSČ</a>
     </article>
+
+
+
+
 </main>
 
 <footer class="container-fluid">
@@ -135,6 +109,5 @@
         </div>
     </article>
 </footer>
-
 </body>
 </html>
