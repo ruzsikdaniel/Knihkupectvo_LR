@@ -68,6 +68,20 @@ a:hover{
 }
 
 /*style for homepage.html*/
+#banner{
+    max-height: 15rem;
+}
+
+#intro{
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    #intro{
+        flex-direction: column;
+    }
+}
+
 #carousel-list {
     display: flex;
     width: 100%;
@@ -77,7 +91,7 @@ a:hover{
 
 .book-item {
     flex: 1 1 auto;
-    max-width: 150px;
+    max-width: 175px;
 }
 
 #carousel{
