@@ -348,14 +348,14 @@ ul #carousel-list{
 }
 
 
-/*style for add photo*/
+/*style for add book page*/
 #foto-add-label{
     color: #963235;
     background-color: #E7E7E7; 
     font-size:2rem;
     border-radius: 5px;
     border:none;
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1/1; 
     text-align: center;
     display: flex;
@@ -384,6 +384,9 @@ ul #carousel-list{
 }
 #book-add-galery-foto{
     display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px; 
 }
 div .foto-add-book{
     height: 50%;
@@ -396,16 +399,32 @@ div .foto-add-book{
     align-items: center; 
 }
 
-/*style for */
-#item-page{
+#item-page, #item-details, #item-status, #item-status p{
+    margin: 5px; 
+}
+.book-about-add{
     margin: 5px;
 }
-#item-details{
+
+#submit-to-catalog{
+    place-self: center;
+    display: block;
     margin: 5px;
 }
-#ano{
-    margin: 5px;
+#add-book-title, #add-book-author, #add-book-genre, #add-book-lang, #add-book-pages, #add-book-publisher, #add-book-year, #book-more{
+    width: 50%;
 }
-#nie{
-    margin: 5px;
+
+#item-page-add, #item-status{
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    
+}
+.book-about-add #ano-stock{
+    color: #198754;
+}
+.book-about-add #nie-stock{
+    color: #dc3545;
 }
