@@ -21,12 +21,12 @@ main{
 
 main article section{
     margin: 1rem;
+    padding: 1rem;
 }
 
 p{
     margin-bottom: 0 !important;
 }
-
 
 /*style for buttons*/
 button{
@@ -138,65 +138,29 @@ ul #carousel-list{
     margin: 5% 20%;
 }
 
-/*style for login.html */
-#login-screen{
-    display: block;
-    place-self: center;
-    place-items: center;
-    margin: 5px;
-    border-style: solid;
-    border-radius: 1px;
-    width: 65%;
-    padding: 5px;
-    background-color: #969696;
-}
-
-#login-screen *{
-    display: flex;
-    flex-direction: column;
-}
-
-#login-screen p{
-    margin-block: 0.5em;
-}
-
-#login-screen .form-group{
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-}
-
-#login-screen .form-group input{
-    border-style: solid;
-}
-
-#login-screen #submit-password-button{
-    place-self: center;
-    display: block;
-    margin: 5px;
-}
-
-#login-screen #password-wrapper{
-    display: flex;
-    flex-direction: row;
-}
-
-#login-info *{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-inline: 0.5em;
-}
-
-#login-error{
-    text-align: center;
-}
-
 /*style for item.html*/
+#item-gallery, #item-details{
+    margin: 1rem;
+    margin-inline: 2rem;
+}
+
+#item-image, #thumbnail-gallery{
+    padding: 0.5rem;
+    padding-inline: 1rem;
+}
+
 #thumbnail-gallery > *{
     max-width: 100px;
 }
 
+#item-page, #item-desc{
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+#item-page > *{
+    margin-top: 1rem;
+}
 
 /*style for checkout.html */
 #payment-screen{
@@ -224,40 +188,49 @@ ul #carousel-list{
     margin: 5px;
 }
 
-/*style for register.html */
-#register-screen{
+
+/*style for login.html */
+#login-screen, #register-screen{
     display: block;
     place-self: center;
     place-items: center;
-    margin: 5px;
-    padding: 20px;
     border-style: solid;
     border-radius: 1px;
     width: 65%;
     background-color: #969696;
 }
 
-#register-screen form{
-    display: flex;
-    flex-direction: column;
+#login-screen form > *{
+    margin-block: 1rem;
 }
 
-#register-screen .form-group input{
-    border-style: solid;
-}
-
-#register-screen .form-group{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 1em;
-}
-
-#register-screen .submit-registration-button{
+#login-screen #submit-password-button{
     place-self: center;
     display: block;
     margin: 5px;
 }
 
+#login-screen #password-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#login-info *{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0.5em;
+}
+
+#login-error{
+    text-align: center;
+}
+
+
+/*style for register.html */
+#register-screen form > *{
+    margin-block: 1rem;
+}
 #register-error{
     display: none; /* basically hide the error message */
 }
@@ -289,10 +262,6 @@ ul #carousel-list{
 #cart-item > *{
     padding: 0.5em;
     flex-direction: column;
-}
-
-#item-title{
-    margin: 0;
 }
 
 #item-icon{
@@ -427,8 +396,8 @@ div .foto-add-book{
     width: 50%;
 }
 
-#item-page-add, #item-status{
-    
+#item-page-add, #item-status, #item-details{
+    padding: 0.5rem;
     border-width: 1px;
     border-style: solid;
     border-radius: 1px;
