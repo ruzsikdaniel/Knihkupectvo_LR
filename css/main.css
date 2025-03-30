@@ -435,3 +435,6 @@ div .foto-add-book{
     place-items: center;
     justify-content: center;
 }
+#form-group div{
+    margin-bottom: 5px;
+}
