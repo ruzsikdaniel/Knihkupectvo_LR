@@ -118,10 +118,6 @@ ul #carousel-list{
     padding-inline: 0.5rem;
 }
 
-
-/*style for list of the book in the carousel*/
-
-
 /*style for buttons */
 #books-change{    
     display: flex;
@@ -188,7 +184,6 @@ ul #carousel-list{
     margin: 5px;
 }
 
-
 /*style for login.html */
 #login-screen, #register-screen{
     display: block;
@@ -233,6 +228,23 @@ ul #carousel-list{
 }
 #register-error{
     display: none; /* basically hide the error message */
+}
+
+#register-screen #form-group{
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    #register-screen #form-group{
+        flex-direction: column;
+        justify-content: start;
+        align-content: start;
+    }
+    #register-screen{
+        width: auto;
+    }
 }
 
 /*styles for shoppingcart.html */

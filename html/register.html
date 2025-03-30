@@ -70,15 +70,15 @@
             <h1 id="register-title">Registrácia</h1>
     
             <form action="/register" method="POST">
-                <div id="form-group" class="d-flex flex-row justify-content-center align-items-center">
-                    <label for="username" class="col-md-4 col-form-label">Prihlasovacie meno</label>
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="username">Prihlasovacie meno</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="username" name="username" required autocomplete="username">
                     </div>
                 </div>
     
-                <div id="form-group" class="d-flex flex-row justify-content-center align-items-center">
-                    <label for="password" class="col-md-4 col-form-label">Heslo</label>
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="password">Heslo</label>
                     <div class="col-md-8 d-flex">
                         <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password">
                         <button type="button" id="uncover-pass" class="btn btn-outline-secondary ms-2">
@@ -87,8 +87,8 @@
                     </div>
                 </div>
     
-                <div id="form-group" class="d-flex flex-row justify-content-center align-items-center">
-                    <label for="pwdRepeat" class="col-md-4 col-form-label">Opakujte heslo</label>
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="pwdRepeat">Opakujte heslo</label>
                     <div class="col-md-8 d-flex">
                         <input type="password" class="form-control" id="pwdRepeat" name="pwdRepeat" required autocomplete="current-password">
                         <button type="button" id="uncover-pass-repeat" class="btn btn-outline-secondary ms-2">
