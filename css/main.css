@@ -435,3 +435,16 @@ div .foto-add-book{
 .book-about-add #nie-stock{
     color: #dc3545;
 }
+/*style for deliver.html*/
+.deliver-style{
+    border-radius: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    margin: 5px;
+    padding: 5px;
+}
+#suma-shoppingcart, #change-shoppingcart-link{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
