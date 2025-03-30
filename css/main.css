@@ -236,13 +236,14 @@ ul #carousel-list{
     align-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     #register-screen #form-group{
         flex-direction: column;
         justify-content: start;
         align-content: start;
-    }
-    #register-screen{
+    }   
+    
+    #register-screen #form-group > *{
         width: auto;
     }
 }
