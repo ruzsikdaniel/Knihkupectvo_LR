@@ -120,8 +120,9 @@ ul #carousel-list{
 
 /*style for buttons */
 #books-change{    
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #add-book{
