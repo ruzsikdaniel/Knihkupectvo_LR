@@ -187,6 +187,11 @@ ul #carousel-list{
     text-align: center;
 }
 
+/*style for item.html*/
+#thumbnail-gallery > *{
+    max-width: 100px;
+}
+
 
 /*style for checkout.html */
 #payment-screen{
@@ -264,6 +269,9 @@ ul #carousel-list{
     #cart-item {
         flex-direction: row;
     }
+    #item-icon{
+        max-height: 125px;
+    }
   }
 
 #cart-item{
@@ -283,8 +291,7 @@ ul #carousel-list{
 }
 
 #item-icon{
-    max-width: 128px;
-    min-width: 128px;
+    max-height: 180px;
     width: auto;
     height: auto;
     margin-right: 2rem;
