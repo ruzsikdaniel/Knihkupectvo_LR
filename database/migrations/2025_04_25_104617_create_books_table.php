@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('publisher', 15);
             $table->unsignedInteger('year');
             $table->string('state', 16);
+            $table->string('autor', 20);
+
         });
     }
 
