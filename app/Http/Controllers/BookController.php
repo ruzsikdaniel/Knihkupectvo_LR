@@ -18,4 +18,10 @@ class BookController extends Controller
         $book = Book::where('name', 'LIKE', '%'.$search.'%')->paginate(10);
         return view('admin.findbooks', compact('book'));
     }
+    public function book_details($id){ //get the details of the book
+        $book = Book::find($id);
+        return view('book', compact('book'));
+    }
+
+    
 }
