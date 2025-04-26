@@ -94,9 +94,30 @@
                     <button class="btn btn-outline-primary filter">Filter 3</button>
                 </div>
             </div>
+
+
+
             <div id="carousel" class="d-flex align-items-center overflow-scroll">
                 <ul id="carousel-list">
-                    <li class="book-item">
+                    @foreach($book as $books)
+                        <li class="book-item">
+                            <span class="d-flex flex-column border p-2">
+                                <img src="https://mrtns.sk/tovar/_l/2828/l2828965.jpg?v=17433079752" alt="Obálka knihy" class="img-fluid mb-2">
+                                <div class="d-flex flex-column text-start mb-2">
+                                    <p id="item-title" class="mb-1 fw-bold"><a href="/html/item.html"
+                                                                            class="text-decoration-none">{{$books->name}}</a></p>
+                                    <p class="text-muted mb-0">{{$books->autor}}</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p id="item-price-gross" class="mb-0">{{$books->price}}€</p>
+                                    <button class="btn btn-outline-secondary">
+                                        <img src="/images/cart-icon.png" alt="Košík">
+                                    </button>
+                                </div>
+                            </span>
+                        </li>
+                    @endforeach
+                    <!-- <li class="book-item">
                         <span class="d-flex flex-column border p-2">
                             <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obálka knihy" class="img-fluid mb-2">
                             <div class="d-flex flex-column text-start mb-2">
@@ -213,9 +234,10 @@
                                 </button>
                             </div>
                         </span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
+            {{$book->links()}}
         </section>
     </article>
 @endsection
