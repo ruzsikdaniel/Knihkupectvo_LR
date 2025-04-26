@@ -12,4 +12,10 @@ class UserController extends Controller
         $book = Book::paginate(10);
         return view('welcome', compact('book'));
     }
+    public function show_logged(){
+        $book = Book::paginate(10);
+        return view('dashboard', compact('book'));
+    }
+
+    
 }
