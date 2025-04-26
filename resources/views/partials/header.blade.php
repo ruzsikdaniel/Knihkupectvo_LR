@@ -63,10 +63,12 @@
         </div>
         <div class="col-12">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
-                <button class="btn btn-outline-secondary">
-                    <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
-                </button>
+                <form action="{{'book_search'}}" method="get">
+                    <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                    <button class="btn btn-outline-secondary">
+                        <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
+                    </button>
+                </form>
             </div>
         </div>
         <div class="col-12 text-center">
