@@ -9,6 +9,7 @@ class Book extends Model
 {
     protected $keyType = 'string'; //for using uuid we need to set to string
     public $incrementing = false;
+    public $timestamps = false;
 
     protected static function boot()
     {
@@ -32,5 +33,6 @@ class Book extends Model
         'publisher',
         'year',
         'state',
+        'autor',
     ];
 }
