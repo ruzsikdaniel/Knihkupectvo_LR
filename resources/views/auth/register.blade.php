@@ -1,52 +1,71 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.main')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+@section('title', 'Hlavná stránka')
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+@section('content')
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+<article>
+        <section id="register-screen" class="d-flex flex-column">
+            <h1 id="register-title">Registrácia</h1>
+    
+            <form method="POST" action="{{ route('register') }}">
+            @csrf                
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="name" :value="__('Name')">Prihlasovacie meno</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="name" name="name" :value="old('name')" required autofocus autocomplete="name">
+                    </div>
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="email" :value="__('Email')">Email</label>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus autocomplete="email">
+                    </div>
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+    
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="password" :value="__('Password')">Heslo</label>
+                    <div class="col-md-8 d-flex">
+                        <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password">
+                        <button type="button" id="uncover-pass" class="btn btn-outline-secondary ms-2">
+                            <img src="/images/eye-icon.png" alt="Zobraziť heslo">
+                        </button>
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                    </div>
+                </div>
+    
+                <div id="form-group" class="d-flex align-items-center">
+                    <label for="password_confirmation" :value="__('Confirm Password')">Opakujte heslo</label>
+                    <div class="col-md-8 d-flex">
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required autocomplete="current-password">
+                        <button type="button" id="uncover-pass-repeat" class="btn btn-outline-secondary ms-2">
+                            <img src="/images/eye-icon.png" alt="Zobraziť heslo">
+                        </button>
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                    </div>
+                </div>
+    
+                <!-- <p id="register-error" class="text-danger">Chyba pri registrovaní!</p> -->
+    
+                <div id="btn-register" class="text-center">
+                    <button type="submit">{{ __('Zaregistrovať sa!') }}</button>
+                </div>
+            </form>
+        </section>
+</article>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+@endsection
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+
+
+
+
+
+
