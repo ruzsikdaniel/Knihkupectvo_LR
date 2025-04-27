@@ -31,8 +31,10 @@ Route::post('/logout', function () {
     return redirect('/');
 })->name('logout');
 
-Route::get('book_search', [BookController::class, 'book_search'])->middleware(['auth', 'find']); //check if the user is admin
+Route::get('book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin
 
-Route::get('findbook', [BookController::class, 'findbook']); //if the user is admin
+Route::get('admin/book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin
+
+Route::get('/findbook', [BookController::class, 'findbook']); //if the user is admin
 
 Route::get('/book_det/{id}', [BookController::class, 'book_details'])->name('book_det');
