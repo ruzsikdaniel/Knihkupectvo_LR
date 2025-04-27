@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('category__books', function (Blueprint $table) {
-            $table->unsignedInteger('id_category')->references('id')->on('category')->onUpdate('cascade');
-            $table->uuid('id_book')->references('id')->on('book')->onUpdate('cascade');
+            $table->unsignedInteger('id_category')->references('id')->on('categories')->onUpdate('cascade');
+            $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
         });
     }
 
