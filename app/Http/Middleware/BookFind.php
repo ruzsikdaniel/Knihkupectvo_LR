@@ -16,8 +16,13 @@ class BookFind
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(!Auth::check()){
+            return $next($request);
+        }
         if(Auth::user()->role == '1'){
-            return redirect('/findbook');
+            if(!$request->is('findbook')){
+                return redirect('/findbook');
+            }
         }
         return $next($request);
     }
