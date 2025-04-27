@@ -17,15 +17,16 @@
         </section>
 
         <section id="category">
-            <div id="category-header" class="d-flex align-items-center mb-3 gap-5">
-                <h2 id="category-name">
-                    <a href="/html/category.html" class="text-decoration-none">Fantasy</a>
-                </h2>
                 <div>
                     <button class="btn btn-outline-primary filter">Filter 1</button>
                     <button class="btn btn-outline-primary filter">Filter 2</button>
                     <button class="btn btn-outline-primary filter">Filter 3</button>
                 </div>
+            <div id="category-header" class="d-flex align-items-center mb-3 gap-5">
+                <h2 id="category-name">
+                    <a href="/html/category.html" class="text-decoration-none">Fantasy</a>
+                </h2>
+
             </div>
 
 

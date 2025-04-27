@@ -4,15 +4,16 @@
     
     @section('content')
     <article id="category">
-        <section>
-            <h1><a href="/html/category.html">Fantasy</a></h1>
-        </section>
-        <section id="filters">
+        
+        <!-- <section id="filters">
             <button class="filter">Filter 1</button>
             <button class="filter">Filter 2</button>
             <button class="filter">Filter 3</button>
         </section>   
-
+        <section>
+            <h1><a href="/html/category.html">Fantasy</a></h1>
+        </section>
+         -->
         <section id="category-grid">
             @foreach($book as $books)
                 <span id="grid-item" class="d-flex flex-column border">
