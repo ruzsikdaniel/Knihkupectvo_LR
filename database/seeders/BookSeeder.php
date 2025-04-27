@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 use App\Models\Book;
+use App\Models\Category_Book;
+
 
 class BookSeeder extends Seeder
 {
@@ -13,6 +16,7 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
+        //create books
         $books = [
             [
                 'name' => 'Ľúbostný list',
@@ -305,11 +309,69 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'state' => 'je na sklade',
                 'autor' => 'Suzanne Collins',
 
+            ],[
+                'name' => 'Psychológia peňazí',
+                'price' => 25.28,
+                'detail' => 'To, čo vieme o peniazoch – investície, osobné financie a obchodné rozhodnutia – sa bežne učíme ako matematickú oblasť, kde nám dáta a vzorce presne povedia, čo máme robiť. Ale v skutočnom svete ľudia nerobia finančné rozhodnutia prostredníctvom tabuliek. Robia ich pri spoločnom stolovaní alebo v zasadačkách, kde sú ich osobné skúsenosti, vlastné jedinečné videnie sveta, ego, hrdosť, marketing a iné neobvyklé podnety zmiešané do jedného celku. V Psychológii peňazí sa s vami oceňovaný autor Morgan Housel podelí o 19 krátkych príbehov, v ktorých preskúma, ako ľudia rozmýšľajú o peniazoch, a naučí vás, ako lepšie pochopiť jeden z najdôležitejších faktorov ľudského života, akým peniaze bezpochyby sú.',
+                'genre' => 'Financie',
+                'language' => 'English',
+                'pages' => 256,
+                'publisher' => 'Aurora',
+                'year' => '2019',
+                'state' => 'je na sklade',
+                'autor' => 'Morgan Housel',
+
+            ],[
+                'name' => 'Path to Wealth',
+                'price' => 15.78,
+                'detail' => 'The only way to beat inflation and grow your wealth is by investing. The greatest investors approach the markets with discipline, emotional distance, and self-mastery—lessons that the Stoics have been teaching us for thousands of years. Combining ancient wisdom with practical investment strategies drawn from analysis of the greatest investors of all time, The Stoic Path to Wealth will teach you how to:
+- cultivate an investing edge by managing your emotions and developing your unique skills and talents.
+- develop the discipline to ignore short-term market fluctuations and avoid living in the future.
+- foster a mindset that allows you to enjoy what you have and avoid greed.
+- create a sustainable approach to trading.
+
+As financial markets become increasingly unpredictable and chaotic, The Stoic Path to Wealth offers the key to weathering any economic storm while building wealth that will last a lifetime and beyond.',
+                'genre' => 'Financie',
+                'language' => 'English',
+                'pages' => 120,
+                'publisher' => 'Aurora',
+                'year' => '2020',
+                'state' => 'nie je na sklade',
+                'autor' => 'Darius Foroux',
+
             ],
+
         ];
 
         foreach($books as $book){
             Book::create($book);
+        }
+
+        //create categories
+        $categories = ['Fantasy', 'Romantic', 'Zmiznutie', 'Zločin', 'Vyšetrovanie', 'Vraždy', 'Triler',
+                        'Dobro a zlo', 'Nepriatelia', 'Tajomstvo', 'Laska', 'Magia', 'Minulost', 'Pomsta',
+                        'Osud', 'Svadba', 'Pacahtel', 'Tragedia', 'Dobrodruzstvo', 'Neocakavane', 'Prekvapenie', 'Motivacia', 'Novy zivot',
+                        'Komunikacia', 'Nadej', 'Strach', 'Biografia', 'Financie'
+        ];
+
+        foreach($categories as $category){
+            Category::create([
+                'name'=>$category,
+            ]);
+        }
+
+        //create categorie_book
+        $categoriesID = Category::pluck('id')->toArray(); //get the categories id
+        $booksID = Book::pluck('id')->toArray(); //get the books id
+
+        foreach($booksID as $bID){ //go throught list of book`s id
+            $getCatId = array_rand($categoriesID, 5); //choose 5 random categories
+            foreach($getCatId as $key){
+                Category_Book::create([
+                    'id_category'=>$categoriesID[$key], //get the category id by generated number
+                    'id_book'=>$bID, //get the book`s id
+                ]);
+            }
         }
     }
 }
