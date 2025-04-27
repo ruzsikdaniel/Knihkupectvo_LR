@@ -15,6 +15,7 @@ class User extends Authenticatable
 
     public $incrementing = false;
     protected $keyType = 'string';
+    public $timestamps = false;
 
     protected static function boot()
     {

@@ -9,6 +9,7 @@ class Shopping_Card extends Model
 {
     protected $keyType = 'string'; //for using uuid we need to set to string
     public $incrementing = false;
+    public $timestamps = false;
 
     protected static function boot()
     {

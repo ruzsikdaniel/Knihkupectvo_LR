@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class Deliver extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'id',
         'type',

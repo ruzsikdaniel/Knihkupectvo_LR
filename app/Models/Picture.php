@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class Picture extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'id',
         'name',
