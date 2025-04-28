@@ -6,7 +6,7 @@
         <div class="col-lg-4">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
                 <form action="{{'book_search'}}" method="get">
-                    <input id="search-input" type="text" class="form-control" placeholder="Hľadať...">
+                    <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
                     <button class="btn btn-outline-secondary">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>
