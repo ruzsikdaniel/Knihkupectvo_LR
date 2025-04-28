@@ -35,6 +35,15 @@ Route::get('book_search', [BookController::class, 'book_search'])->middleware(['
 
 Route::get('admin/book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin
 
-Route::get('/findbook', [BookController::class, 'findbook']); //if the user is admin
+Route::get('/findbook/{id}', [BookController::class, 'findbook']); //if the user is admin
 
 Route::get('/book_det/{id}', [BookController::class, 'book_details'])->name('book_det');
+
+Route::get('admin_book_det/{id}', [BookController::class, 'admin_book_details'])->name('admin_book_det');
+
+Route::get('/category_details/{name}', [BookController::class, 'category'])->name('category_details'); //get the category details
+
+Route::get('/category_details_log/{name}', [BookController::class, 'category_log'])->name('category_details_log'); //get the category details for logged user
+
+Route::get('/category_details_admin/{name}', [BookController::class, 'category_admin'])->name('category_details_admin'); //get the category details
+
