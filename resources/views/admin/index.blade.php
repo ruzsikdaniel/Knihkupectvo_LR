@@ -19,17 +19,11 @@
         <section id="category">
                 <div>
                     @foreach($category as $categories)
-                        <button class="btn btn-outline-primary filter">{{$categories->name}}</button>
+                        <a href="{{route('category_details_admin', $categories)}}">
+                            <button class="btn btn-outline-primary filter" style="margin-bottom:5px">{{$categories}}</button>
+                        </a>
                     @endforeach
                 </div>
-
-            <div id="category-header" class="d-flex align-items-center mb-3 gap-5">
-
-                <h2 id="category-name">
-                    <a href="/html/category.html" class="text-decoration-none">Fantasy</a>
-                </h2>
-
-            </div>
 
 
 
@@ -38,10 +32,12 @@
                     @foreach($book as $books)
                         <li class="book-item">
                             <span class="d-flex flex-column border p-2">
-                                <img src="https://mrtns.sk/tovar/_l/2828/l2828965.jpg?v=17433079752" alt="Obálka knihy" class="img-fluid mb-2">
+                            <a href="{{route('admin_book_det', $books->id)}}"
+                            class="text-decoration-none">
+                                <img src="https://mrtns.sk/tovar/_l/2828/l2828965.jpg?v=17433079752" alt="Obálka knihy" class="img-fluid mb-2"></a>
                                 <div class="d-flex flex-column text-start mb-2">
-                                    <p id="item-title" class="mb-1 fw-bold"><a href="/html/item.html"
-                                                                            class="text-decoration-none">{{$books->name}}</a></p>
+                                    <p id="item-title" class="mb-1 fw-bold"><a href="{{route('admin_book_det', $books->id)}}"
+                                    class="text-decoration-none">{{$books->name}}</a></p>
                                     <p class="text-muted mb-0">{{$books->autor}}</p>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
