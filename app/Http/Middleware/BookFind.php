@@ -21,9 +21,12 @@ class BookFind
         }
         if(Auth::user()->role == '1'){
             if(!$request->is('findbook')){
-                return redirect('/findbook');
+                return redirect('/findbook/' . $request->search);
+
+                //return redirect('/findbook', $request->search);
             }
         }
+        // {route('category_details', $categories)}}">
         return $next($request);
     }
 }
