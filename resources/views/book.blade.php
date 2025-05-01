@@ -1,7 +1,7 @@
 @extends('layouts.main')
-    
+
     @section('title', 'Hlavná stránka')
-    
+
     @section('content')
 
 <div class="row d-none d-md-flex">
@@ -47,12 +47,16 @@
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">{{$book->state}}</p>
+                            @if($book->state === 'je na sklade')
+                                <p id="in-stock">{{$book->state}}</p>
+                            @else
+                                <p id="out-of-stock">{{$book->state}}</p>
+                            @endif
                         </div>
                         <div id="item-price">
-                            <p id="book-price-gross">
-                            <h3>{{$book->price}}</h3>
-                            </p>
+                            <h3 id="item-price-gross" class="mb-0">
+                                {{number_format($book->price, 2, ',', ' ')}}€
+                            </h3>
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
@@ -99,9 +103,9 @@
                             <p id="in-stock">{{$book->state}}</p>
                         </div>
                         <div id="item-price">
-                            <p id="book-price-gross">
-                            <h3>{{$book->price}}€</h3>
-                            </p>
+                            <h3 id="item-price-gross">
+                                {{number_format($book->price, 2, ',', ' ')}}€
+                            </h3>
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">

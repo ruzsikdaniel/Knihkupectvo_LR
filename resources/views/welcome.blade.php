@@ -43,12 +43,16 @@
                                 <a href="{{route('book_det', $books->id)}}" class="text-decoration-none">
                                 <img src="https://mrtns.sk/tovar/_l/2828/l2828965.jpg?v=17433079752" alt="Obálka knihy" class="img-fluid mb-2"></a>
                                 <div class="d-flex flex-column text-start mb-2">
-                                    <p id="item-title" class="mb-1 fw-bold"><a href="{{route('book_det', $books->id)}}"
-                                                                            class="text-decoration-none">{{$books->name}}</a></p>
+                                    <p id="item-title" class="mb-1 fw-bold">
+                                        <a href="{{route('book_det', $books->id)}}
+                                        "class="text-decoration-none">{{$books->name}}</a>
+                                    </p>
                                     <p class="text-muted mb-0">{{$books->autor}}</p>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p id="item-price-gross" class="mb-0">{{$books->price}}€</p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <p id="item-price-gross" class="mb-0">
+                                        {{number_format($books->price, 2, ',', ' ')}}€
+                                    </p>
                                     <button class="btn btn-outline-secondary">
                                         <img src="/images/cart-icon.png" alt="Košík">
                                     </button>

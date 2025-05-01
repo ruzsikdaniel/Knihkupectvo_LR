@@ -31,7 +31,7 @@ p{
 /*style for buttons*/
 button{
     color: #963235;
-    background-color: #E7E7E7; 
+    background-color: #E7E7E7;
     font-size:1rem;
     border-radius: 5px;
     border:none;
@@ -133,7 +133,7 @@ ul #carousel-list{
 }
 
 /*style for buttons */
-#books-change{    
+#books-change{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,8 +255,8 @@ ul #carousel-list{
         flex-direction: column;
         justify-content: start;
         align-content: start;
-    }   
-    
+    }
+
     #register-screen #form-group > *{
         width: auto;
     }
@@ -359,17 +359,17 @@ ul #carousel-list{
 /*style for add book page*/
 #foto-add-label{
     color: #963235;
-    background-color: #E7E7E7; 
+    background-color: #E7E7E7;
     font-size:2rem;
     border-radius: 5px;
     border:none;
     width: 100%;
-    aspect-ratio: 1/1; 
+    aspect-ratio: 1/1;
     text-align: center;
     display: flex;
     align-self: center;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 #foto-add-label:hover{
     color:#b83e42;
@@ -384,8 +384,8 @@ ul #carousel-list{
 
 #book-add-galery{
     display: flex;
-    justify-content: space-around; 
-    align-items: flex-start; 
+    justify-content: space-around;
+    align-items: flex-start;
 }
 #book-add-galery-foto *{
     margin: 5px;
@@ -394,7 +394,7 @@ ul #carousel-list{
     display: inline-block;
     border-width: 1px;
     border-style: solid;
-    border-radius: 1px; 
+    border-radius: 1px;
 }
 div .foto-add-book{
     height: 50%;
@@ -403,12 +403,12 @@ div .foto-add-book{
 
 #dd-foto-center{
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
 #item-page, #item-details, #item-status, #item-status p{
-    margin: 5px; 
+    margin: 5px;
 }
 .book-about-add{
     margin: 5px;
@@ -428,7 +428,7 @@ div .foto-add-book{
     border-width: 1px;
     border-style: solid;
     border-radius: 1px;
-    
+
 }
 .book-about-add #ano-stock{
     color: #198754;
@@ -436,6 +436,8 @@ div .foto-add-book{
 .book-about-add #nie-stock{
     color: #dc3545;
 }
+
+
 /*style for deliver.html*/
 .deliver-style{
     border-radius: 1px;
@@ -451,4 +453,8 @@ div .foto-add-book{
 }
 #form-group div{
     margin-bottom: 5px;
+}
+
+#pagination-container{
+    margin: 1rem;
 }

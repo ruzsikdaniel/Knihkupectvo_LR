@@ -1,15 +1,15 @@
 @extends('layouts.main')
-    
+
     @section('title', 'Hlavná stránka')
-    
+
     @section('content')
     <article id="category">
-        
+
         <!-- <section id="filters">
             <button class="filter">Filter 1</button>
             <button class="filter">Filter 2</button>
             <button class="filter">Filter 3</button>
-        </section>   
+        </section>
         <section>
             <h1><a href="/html/category.html">Fantasy</a></h1>
         </section>
@@ -20,12 +20,16 @@
                     <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obálka knihy" class="img-fluid">
 
                     <div class="d-flex flex-column text-left">
-                        <p id="item-title"><a href="/html/item.html">{{$books->name}}</a></p>
+                        <p id="item-title">
+                            <a href="/html/item.html">{{$books->name}}</a>
+                        </p>
                         <p class="text-muted">{{$books->autor}}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <p id="item-price-gross">{{$books->price}}€</p>
+                        <p id="item-price-gross" class="mb-0">
+                            {{number_format($books->price, 2, ',', ' ')}}€
+                        </p>
                         <button class="btn btn-outline-secondary">
                             <img src="/images/cart-icon.png" alt="Košík">
                         </button>
