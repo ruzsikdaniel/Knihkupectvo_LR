@@ -25,7 +25,7 @@ class BookSeeder extends Seeder
 
             Mladá ambiciózna novinárka Joanna Haslamová sa zúčastní na pohrebe jedného z najslávnejších britských hercov svojej generácie a náhodou tam začuje klebety o existencii záhadného listu, ktorý po sebe zanechal. Dlho neváha a pustí sa do pátrania na vlastnú päsť, netuší však, do akého nebezpečenstva sa púšťa… a ohrozí nielen seba, ale aj ľudí vo svojej blízkosti. Ten list sa snažia získať aj ľudia z najvyšších spoločenských kruhov s obrovským vplyvom a dotieravá novinárka je im tŕňom v oku. Nezastavia sa pred ničím. To však ani ona.
 
-            Napínavý triler z pera autorky série Sedem sestier, odohrávajúci sa v dvadsiatych rokoch 20. storočia, zachytáva skutočné dobové reálie i postavy, šikovne pretkané fikciou, ako to dokáže len Lucinda Rileyová.',
+            Napínavý Thriller z pera autorky série Sedem sestier, odohrávajúci sa v dvadsiatych rokoch 20. storočia, zachytáva skutočné dobové reálie i postavy, šikovne pretkané fikciou, ako to dokáže len Lucinda Rileyová.',
                 'genre' => 'Detective',
                 'language' => 'Slovenčina',
                 'pages' => 432,
@@ -38,7 +38,7 @@ class BookSeeder extends Seeder
                 'name' => 'Bezmocná',
                 'price' => 15.80,
                 'detail' => 'Elita už po desetiletí disponuje zvláštními schopnostmi, jež jí daroval Mor. Ačkoliv ne všichni měli to štěstí, že nemoc přežili a zároveň dostali do vínku moc. A právě ti jsou doslova Obyčejní. Když je král vykáže z království, nedostatek schopností se náhle stává hrdelním zločinem. Jedním z vyděděnců je i Paedyn Grayová. Skrývá se v chudinské čtvrti, kde je život mimořádně krutý, a vydává se za Elitu, aby splynula s ostatními a vyhnula se problémům. Jenže pak zachrání mladého cizince, aniž tuší, že to je jeden z ilyjských princů, Kai Azer. Za „odměnu“ je vybrána do Očistných zkoušek, brutální soutěže, která má demonstrovat sílu Elity. Pokud ji však nezabijí protivníci, postará se o ni Kai, k němuž začíná něco cítit. Jestli totiž zjistí, že Paedyn je ve skutečnosti Obyčejná, bude to znamenat její konec.',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'Čeština',
                 'pages' => 344,
                 'publisher' => 'YOLi CZ',
@@ -50,7 +50,7 @@ class BookSeeder extends Seeder
                 'name' => 'Bezohledná',
                 'price' => 11.80,
                 'detail' => 'Království Ilya právě potlačilo povstání Odboje, ale klid nezavládl. Paedyn Grayová, patřící k Obyčejným, přežila Očistné zkoušky a poté, co v sebeobraně zabila krále, je na útěku před tím, komu začala až příliš důvěřovat. Kai Azer je nyní ilyjským Vymahatelem. Novým králem je jeho bratr Kitt, který ho pověřil, aby Paedyn našel a přivedl mu ji. Kai stopuje Paedyn přes nebezpečnou poušť Spáleniště do útrob nepřátelského města Dor a v hloubi duše si přeje, aby ji pronásledovat nemusel. Ve městě, kde Elity nic neznamenají, se však role lovce a kořisti mohou snadno měnit – a vnitřní souboj mezi touhou a smyslem pro povinnost může být smrtelný.',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'Čeština',
                 'pages' => 290,
                 'publisher' => 'YOLi CZ',
@@ -61,8 +61,8 @@ class BookSeeder extends Seeder
             ],[
                 'name' => 'Odvážná',
                 'price' => 14.99,
-                'detail' => 'Mírnou Adenu a bojovnou Paedyn svedl osud dohromady už v dětství a od té doby jsou nerozlučné. Vždycky si kryly záda a chránily svůj domov ve slumech Kořistné. Teď ale Paedyn – která patří k Obyčejným – vybrali do Očistných zkoušek, což pro ni znamená téměř jistou smrt. Adena zůstala v Kořistné sama a musí se naučit bránit. Po neúspěšném pokusu o krádež ji zachrání neznámý muž z trhu. Makova záhadná minulost a utajovaná moc ho odlišují od ostatních nižších Elit. Společně utvoří tým, aby mohli své milované vidět před Zkouškami, a jejich životu nebezpečná mise prověří sílu jejich loajálnosti i lásky.',
-                'genre' => 'Romantic',
+                'detail' => 'Mírnou Adenu a bojovnou Paedyn svedl osud dohromady už v dětství a od té doby jsou nerozlučné. Vždycky si kryly záda a chránily svůj domov ve slumech Kořistné. Teď ale Paedyn – která patří k Obyčejným – vybrali do Očistných zkoušek, což pro ni znamená téměř jistou smrt. Adena zůstala v Kořistné sama a musí se naučit bránit. Po neúspěšném pokusu o krádež ji zachrání neznámý muž z trhu. Makova záhadná Minulosť a utajovaná moc ho odlišují od ostatních nižších Elit. Společně utvoří tým, aby mohli své milované vidět před Zkouškami, a jejich životu nebezpečná mise prověří sílu jejich loajálnosti i lásky.',
+                'genre' => 'Romantika',
                 'language' => 'Čeština',
                 'pages' => 350,
                 'publisher' => 'YOLi CZ',
@@ -76,7 +76,7 @@ class BookSeeder extends Seeder
                 'detail' => 'Paedyn Gray and Kai Azer return to the Kingdom of Ilya... And Paedyn has a life-altering choice to make. Whatever she decides will determine her fate – and the fate of those around her – forever. ​
 ​
                 In the ultimate battle of love and loyalty, who wins? Be swept away by the conclusion to the smash hit, dagger-to-the-throat romantasy trilogy.',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'English',
                 'pages' => 380,
                 'publisher' => 'Simon Schuster',
@@ -98,7 +98,7 @@ Kai Azer is now Ilya’s Enforcer, loyal to his brother Kitt, the new King. He h
 Across the deadly Scorches, and deep into the hostile city of Dor, Kai pursues the one person he wishes he didn’t have to. But in a city without Elites, the balance between the hunter and hunted shifts – and the battle between duty and desire is deadly.
 
 Be swept away by this bestselling, dagger-to-the-throat romantasy trilogy taking the world by storm.',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'English',
                 'pages' => 280,
                 'publisher' => 'Simon Schuster',
@@ -112,7 +112,7 @@ Be swept away by this bestselling, dagger-to-the-throat romantasy trilogy taking
                 'detail' => 'Perfect for fans of The Hunger Games and Fourth Wing. Adena and Paedyn have always been inseparable. Fate brought them together when they were young, but friendship ensured they’d always protect each other and the home they built in the slums of Loot.
 
 But now Paedyn – an Ordinary – has been selected for The Purging Trials, which means almost certain death. Now alone in Loot, Adena must fend for herself. After attempting to steal, it’s a mysterious man from the market who comes to her rescue. Mak’s shadowy past and secretive power set him apart from the other low-level Elites of Loot.',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'English',
                 'pages' => 280,
                 'publisher' => 'Simon Schuster',
@@ -209,7 +209,7 @@ Sara má pořád naději zachránit svět, možná však bude muset obětovat sv
                 'price' => 19.70,
                 'detail' => 'Přišli na zemi - Mor, Válka, Hlad a Smrt - čtyři Jezdci apokalypsy, kteří se na svých hrůzostrašných ořích rozjeli po světě nadáni mocí zahubit veškeré lidstvo.
 
-Když Jeruzalém padne do rukou armády nájezdníků, Miriam Elmahdyová je přesvědčená, že její život skončil. Domy hoří, ulice rudnou krví a vojáci masakrují nevinné - tohle nemůže přežít… A potom upoutá pozornost děsivého vůdce uchvatitelů, samotného Války. Jezdec se vydá Miriam pronásledovat, ale místo aby ji zabil, nazve ji svou „manželkou" a unese ji do svého tábora. Od té chvíle mladá žena z první řady sleduje konec světa, kdy město za městem lehá popelem, zatímco ten, kdo je za to zodpovědný - její nesmrtelný apokalyptický „manžel" - ji drží v zajetí. Vedle krutosti jí však Válka ukazuje i svou druhou tvář, laskavou a milující, která si ji podmaňuje, a Miriam možná nebude dost silná, aby odolala. Jestliže se však v životě něco naučila, pak to, že láska a válka nemohou existovat vedle sebe. Musí učinit zásadní volbu: vzdát se Válce a sledovat pád lidstva, nebo obětovat vše, aby ho zastavila.',
+Když Jeruzalém padne do rukou armády nájezdníků, Miriam Elmahdyová je přesvědčená, že její život skončil. Domy hoří, ulice rudnou krví a vojáci masakrují nevinné - tohle nemůže přežít… A potom upoutá pozornost děsivého vůdce uchvatitelů, samotného Války. Jezdec se vydá Miriam pronásledovat, ale místo aby ji zabil, nazve ji svou „manželkou" a unese ji do svého tábora. Od té chvíle mladá žena z první řady sleduje konec světa, kdy město za městem lehá popelem, zatímco ten, kdo je za to zodpovědný - její nesmrtelný apokalyptický „manžel" - ji drží v zajetí. Vedle krutosti jí však Válka ukazuje i svou druhou tvář, láskavou a milující, která si ji podmaňuje, a Miriam možná nebude dost silná, aby odolala. Jestliže se však v životě něco naučila, pak to, že láska a válka nemohou existovat vedle sebe. Musí učinit zásadní volbu: vzdát se Válce a sledovat pád lidstva, nebo obětovat vše, aby ho zastavila.',
                 'genre' => 'Fantasy',
                 'language' => 'Čeština',
                 'pages' => 544,
@@ -289,7 +289,7 @@ Complete with new information and tense, terrifying illustrations, fans won\'t w
 It\’s a reputation she\’s fought hard to earn at the highly prestigious Woodvale Academy, and one she\’s determined to maintain until graduation. The trick to keeping her model-student-smile plastered on her face at all times? She channels all her petty frustrations into her email drafts. One for the math teacher who refused to round her eighty-nine-point-nine percent up to ninety; one for the girl who blatantly copied her science project and took the credit for it.
 But most of her vehemently-worded emails are for her smug, infuriating co-captain, Julius Gong, who\’s been the sharpest thorn in her side ever since they were kids. Sadie never meant for these emails to get out ... but now her whole life is about to change...
 From the author of THIS TIME IT\'S REAL comes another own-voices love story with a high-concept twist Perfect for fans of Jenny Han and Crazy Rich Asians Gorgeously page-turning and endlessly readable, I HOPE THIS DOESN\'T FIND YOU is perfect for BookTok and the Netflix generation',
-                'genre' => 'Romantic',
+                'genre' => 'Romantika',
                 'language' => 'English',
                 'pages' => 314,
                 'publisher' => 'Scolastic',
@@ -338,9 +338,7 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
                 'year' => '2020',
                 'state' => 'nie je na sklade',
                 'autor' => 'Darius Foroux',
-
             ],
-
         ];
 
         foreach($books as $book){
@@ -348,10 +346,10 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
         }
 
         //create categories
-        $categories = ['Fantasy', 'Romantic', 'Zmiznutie', 'Zločin', 'Vyšetrovanie', 'Vraždy', 'Triler',
-                        'Dobro a zlo', 'Nepriatelia', 'Tajomstvo', 'Laska', 'Magia', 'Minulost', 'Pomsta',
-                        'Osud', 'Svadba', 'Pacahtel', 'Tragedia', 'Dobrodruzstvo', 'Neocakavane', 'Prekvapenie', 'Motivacia', 'Novy zivot',
-                        'Komunikacia', 'Nadej', 'Strach', 'Biografia', 'Financie'
+        $categories = ['Fantasy', 'Romantika', 'Zmiznutie', 'Zločin', 'Vyšetrovanie', 'Vraždy', 'Thriller',
+                        'Dobro a zlo', 'Nepriatelia', 'Tajomstvo', 'Láska', 'Mágia', 'Minulosť', 'Pomsta',
+                        'Osud', 'Svadba', 'Páchateľ', 'Tragédia', 'Dobrodružstvo', 'Neočakávané', 'Prekvapenie',
+                        'Motivácia', 'Nový život', 'Komunikácia', 'Nádej', 'Strach', 'Biografia', 'Financie'
         ];
 
         foreach($categories as $category){
@@ -360,7 +358,7 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
             ]);
         }
 
-        //create categorie_book
+        //create category_book
         $categoriesID = Category::pluck('id')->toArray(); //get the categories id
         $booksID = Book::pluck('id')->toArray(); //get the books id
 
