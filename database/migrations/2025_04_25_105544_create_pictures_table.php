@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pictures', function (Blueprint $table) {
-            $table->unsignedInteger('id')->primary()->autoIncrement();
-            $table->string('name', 15);
-            $table->string('dir', 30);
+            $table->uuid('id')->primary();
+            $table->string('title', 50)->nullable();
+            $table->string('url', 1000);
+            $table->string('source', 1000);
+            $table->timestamps();
         });
     }
 

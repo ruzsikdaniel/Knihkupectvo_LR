@@ -7,12 +7,13 @@
 <div class="row d-none d-md-flex">
         <article class="col-md-6 d-flex flex-column align-items-center">
             <section id="item-gallery" class="d-flex flex-column align-items-center">
-                <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obalka knihy" class="img-fluid" id="item-image" />
+                <img src="{{ $book->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obalka knihy" class="img-fluid" id="item-image" />
                 <div id="thumbnail-gallery">
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 1" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 2" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 3" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 4" class="img-thumbnail" />
+                    @forelse($book->pictures as $picture)
+                        <img src="{{ $picture->url }}" alt="{{ $picture->title }}" class="img-thumbnail" style="max-width: 100px;">
+                    @empty
+                        <img src="{{ asset('images/book_128.png') }}" alt="Placeholder" class="img-thumbnail" style="max-width: 100px;">
+                    @endforelse
                 </div>
             </section>
             <section id="item-details">
@@ -77,12 +78,13 @@
     <div class="row d-flex d-md-none">
         <article>
             <section id="item-gallery" class="d-flex flex-column align-items-center">
-                <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obalka knihy" class="img-fluid" id="item-image" />
+                <img src="{{ $book->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obalka knihy" class="img-fluid" id="item-image" />
                 <div id="thumbnail-gallery">
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 1" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 2" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 3" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 4" class="img-thumbnail" />
+                    @forelse($book->pictures as $picture)
+                        <img src="{{ $picture->url }}" alt="{{ $picture->title }}" class="img-thumbnail" style="max-width: 100px;">
+                    @empty
+                        <img src="{{ asset('images/book_128.png') }}" alt="Placeholder" class="img-thumbnail" style="max-width: 100px;">
+                    @endforelse
                 </div>
             </section>
 

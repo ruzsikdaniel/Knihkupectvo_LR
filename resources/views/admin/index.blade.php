@@ -38,7 +38,7 @@
                                 <div class="d-flex flex-column text-start mb-2">
                                     <p id="item-title" class="mb-1 fw-bold"><a href="{{route('admin_book_det', $books->id)}}"
                                     class="text-decoration-none">{{$books->name}}</a></p>
-                                    <p class="text-muted mb-0">{{$books->autor}}</p>
+                                    <p class="text-muted mb-0">{{$books->author}}</p>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <p id="item-price-gross" class="mb-0">{{$books->price}}€</p>

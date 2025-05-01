@@ -1,7 +1,7 @@
 @extends('layouts.main')
-    
+
     @section('title', 'Hlavná stránka')
-    
+
     @section('content')
     <article id="category">
 
@@ -12,7 +12,7 @@
 
                     <div class="d-flex flex-column text-left">
                         <p id="item-title"><a href="/html/item.html">{{$books->name}}</a></p>
-                        <p class="text-muted">{{$books->autor}}</p>
+                        <p class="text-muted">{{$books->author}}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
