@@ -20,6 +20,7 @@ class BookSeeder extends Seeder
         $books = [
             [
                 'name' => 'Ľúbostný list',
+                'author' => 'Lucinda Riley',
                 'price' => 20.23,
                 'detail' => 'Existuje ľúbostný list, ktorý by mohol zmeniť dejiny Anglicka. Tento ľúbostný list sa nachádza v pozostalosti známeho herca sira Jamesa Harrisona. Jeho odchod okrem smútiacej rodiny zanecháva aj šokujúce tajomstvo, aké by nikdy nemalo uzrieť svetlo sveta.
 
@@ -32,10 +33,9 @@ class BookSeeder extends Seeder
                 'publisher' => 'Tatran',
                 'year' => 2020,
                 'state' => 'je na sklade',
-                'autor' => 'Lucinda Riley',
-
             ],[
                 'name' => 'Bezmocná',
+                'author' => 'Lauren Roberts',
                 'price' => 15.80,
                 'detail' => 'Elita už po desetiletí disponuje zvláštními schopnostmi, jež jí daroval Mor. Ačkoliv ne všichni měli to štěstí, že nemoc přežili a zároveň dostali do vínku moc. A právě ti jsou doslova Obyčejní. Když je král vykáže z království, nedostatek schopností se náhle stává hrdelním zločinem. Jedním z vyděděnců je i Paedyn Grayová. Skrývá se v chudinské čtvrti, kde je život mimořádně krutý, a vydává se za Elitu, aby splynula s ostatními a vyhnula se problémům. Jenže pak zachrání mladého cizince, aniž tuší, že to je jeden z ilyjských princů, Kai Azer. Za „odměnu“ je vybrána do Očistných zkoušek, brutální soutěže, která má demonstrovat sílu Elity. Pokud ji však nezabijí protivníci, postará se o ni Kai, k němuž začíná něco cítit. Jestli totiž zjistí, že Paedyn je ve skutečnosti Obyčejná, bude to znamenat její konec.',
                 'genre' => 'Romantika',
@@ -44,10 +44,9 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Lauren Roberts',
-
             ],[
                 'name' => 'Bezohledná',
+                'author' => 'Lauren Roberts',
                 'price' => 11.80,
                 'detail' => 'Království Ilya právě potlačilo povstání Odboje, ale klid nezavládl. Paedyn Grayová, patřící k Obyčejným, přežila Očistné zkoušky a poté, co v sebeobraně zabila krále, je na útěku před tím, komu začala až příliš důvěřovat. Kai Azer je nyní ilyjským Vymahatelem. Novým králem je jeho bratr Kitt, který ho pověřil, aby Paedyn našel a přivedl mu ji. Kai stopuje Paedyn přes nebezpečnou poušť Spáleniště do útrob nepřátelského města Dor a v hloubi duše si přeje, aby ji pronásledovat nemusel. Ve městě, kde Elity nic neznamenají, se však role lovce a kořisti mohou snadno měnit – a vnitřní souboj mezi touhou a smyslem pro povinnost může být smrtelný.',
                 'genre' => 'Romantika',
@@ -56,10 +55,9 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2025,
                 'state' => 'je na sklade',
-                'autor' => 'Lauren Roberts',
-
             ],[
                 'name' => 'Odvážná',
+                'author' => 'Lauren Roberts',
                 'price' => 14.99,
                 'detail' => 'Mírnou Adenu a bojovnou Paedyn svedl osud dohromady už v dětství a od té doby jsou nerozlučné. Vždycky si kryly záda a chránily svůj domov ve slumech Kořistné. Teď ale Paedyn – která patří k Obyčejným – vybrali do Očistných zkoušek, což pro ni znamená téměř jistou smrt. Adena zůstala v Kořistné sama a musí se naučit bránit. Po neúspěšném pokusu o krádež ji zachrání neznámý muž z trhu. Makova záhadná Minulosť a utajovaná moc ho odlišují od ostatních nižších Elit. Společně utvoří tým, aby mohli své milované vidět před Zkouškami, a jejich životu nebezpečná mise prověří sílu jejich loajálnosti i lásky.',
                 'genre' => 'Romantika',
@@ -68,10 +66,9 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Lauren Roberts',
-
             ],[
                 'name' => 'Fearless',
+                'author' => 'Lauren Roberts',
                 'price' => 13.80,
                 'detail' => 'Paedyn Gray and Kai Azer return to the Kingdom of Ilya... And Paedyn has a life-altering choice to make. Whatever she decides will determine her fate – and the fate of those around her – forever. ​
 ​
@@ -82,10 +79,10 @@ class BookSeeder extends Seeder
                 'publisher' => 'Simon Schuster',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Lauren Roberts',
 
             ],[
                 'name' => 'Reckless',
+                'author' => 'Lauren Roberts',
                 'price' => 23.80,
                 'detail' => 'With more than 60 million views on TikTok, the second heart-racing instalment in this bestselling and sizzling fantasy romance trilogy. Perfect for fans of Fourth Wing and The Hunger Games.
 
@@ -104,10 +101,10 @@ Be swept away by this bestselling, dagger-to-the-throat romantasy trilogy taking
                 'publisher' => 'Simon Schuster',
                 'year' => 2025,
                 'state' => 'nie je na sklade',
-                'autor' => 'Lauren Roberts',
 
             ],[
                 'name' => 'Powerful',
+                'author' => 'Lauren Roberts',
                 'price' => 19.80,
                 'detail' => 'Perfect for fans of The Hunger Games and Fourth Wing. Adena and Paedyn have always been inseparable. Fate brought them together when they were young, but friendship ensured they’d always protect each other and the home they built in the slums of Loot.
 
@@ -118,10 +115,10 @@ But now Paedyn – an Ordinary – has been selected for The Purging Trials, whi
                 'publisher' => 'Simon Schuster',
                 'year' => 2025,
                 'state' => 'nie je na sklade',
-                'autor' => 'Lauren Roberts',
 
             ],[
                 'name' => 'Kráľovná ničoho',
+                'author' => 'Holly Black',
                 'price' => 13.80,
                 'detail' => 'Moc sa dá získať veľmi jednoducho, zložitejšie je udržať si ju. Jude to zažila na vlastnej koži, keď sa výmenou za neobmedzené vládnutie vzdala kontroly nad skazeným kráľom Cardanom. Ako férska kráľovná vo vyhnanstve je Jude úplne bezmocná. Cardanova zrada ju vnútorne zožiera a čaká na vhodnú príležitosť, aby mohla získať späť všetko, o čo ju pripravil. Tá sa jej naskytne vo chvíli, keď sa jej dvojička, Taryn, ocitne v ohrození života. Jude si trúfne vrátiť sa na zradný férsky dvor, postaviť sa zoči-voči neutíchajúcim citom ku Cardanovi, a to všetko preto, aby zachránila svoju sestru. Elfham sa však medzičasom zmenil na nepoznanie. Schyľuje sa k vojne, a čím je Jude bližšie k nepriateľským líniám, tým väčšmi je zapletená do krvavej vojnovej politiky. Keď však začne účinkovať dávna kliatba, krajinu premkne panika a Jude si musí vybrať medzi vlastnými ambíciami a ľudskosťou…',
                 'genre' => 'Fantasy',
@@ -130,10 +127,10 @@ But now Paedyn – an Ordinary – has been selected for The Purging Trials, whi
                 'publisher' => 'Slovart',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Holly Black',
 
             ],[
                 'name' => 'Krutý princ',
+                'author' => 'Holly Black',
                 'price' => 16.93,
                 'detail' => 'Holly Black, jedna z najúspešnejších autoriek detskej a YA literatúry súčasnosti, odštartovala v novej trilógii príbeh o manipulácii, kráse i krutosti sveta mágie a nevyspytateľných vášňach.
 
@@ -144,10 +141,10 @@ Jude mala len sedem rokov, keď jej rodičov brutálne zavraždili a spolu s jej
                 'publisher' => 'Slovart',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Holly Black',
 
             ],[
                 'name' => 'Skazený kráľ',
+                'author' => 'Holly Black',
                 'price' => 14.93,
                 'detail' => 'Jude si rafinovanou dohodou k sebe pripútala krutého Cardana, a tak sa stala bábkarom ťahajúcim za nitky, tajnou vládkyňou skazeného kráľa. Mánevrovať v sieti neustále sa meniacich politických hier by však bolo náročné, aj keby sa dal Cardan jednoducho ovládať. On však robí všetko preto, aby ju ponížil a podryl jej autoritu, hoci je ňou nevysvetliteľne fascinovaný. Navyše, všetko nasvedčuje tomu, že pre Jude predstavuje niekto z jej blízkych hrozbu. Aby si Jude udržala moc, musí čo najskôr odhaliť zradcu – popri boji s vlastnými komplikovanými citmi voči Cardanovi. V pokračovaní bestselleru Krutý princ rozohráva jedna z najúspešnejších autoriek fantasy Holly Black nebezpečnú hru spletitých intríg a potlačovanej túžby.',
                 'genre' => 'Fantasy',
@@ -156,10 +153,10 @@ Jude mala len sedem rokov, keď jej rodičov brutálne zavraždili a spolu s jej
                 'publisher' => 'Slovart',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Holly Black',
 
             ],[
                 'name' => 'Ukradnutý dedič',
+                'author' => 'Holly Black',
                 'price' => 17.43,
                 'detail' => 'Nenechajte si ujsť návrat do sveta krutých férov!
 Od Bitky hada uplynulo osem rokov. Lady Nore z Dvora zubov sa opäť usadila na neprístupnom severe, kde vdychuje život príšerám z konárov a snehu, verným služobníkom, ktorí sú pripravení svoju paniu pomstiť. Jediná, kto má nad krutou lady moc, je jej dcéra, mladučká kráľovná Dvora zubov. Suren však utiekla do sveta smrteľníkov a zvolila si divoký život v lesoch, presvedčená, že sa na ňu zabudlo. Všetko sa zmení, keď ju nočnými ulicami začne prenasledovať Bogdana, bosorka búrok, a Suren sa dočká nečakanej záchrany – z rúk princa Oaka, dediča Elfhamu. Už roky voči nemu prechováva nevraživosť, hoci mala byť jeho nevestou. Šarmantného Oaka, zvyknutého omotať si všetkých okolo prsta, vedie výprava na sever a prišiel poprosiť
@@ -170,10 +167,10 @@ Suren o pomoc. Jej súhlas by však znamenal, že mladá kráľovná bude musie�
                 'publisher' => 'Slovart',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Holly Black',
 
             ],[
                 'name' => 'Väzňov trón',
+                'author' => 'Holly Black',
                 'price' => 14.23,
                 'detail' => 'Uväznený princ. Pomstychtivá kráľovná. A vojna, ktorá rozhodne o osude celého Elfhamu.
 Princ Oak si v žalári odpykáva trest za svoju zradu, odkázaný na milosť a nemilosť novej desivej kráľovnej nevľúdneho severu. Neostalo mu nič, len jeho šarm a prefíkanosť. Bude to však stačiť na prežitie? Najvyšší kráľ Cardan a Najvyššia kráľovná Jude hodlajú nasadiť všetky páky, aby ukradnutého dediča elfhamskej koruny priviedli späť domov, no Oak je na pochybách. Má bojovať o stratenú dôveru dievčiny, ktorú vždy miloval? Alebo zachovať vernosť Elfhamu a zvrhnúť samozvanú kráľovnú z trónu, hoci na to Wren môže doplatiť životom? Krajinu však sužuje prísľub vojny a zradcovia číhajú na každom kroku, a tak ani princov dôvtip a prešibanosť nemusia stačiť na záchranu tých, ktorých má rád. A hoci všetky cesty vedú do záhuby, Oakovi neostáva nič iné, len sa rozhodnúť, po ktorej vykročí.
@@ -185,10 +182,10 @@ Bestsellerová autorka Holly Black prináša pútavé zakončenie dilógie Ukrad
                 'publisher' => 'Slovart',
                 'year' => 2025,
                 'state' => 'je na sklade',
-                'autor' => 'Holly Black',
 
             ],[
                 'name' => 'Mor',
+                'author' => 'Laura Thalassa',
                 'price' => 20.70,
                 'detail' => 'MOR, VÁLKA, HLAD, SMRT - ČTYŘI JEZDCI NA SVÝCH DĚSIVÝCH OŘÍCH SE ROZJELI PO SVĚTĚ. ČTYŘI JEZDCI NADANÍ MOCÍ ZAHUBIT VEŠKERÉ LIDSTVO. PŘIŠLI NA ZEMI. PŘIŠLI NÁS ZNIČIT.
 
@@ -202,10 +199,10 @@ Sara má pořád naději zachránit svět, možná však bude muset obětovat sv
                 'publisher' => 'Slovart CZ',
                 'year' => 2023,
                 'state' => 'je na sklade',
-                'autor' => 'Laura Thalassa',
 
             ],[
-                'name' => 'Valka',
+                'name' => 'Válka',
+                'author' => 'Laura Thalassa',
                 'price' => 19.70,
                 'detail' => 'Přišli na zemi - Mor, Válka, Hlad a Smrt - čtyři Jezdci apokalypsy, kteří se na svých hrůzostrašných ořích rozjeli po světě nadáni mocí zahubit veškeré lidstvo.
 
@@ -216,10 +213,10 @@ Když Jeruzalém padne do rukou armády nájezdníků, Miriam Elmahdyová je př
                 'publisher' => 'Slovart CZ',
                 'year' => 2023,
                 'state' => 'nie je na sklade',
-                'autor' => 'Laura Thalassa',
 
             ],[
                 'name' => 'The Ever King',
+                'author' => 'L.J. Andrews',
                 'price' => 29.35,
                 'detail' => 'They stole his crown. So, he stole their daughter…
 
@@ -234,10 +231,10 @@ She’s innocent. He’s vicious. But he will take back what he lost, no matter 
                 'publisher' => 'The Ever Seas',
                 'year' => 2025,
                 'state' => 'je na sklade',
-                'autor' => 'L.J. Andrews',
 
             ],[
                 'name' => 'Večný kráľ',
+                'author' => 'L.J. Andrews',
                 'price' => 19.35,
                 'detail' => 'Ukradli mu korunu. On im za to ukradol dcéru... Erik, zjazvený kráľ Večného kráľovstva, už roky nemyslí na nič iné, len na pomstu mužovi, ktorý mu zabil otca, uväznil ho pod hladinou a urobil z neho väzňa vo vlastnej ríši. Až do chvíle, keď dcéra jeho nepriateľa neúmyselne pretrhne putá Večného kráľovstva a Erik z nej spraví nevedomého pešiaka vo svojej krutej pomste. Je nevinná a on zlomyseľný. Vezme si späť, čo stratil, bez ohľadu na cenu. Ak mu ona najskôr neukradne srdce.',
                 'genre' => 'Fantasy',
@@ -246,10 +243,10 @@ She’s innocent. He’s vicious. But he will take back what he lost, no matter 
                 'publisher' => 'Zelený kocúr',
                 'year' => 2025,
                 'state' => 'je na sklade',
-                'autor' => 'L.J. Andrews',
 
             ],[
                 'name' => 'Večná kráľovná',
+                'author' => 'L.J. Andrews',
                 'price' => 19,
                 'detail' => 'Vtáčatko:
 Zajatkyňa. Vyzývateľka. Kráľovná.
@@ -264,26 +261,10 @@ Nepriatelia ho zradili pre chamtivosť a túžbu po korune. Uniesli mu ženu, kt
                 'publisher' => 'Zelený kocúr',
                 'year' => 2025,
                 'state' => 'je na sklade',
-                'autor' => 'L.J. Andrews',
 
             ],[
-                'name' => 'Nights at Freddy',
-                'price' => 21.34,
-                'detail' => 'Don\'t miss the first-ever graphic novel for Five Nights at Freddy\'s, an adaptation of the #1 New York Times bestselling novel, The Silver Eyes, illustrated by fan-favourite game artist Claudia Schroeder!
-
-Ten years after the horrific murders at Freddy Fazbear\'s Pizzathat ripped their town apart, Charlie - whose father ownedthe restaurant - and her childhood friends reunite on the anniversary of the tragedy and find themselves at the old pizza place which had been locked up and abandoned for years. After they discover a way inside, they realize that things are not as they used to be. The four adult-sized animatronic mascots that once entertained patrons have changed. They now have a dark secret ... and a murderous agenda.
-
-Complete with new information and tense, terrifying illustrations, fans won\'t want to miss this graphic novel adaptation by Scott Cawthon, Kira Breed-Wrisley and Claudia Schroeder, whose stunning artwork has been featured in the games.',
-                'genre' => 'Horory',
-                'language' => 'English',
-                'pages' => 192,
-                'publisher' => 'Scholastic',
-                'year' => 2020,
-                'state' => 'nie je na sklade',
-                'autor' => 'Claudia Schröder',
-
-            ],[
-                'name' => 'I Hope This Find You',
+                'name' => 'I Hope This Doesn\'t Find You',
+                'author' => 'Ann Liang',
                 'price' => 12.95,
                 'detail' => 'Sadie doesn\'t have to hold back in her email drafts because nobody will ever read them ... that is, until someone sends them out. Seventeen-year-old Sadie Wen is perfect on paper.
 It\’s a reputation she\’s fought hard to earn at the highly prestigious Woodvale Academy, and one she\’s determined to maintain until graduation. The trick to keeping her model-student-smile plastered on her face at all times? She channels all her petty frustrations into her email drafts. One for the math teacher who refused to round her eighty-nine-point-nine percent up to ninety; one for the girl who blatantly copied her science project and took the credit for it.
@@ -292,13 +273,13 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'genre' => 'Romantika',
                 'language' => 'English',
                 'pages' => 314,
-                'publisher' => 'Scolastic',
+                'publisher' => 'Scholastic',
                 'year' => 2024,
                 'state' => 'je na sklade',
-                'autor' => 'Ann Liang',
 
             ],[
-                'name' => 'Sunrise on Reaping',
+                'name' => 'Sunrise on the Reaping',
+                'author' => 'Suzanne Collins',
                 'price' => 21.28,
                 'detail' => 'When you\'ve been set up to lose everything you love, what is there left to fight for? As the day dawns on the fiftieth annual Hunger Games, fear grips the districts of Panem. This year, in honour of the Quarter Quell, twice as many tributes will be taken from their homes. Back in District 12, Haymitch Abernathy is trying not to think too hard about his chances. All he cares about is making it through the day and being with the girl he loves. When Haymitch\'s name is called, he can feel all his dreams break. He\'s torn from his family and his love, shuttled to the Capitol with the three other District 12 tributes: a young friend who\'s nearly a sister to him, a compulsive oddsmaker, and the most stuck-up girl in town. As the Games begin, Haymitch understands he\'s been set up to fail. But there\'s something in him that wants to fight... and have that fight reverberate far beyond the deadly arena.',
                 'genre' => 'Fantasy',
@@ -307,10 +288,10 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'publisher' => 'Scholastic',
                 'year' => '2025',
                 'state' => 'je na sklade',
-                'autor' => 'Suzanne Collins',
 
             ],[
                 'name' => 'Psychológia peňazí',
+                'author' => 'Morgan Housel',
                 'price' => 25.28,
                 'detail' => 'To, čo vieme o peniazoch – investície, osobné financie a obchodné rozhodnutia – sa bežne učíme ako matematickú oblasť, kde nám dáta a vzorce presne povedia, čo máme robiť. Ale v skutočnom svete ľudia nerobia finančné rozhodnutia prostredníctvom tabuliek. Robia ich pri spoločnom stolovaní alebo v zasadačkách, kde sú ich osobné skúsenosti, vlastné jedinečné videnie sveta, ego, hrdosť, marketing a iné neobvyklé podnety zmiešané do jedného celku. V Psychológii peňazí sa s vami oceňovaný autor Morgan Housel podelí o 19 krátkych príbehov, v ktorých preskúma, ako ľudia rozmýšľajú o peniazoch, a naučí vás, ako lepšie pochopiť jeden z najdôležitejších faktorov ľudského života, akým peniaze bezpochyby sú.',
                 'genre' => 'Financie',
@@ -319,10 +300,10 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'publisher' => 'Aurora',
                 'year' => '2019',
                 'state' => 'je na sklade',
-                'autor' => 'Morgan Housel',
 
             ],[
-                'name' => 'Path to Wealth',
+                'name' => 'The Stoic Path to Wealth',
+                'author' => 'Darius Foroux',
                 'price' => 15.78,
                 'detail' => 'The only way to beat inflation and grow your wealth is by investing. The greatest investors approach the markets with discipline, emotional distance, and self-mastery—lessons that the Stoics have been teaching us for thousands of years. Combining ancient wisdom with practical investment strategies drawn from analysis of the greatest investors of all time, The Stoic Path to Wealth will teach you how to:
 - cultivate an investing edge by managing your emotions and developing your unique skills and talents.
@@ -337,7 +318,6 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
                 'publisher' => 'Aurora',
                 'year' => '2020',
                 'state' => 'nie je na sklade',
-                'autor' => 'Darius Foroux',
             ],
         ];
 
@@ -349,7 +329,8 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
         $categories = ['Fantasy', 'Romantika', 'Zmiznutie', 'Zločin', 'Vyšetrovanie', 'Vraždy', 'Thriller',
                         'Dobro a zlo', 'Nepriatelia', 'Tajomstvo', 'Láska', 'Mágia', 'Minulosť', 'Pomsta',
                         'Osud', 'Svadba', 'Páchateľ', 'Tragédia', 'Dobrodružstvo', 'Neočakávané', 'Prekvapenie',
-                        'Motivácia', 'Nový život', 'Komunikácia', 'Nádej', 'Strach', 'Biografia', 'Financie'
+                        'Motivácia', 'Nový život', 'Komunikácia', 'Nádej', 'Strach', 'Biografia', 'Financie',
+                        'Horror'
         ];
 
         foreach($categories as $category){

@@ -22,6 +22,11 @@ class Book extends Model
         });
     }
 
+    public function pictures()
+    {
+        return $this->belongsToMany(Picture::class, 'picture__books', 'id_book', 'id_picture');
+    }
+
     protected $fillable = [
         'id',
         'name',
@@ -33,6 +38,6 @@ class Book extends Model
         'publisher',
         'year',
         'state',
-        'autor',
+        'author',
     ];
 }

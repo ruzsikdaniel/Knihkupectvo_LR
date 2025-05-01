@@ -7,12 +7,34 @@ use Illuminate\Support\Str;
 
 class Picture extends Model
 {
-    public $timestamps = false;
+    public $timestamps = true;
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $fillable = [
         'id',
-        'name',
-        'dir',
+        'title',
+        'url',
+        'source',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (empty($model->{$model->getKeyName()})) {
+                $model->{$model->getKeyName()} = (string) Str::uuid();
+            }
+        });
+    }
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class,
+            'picture__books',
+            'id_picture',
+            'id_book');
+    }
 }

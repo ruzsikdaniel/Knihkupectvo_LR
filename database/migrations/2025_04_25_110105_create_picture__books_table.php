@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('picture__books', function (Blueprint $table) {
-            $table->unsignedInteger('id_picture')->references('id')->on('pictures')->onUpdate('cascade');
-            $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
+            $table->id();
+            $table->uuid('id_book');
+            $table->uuid('id_picture');
+
+            $table->foreign('id_book')->references('id')->on('books')->onDelete('cascade');
+            $table->foreign('id_picture')->references('id')->on('pictures')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
