@@ -33,7 +33,7 @@ class PictureSeeder extends Seeder
             'Bezohledná' => [
                 [
                     'title' => 'Bezohledná',
-                    'url' => 'https://www.martinus.sk/3087795-bezohledna/kniha',
+                    'url' => 'https://mrtns.sk/tovar/_xl/2813/xl2813629.jpg?v=17461586052',
                     'source' => 'Martinus'
                 ]
             ],
@@ -93,6 +93,56 @@ class PictureSeeder extends Seeder
                 [
                     'title' => 'Krutý princ',
                     'url' => 'https://mrtns.sk/tovar/_xl/2602/xl2602429.jpg?v=17460722152',
+                    'source' => 'Martinus'
+                ],
+                [
+                    'title' => 'Krutý princ bočná',
+                    'url' => 'https://mrtns.sk/dt/26/02/42/l8615312602429.jpg',
+                    'source' => 'Martinus'
+                ]
+            ],
+
+            'Krutý princ' => [
+                [
+                    'title' => 'Krutý princ',
+                    'url' => 'https://mrtns.sk/tovar/_xl/2602/xl2602429.jpg?v=17460722152',
+                    'source' => 'Martinus'
+                ],
+                [
+                    'title' => 'Krutý princ bočná',
+                    'url' => 'https://mrtns.sk/dt/26/02/42/l8615312602429.jpg',
+                    'source' => 'Martinus'
+                ]
+            ],
+
+            'Skazený kráľ' => [
+                [
+                    'title' => 'Skazený kráľ',
+                    'url' => 'https://mrtns.sk/tovar/_xl/1310/xl1310731.jpg?v=17460722232',
+                    'source' => 'Martinus'
+                ]
+            ],
+
+            'Ukradnutý dedič' => [
+                [
+                    'title' => 'Ukradnutý dedič',
+                    'url' => 'https://mrtns.sk/tovar/_xl/1871/xl1871085.jpg?v=17460722232',
+                    'source' => 'Martinus'
+                ]
+            ],
+
+            'Väzňov trón' => [
+                [
+                    'title' => 'Väzňov trón',
+                    'url' => 'https://mrtns.sk/tovar/_xl/2739/xl2739739.jpg?v=17460722152',
+                    'source' => 'Martinus'
+                ]
+            ],
+
+            'Mor' => [
+                [
+                    'title' => 'Mor',
+                    'url' => 'https://mrtns.sk/tovar/_xl/2774/xl2774533.jpg?v=17460722142',
                     'source' => 'Martinus'
                 ]
             ],
