@@ -12,7 +12,11 @@
             </div>
         </section>
         <section class="col-lg-3 d-flex justify-content-around">
-            <button id="btnBackToTop">Späť ▲</button>
+            <a href="#top">
+                <button id="btnBackToTop">
+                    Späť ▲
+                </button>
+            </a>
         </section>
     </article>
 
@@ -24,7 +28,11 @@
             </div>
         </section>
         <section>
-            <button id="btnBackToTop">Späť ▲</button>
+            <a href="#top">
+                <button id="btnBackToTop">
+                    Späť ▲
+                </button>
+            </a>
         </section>
         </div>
     </article>

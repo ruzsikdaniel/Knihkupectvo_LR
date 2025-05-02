@@ -1,11 +1,15 @@
 <header>
     <article class="d-none d-lg-flex align-items-center">
         <div class="col-lg-4">
-            <h1 id="site-title"><a href="{{ url('../') }}">Kníhkupectvo LR</a></h1>
+            <h1 id="site-title">
+                <a href="{{ url('/') }}">
+                    Kníhkupectvo LR
+                </a>
+            </h1>
         </div>
         <div class="col-lg-4">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <form action="{{'book_search'}}" method="get">
+                <form action="{{url('book_search')}}" method="get" class="d-flex gap-2">
                     <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
                     <button class="btn btn-outline-secondary">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
@@ -65,7 +69,7 @@
         </div>
         <div class="col-12">
             <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <form action="{{'book_search'}}" method="get">
+                <form action="{{url('book_search')}}" method="get" class="d-flex gap-2">
                     <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
                     <button class="btn btn-outline-secondary">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">

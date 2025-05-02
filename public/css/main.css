@@ -157,6 +157,8 @@ ul #carousel-list{
 #item-image, #thumbnail-gallery{
     padding: 0.5rem;
     padding-inline: 1rem;
+    object-fit: contain;
+    max-height: 400px;
 }
 
 #thumbnail-gallery > *{
