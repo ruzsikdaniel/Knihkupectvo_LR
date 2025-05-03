@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect('admin/dashboard');
         }
 
-        return redirect()->intended(route('dashboard'));
+        return redirect('/');
     }
 
     /**
@@ -46,6 +46,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('home');
     }
 }
