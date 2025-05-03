@@ -4,18 +4,29 @@ footer{
     padding: 0.5rem;
 }
 
+footer article{
+    position: relative;
+}
+
+#authors{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #authors-text{
     margin-bottom: 0;
 }
 
-#back-to-top{
-    text-align: center;
+#backToTop{
+    position: absolute;
+    right: 0;
 }
-#back-to-top-button{
+#btnBackToTop{
     text-align: center;
     float:right;
 }
 
 footer section *{
     text-align: center;
+    padding-inline: 0.5rem;
 }
