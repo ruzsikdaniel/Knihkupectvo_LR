@@ -21,7 +21,7 @@
 
                     <div class="d-flex flex-column text-left">
                         <p id="item-title">
-                            <a href="{{ route('book_det', $books->id) }}">{{$books->name}}</a>
+                            <a href="{{ route('book_details', $books->id) }}">{{$books->name}}</a>
                         </p>
                         <p class="text-muted">{{$books->author}}</p>
                     </div>

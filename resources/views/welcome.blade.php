@@ -40,11 +40,11 @@
                     @foreach($book as $books)
                         <li class="book-item">
                             <span class="d-flex flex-column border p-2">
-                                <a href="{{route('book_det', $books->id)}}" class="text-decoration-none">
+                                <a href="{{route('book_details', $books->id)}}" class="text-decoration-none">
                                 <img src="{{$books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid mb-2"></a>
                                 <div class="d-flex flex-column text-start mb-2">
                                     <p id="item-title" class="mb-1 fw-bold">
-                                        <a href="{{route('book_det', $books->id)}}"
+                                        <a href="{{route('book_details', $books->id)}}"
                                            class="text-decoration-none">{{$books->name}}
                                         </a>
                                     </p>

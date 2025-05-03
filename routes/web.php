@@ -37,7 +37,7 @@ Route::get('admin/book_search', [BookController::class, 'book_search'])->middlew
 
 Route::get('/findbook/{id}', [BookController::class, 'findbook']); //if the user is admin
 
-Route::get('/book_det/{id}', [BookController::class, 'book_details'])->name('book_det');
+Route::get('/book_details/{id}', [BookController::class, 'book_details'])->name('book_details');
 
 Route::get('admin_book_det/{id}', [BookController::class, 'admin_book_details'])->name('admin_book_det');
 

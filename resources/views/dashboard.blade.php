@@ -31,11 +31,11 @@
                     @foreach($book as $books)
                         <li class="book-item">
                             <span class="d-flex flex-column border p-2">
-                                <a href="{{route('book_det', $books->id)}}">
+                                <a href="{{route('book_details', $books->id)}}">
                                     <img src="https://mrtns.sk/tovar/_l/2828/l2828965.jpg?v=17433079752" alt="Obálka knihy" class="img-fluid mb-2">
                                 </a>
                                 <div class="d-flex flex-column text-start mb-2">
-                                    <p id="item-title" class="mb-1 fw-bold"><a href="{{route('book_det', $books->id)}}"
+                                    <p id="item-title" class="mb-1 fw-bold"><a href="{{route('book_details', $books->id)}}"
                                                                             class="text-decoration-none">{{$books->name}}</a></p>
                                     <p class="text-muted mb-0">{{$books->author}}</p>
                                 </div>
