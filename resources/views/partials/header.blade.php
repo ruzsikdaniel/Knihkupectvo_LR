@@ -8,10 +8,10 @@
             </h1>
         </div>
         <div class="col-lg-4">
-            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <form action="{{url('book_search')}}" method="get" class="d-flex gap-2">
-                    <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
-                    <button class="btn btn-outline-secondary">
+            <div id="search-panel" class="gap-3 d-flex justify-content-center">
+                <form action="{{url('book_search')}}" method="get" class="d-flex justify-content-between align-items-center w-100">
+                    <input name="search" id="search-input" type="text" class="form-control flex-grow-1 me-2" placeholder="Hľadať...">
+                    <button class="btn btn-outline-secondary flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>
                 </form>
@@ -68,10 +68,10 @@
             <h1 id="site-title"><a href="{{ url('/') }}">Kníhkupectvo LR</a></h1>
         </div>
         <div class="col-12">
-            <div id="search-panel" class="d-flex justify-content-center align-items-center gap-3">
-                <form action="{{ url('book_search') }}" method="get" class="d-flex gap-2">
-                    <input name="search" id="search-input" type="text" class="form-control" placeholder="Hľadať...">
-                    <button class="btn btn-outline-secondary">
+            <div id="search-panel" class="gap-3 d-flex justify-content-center">
+                <form action="{{url('book_search')}}" method="get" class="d-flex justify-content-between align-items-center">
+                    <input name="search" id="search-input" type="text" class="form-control flex-grow-1 me-2" placeholder="Hľadať...">
+                    <button class="btn btn-outline-secondary flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>
                 </form>
