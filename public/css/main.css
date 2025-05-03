@@ -89,10 +89,6 @@ a:hover{
     padding-left: 0;
 }
 
-.book-item {
-    flex: 1 1 auto;
-    max-width: 175px;
-}
 
 #carousel{
     display: flex;
@@ -105,11 +101,19 @@ ul #carousel-list{
     list-style-type: none;
     list-style-position: inside;
 }
+
+#item-title > {
+    text-decoration: none;
+}
+
 .book-item{
-    display:inline-block;
+    display: inline-block;
     background-color: #f8f8f8;
+    flex: 1 1 auto;
+    max-width: 175px;
     padding: 10px;
     margin: 5px;
+    vertical-align: top;
 }
 
 #button-left, #button-left{
@@ -117,10 +121,14 @@ ul #carousel-list{
 }
 
 /*style for category.html*/
+#category-title{
+    font-weight: bold;
+}
+
 #category-grid{
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     justify-items: center;
 }
 

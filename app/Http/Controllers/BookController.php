@@ -41,7 +41,8 @@ class BookController extends Controller
         $cat_book = Category_Book::where('id_category', $cat->id)->get(); //get id of the books with the category
         $book = Book::with('pictures')->whereIn('id', $cat_book->pluck('id_book'))->paginate(10);
 
-        return view('category', compact('book'));
+        return view(
+            'category', ['book' => $book, 'categoryName' => $cat->name]);
     }
 
     public function category_log($name){ //get the details of the book

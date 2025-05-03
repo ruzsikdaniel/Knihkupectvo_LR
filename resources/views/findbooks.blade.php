@@ -16,18 +16,18 @@
          -->
         <section id="category-grid">
             @foreach($book as $books)
-                <span id="grid-item" class="d-flex flex-column border">
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obálka knihy" class="img-fluid">
+                <span id="grid-item" class="d-flex flex-column border book-item">
+                    <img src="{{ $books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid">
 
                     <div class="d-flex flex-column text-left">
                         <p id="item-title">
-                            <a href="/html/item.html">{{$books->name}}</a>
+                            <a href="{{ route('book_det', $books->id) }}">{{$books->name}}</a>
                         </p>
                         <p class="text-muted">{{$books->author}}</p>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p id="item-price-gross" class="mb-0">
+                    <div class="d-flex align-items-center gap-3">
+                        <p id="item-price-gross">
                             {{number_format($books->price, 2, ',', ' ')}}€
                         </p>
                         <button class="btn btn-outline-secondary">
@@ -36,6 +36,7 @@
                     </div>
                 </span>
             @endforeach
+        </section>
             <!-- <span id="grid-item" class="d-flex flex-column border">
                 <img src="https://mrtns.sk/tovar/_m/1807/m1807783.jpg?v=17417487272" alt="Obálka knihy" class="img-fluid">
 
