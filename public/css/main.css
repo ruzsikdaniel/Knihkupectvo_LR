@@ -19,9 +19,13 @@ main{
     flex-grow: 1;
 }
 
+
 main article section{
     margin: 1rem;
     padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
 }
 
 p{
@@ -102,8 +106,7 @@ ul #carousel-list{
     list-style-position: inside;
 }
 
-#item-title > {
-    text-decoration: none;
+#item-page > *{
 }
 
 .book-item{
@@ -174,12 +177,18 @@ ul #carousel-list{
 }
 
 #item-page, #item-desc{
-    margin: 1rem;
+    margin: 2.5rem;
     padding: 0.5rem;
 }
 
-#item-page > *{
+#item-page > *, #item-desc > *{
     margin-top: 1rem;
+    text-decoration: none;
+    padding-inline: 0.5rem;
+}
+
+#book-title{
+    font-weight: bold;
 }
 
 /*style for checkout.html */
@@ -417,7 +426,7 @@ div .foto-add-book{
     align-items: center;
 }
 
-#item-page, #item-details, #item-status, #item-status p{
+#item-details, #item-status p{
     margin: 5px;
 }
 .book-about-add{
@@ -434,12 +443,12 @@ div .foto-add-book{
 }
 
 #item-page-add, #item-status, #item-details{
-    padding: 0.5rem;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 1px;
-
+    padding: 1rem;
 }
+#item-status > *{
+    margin-top: 0.5rem;
+}
+
 .book-about-add #ano-stock{
     color: #198754;
 }
