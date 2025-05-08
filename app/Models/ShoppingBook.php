@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use App\Models\Shopping_Card;
+use App\Models\ShoppingCart;
 
-class Shopping_Book extends Model
+class ShoppingBook extends Model
 {
     protected $table = 'shopping__books';
     public $incrementing = false;
@@ -20,7 +20,7 @@ class Shopping_Book extends Model
 
     public function card()
     {
-        return $this->belongsTo(Shopping_Card::class, 'id_card', 'id');
+        return $this->belongsTo(ShoppingCart::class, 'id_card', 'id');
     }
 
     public function book()

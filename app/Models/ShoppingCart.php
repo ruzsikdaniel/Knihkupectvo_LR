@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Shopping_Card extends Model
+class ShoppingCart extends Model
 {
     protected $table = 'shopping__cards';
     public $incrementing = false;
@@ -31,7 +31,7 @@ class Shopping_Card extends Model
 
     public function books()
     {
-        return $this->hasMany(Shopping_Book::class, 'id_card', 'id');
+        return $this->hasMany(ShoppingBook::class, 'id_card', 'id');
     }
 
 }

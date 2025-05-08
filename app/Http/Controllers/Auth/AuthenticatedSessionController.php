@@ -8,7 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use App\Models\Shopping_Card;
+use App\Models\ShoppingCart;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,8 +32,8 @@ class AuthenticatedSessionController extends Controller
         $userId = $request->user()->id;             // get userId (if logged in)
 
         // get the cart from both the session and the user
-        $sessionCart = Shopping_Card::where('session_id', $sessionId)->first();
-        $userCart = Shopping_Card::where('id_user', $userId)->first();
+        $sessionCart = ShoppingCart::where('session_id', $sessionId)->first();
+        $userCart = ShoppingCart::where('id_user', $userId)->first();
 
         // merge two carts, if both exist
         if($userCart && $sessionCart){

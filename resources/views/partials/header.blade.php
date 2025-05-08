@@ -10,7 +10,7 @@
         <div class="col-lg-4">
             <div id="search-panel" class="gap-3 d-flex justify-content-center">
                 <form action="{{url('book_search')}}" method="get" class="d-flex justify-content-between align-items-center w-100">
-                    <input name="search" id="search-input" type="text" class="form-control flex-grow-1 me-2" placeholder="Hľadať...">
+                    <input name="search" type="text" class="form-control flex-grow-1 me-2 search-input" placeholder="Hľadať...">
                     <button class="btn btn-outline-secondary flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>
@@ -56,7 +56,7 @@
         <div class="col-12">
             <div id="search-panel" class="gap-3 d-flex justify-content-center">
                 <form action="{{url('book_search')}}" method="get" class="d-flex justify-content-between align-items-center">
-                    <input name="search" id="search-input" type="text" class="form-control flex-grow-1 me-2" placeholder="Hľadať...">
+                    <input name="search" type="text" class="form-control flex-grow-1 me-2 search-input" placeholder="Hľadať...">
                     <button class="btn btn-outline-secondary flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>

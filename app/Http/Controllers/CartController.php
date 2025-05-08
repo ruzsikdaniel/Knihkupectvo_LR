@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Shopping_Book;
-use App\Models\Shopping_Card;
+use App\Models\ShoppingBook;
+use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -15,18 +15,22 @@ class CartController extends Controller
         $userId = Auth::check() ? Auth::id() : null;
         $sessionId = $request->session()->getId();
 
-        $cart = Shopping_Card::with(['books.book'])
+        $cart = ShoppingCart::with(['books.book'])
             ->where('id_user', $userId)
             ->orWhere('session_id', $userId ? null : $sessionId)
             ->first();
 
-        $books = $cart ? $cart->books: collect();
+        $cartItems = $cart ? $cart->books: collect();
+        $total = $cartItems->sum(fn($item) => $item->book?->price * $item->number);
 
-        return view('cart', ['book' => $books]);
+
+        return view('cart', [
+            'cartItems' => $cartItems,
+            'total' => $total,
+        ]);
     }
 
     public function add(Request $request){
-
         $request->validate([
             'book_id' => 'required|exists:books,id',
         ]);
@@ -35,32 +39,42 @@ class CartController extends Controller
         $sessionId = $request->session()->getId();
         $userId = Auth::check() ? Auth::id() : null;
 
-        // najdi kosik podla user_id alebo session_id
-        $cart = Shopping_Card::firstOrCreate(
-            ['id_user' => $userId, 'session_id' => $userId ? null : $sessionId],
-            ['price' => 0]
-        );
+        // najdi alebo vytvor kosik
+        $cart = ShoppingCart::with(['books.book'])
+            ->where('id_user', $userId)
+            ->orWhere('session_id', $userId ? null : $sessionId)
+            ->first();
+
+        if(!$cart){
+            $cart = new ShoppingCart();
+            $cart->id_user = $userId;
+            $cart->session_id = $userId ? null : $sessionId;
+            $cart->price = 0;
+            $cart->save();
+        }
+
+        // najdi knihu, ktoru chce pouzivatel pridat do kosika
+        $book = Book::findOrFail($bookId);
 
         // pridaj / aktualizuj knihu v kosiku
-        $bookInCart = Shopping_Book::firstOrCreate(
-            ['id_card' => $cart->id, 'id_book' => $bookId],
-            ['number' => 1]
-        );
+        $bookInCart = ShoppingBook::firstOrNew([
+            'id_card' => $cart->id,
+            'id_book' => $bookId
+        ]);
+        $bookInCart->number = $bookInCart->exists ? $bookInCart->number + 1 : 1;    // zvys pocet danej knihy o 1
         $bookInCart->save();
 
-
-        // aktualizuj cenu v kosiku
+        // prepocitaj celkovu cenu kosika
+        $cart->load('books.book');
         $total = $cart->books->sum(
-            function ($item) {
-                return $item->book->price * $item->number;
-            }
+            fn($item) => $item->book?->price * $item->number
         );
-
         $cart->price = $total;
         $cart->save();
 
         return response()->json([
-            'message' => 'Kniha pridana do kosika.', 'cart_total' => $total
+            'message' => 'Kniha bola úspešne pridaná do košíka.',
+            'cart_total' => $total
         ]);
 
     }

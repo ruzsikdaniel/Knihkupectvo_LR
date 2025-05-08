@@ -52,9 +52,9 @@
                                 </div>
                                 <div class="d-flex align-items-center gap-3">
                                     <p id="item-price-gross" class="mb-0">
-                                        {{number_format($books->price, 2, ',', ' ')}}€
+                                        {{ number_format($books->price, 2, ',', ' ') }}€
                                     </p>
-                                    <button class="btn btn-outline-secondary add-to-cart"  data-book-id="{{ $books->id }}">
+                                    <button class="btn btn-outline-secondary add-to-cart"  data-book-id="{{ $books->id }} ">
                                         <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                                     </button>
                                 </div>
