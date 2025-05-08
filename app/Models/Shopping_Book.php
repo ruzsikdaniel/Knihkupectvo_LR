@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\Shopping_Card;
 
 class Shopping_Book extends Model
 {
     protected $table = 'shopping__books';
-
-    public $timestamps = false;
     public $incrementing = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'id_card',

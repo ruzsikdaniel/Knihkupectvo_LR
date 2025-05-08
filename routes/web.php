@@ -31,7 +31,6 @@ Route::post('/logout', function () {
     return redirect('/');
 })->name('logout');
 
-// TODO: pridat CartController a spravne napojit route
 Route::get('cart', [CartController::class, 'show'])->name('cart');
 
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');

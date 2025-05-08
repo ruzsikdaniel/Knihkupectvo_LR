@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.forEach(button => {
         // button #add-to-cart is clicked
         button.addEventListener('click', function (){
-            // get data-book-id attribute of book
-            const bookId = this.getAttribute('data-book-id');
+            const bookId = this.getAttribute('data-book-id');   // get data-book-id attribute of book
 
             // send POST to backend route
             fetch('/cart/add', {
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // check for correct response
             .then(response => {
-                if(!response.ok)
+                if (!response.ok)
                     throw new Error('HTTP chyba: ' + response.status);
                 return response.json();
             })
@@ -38,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // catch error during adding process
             .catch(error => {
                 console.error('Chyba pri pridávaní do košíka:', error);
+                alert('Chyba pri pridávaní do košíka.')
             });
         });
     })

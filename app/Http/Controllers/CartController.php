@@ -6,18 +6,29 @@ use App\Models\Book;
 use App\Models\Shopping_Book;
 use App\Models\Shopping_Card;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CartController extends Controller
 {
-    public function show(){
-        $books = Book::take(2)->get();  // for testing purposes the first and second book
+    public function show(Request $request){
+        $userId = Auth::check() ? Auth::id() : null;
+        $sessionId = $request->session()->getId();
+
+        $cart = Shopping_Card::with(['books.book'])
+            ->where('id_user', $userId)
+            ->orWhere('session_id', $userId ? null : $sessionId)
+            ->first();
+
+        $books = $cart ? $cart->books: collect();
 
         return view('cart', ['book' => $books]);
     }
 
     public function add(Request $request){
+
         $request->validate([
-            'book_id' => 'required|uuid|exists:books,id',
+            'book_id' => 'required|exists:books,id',
         ]);
 
         $bookId = $request->input('book_id');
@@ -33,24 +44,23 @@ class CartController extends Controller
         // pridaj / aktualizuj knihu v kosiku
         $bookInCart = Shopping_Book::firstOrCreate(
             ['id_card' => $cart->id, 'id_book' => $bookId],
-            ['number' => 0]
+            ['number' => 1]
         );
-
-        // pridaj jednu knihu do kosiku
-        $bookInCart->number += 1;
         $bookInCart->save();
+
 
         // aktualizuj cenu v kosiku
         $total = $cart->books->sum(
             function ($item) {
-                return $item->price * $item->number;
+                return $item->book->price * $item->number;
             }
         );
+
         $cart->price = $total;
         $cart->save();
 
         return response()->json([
-            'message' => 'Kniha pridana do kosika.', 'cart_total' => total
+            'message' => 'Kniha pridana do kosika.', 'cart_total' => $total
         ]);
 
     }

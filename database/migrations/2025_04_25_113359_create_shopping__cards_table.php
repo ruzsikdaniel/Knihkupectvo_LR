@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('shopping__cards', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('id_user')->references('id')->on('users')->onUpdate('cascade')->nullable();
-            $table->uuid('session_id')->references('user_id')->on('sessions')->onUpdate('cascade')->nullable();
-            $table->decimal('price', total:5, places:2);
+            $table->uuid('id_user')->nullable();
+            $table->string('session_id')->nullable();
+            $table->decimal('price', total:5, places:2)->default(0);
 
+            $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
         });
     }
 

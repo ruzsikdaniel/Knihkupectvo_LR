@@ -8,9 +8,9 @@ use Illuminate\Support\Str;
 class Shopping_Card extends Model
 {
     protected $table = 'shopping__cards';
-    protected $keyType = 'string'; // uuid needs string as type
     public $incrementing = false;
     public $timestamps = false;
+    protected $keyType = 'uuid'; // uuid needs string as type
 
     protected $fillable = [
         'id_user',

@@ -13,22 +13,22 @@
         <section id="cart-item" class="d-flex justify-content-between align-items-center">
         <span id="item-data" class="d-flex justify-content-start align-items-center">
             <img id="item-icon" class="col-3"
-                 src="{{ $item->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
+                 src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
             <div class="col-12">
                 <p id="item-title">
-                    <a href="{{ route('book_details', $item->id) }}"> {{ $item->name }} </a>
+                    <a href="{{ route('book_details', $item->book->id) }}"> {{ $item->book->name }} </a>
                     <br>
-                    <a> {{ $item->author }} </a>
+                    <a> {{ $item->book->author }} </a>
                 </p>
             </div>
         </span>
             <span id="item-control" class="d-flex justify-content-end align-items-center">
             <div id="stock-info">
                 <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
-                @if($item->state === 'je na sklade')
-                    <p id="in-stock">4 na sklade</p>
+                @if($item->book->state === 'je na sklade')
+                    <p id="in-stock">{{ $item->book->state }}</p>
                 @else
-                    <p id="out-of-stock">0 na sklade</p>
+                    <p id="out-of-stock">{{ $item->book->state }}</p>
                 @endif
             </div>
             <label>
@@ -38,11 +38,20 @@
                 <img src="{{ asset('images/delete.png') }}"/>
             </button>
             <p id="item-price-gross">
-                {{ number_format($item->price, 2, ',', ' ') }}€
+                Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
             </p>
         </span>
         </section>
     @endforeach
+    <section id="cart-summary" class="d-flex justify-content-end">
+        <div id="sum-prices">
+            <p id="total-price-gross">
+                Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
+            </p>
+            <!-- TODO: vypocita sumu $book->price kazdej knihy v kosiku -->
+
+        </div>
+    </section>
 </article>
 
 <article id="cart" class="d-lg-none">
@@ -51,26 +60,26 @@
         <span id="item-data" class="d-flex justify-content-between align-items-center">
             <div class="d-flex flex-row">
                 <img id="item-icon" class="col-3"
-                     src="{{ $item->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
+                     src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
                 <div class="d-flex align-items-center">
                     <p id="item-title">
-                        <a href="{{ route('book_details', $item->id) }}"> {{ $item->name }} </a>
+                        <a href="{{ route('book_details', $item->book->id) }}"> {{ $item->book->name }} </a>
                         <br>
-                        <a> {{ $item->author }} </a>
+                        <a> {{ $item->book->author }} </a>
                     </p>
                 </div>
             </div>
             <p id="item-price-gross">
-                {{ number_format($item->price, 2, ',', ' ') }}€
+                {{ number_format($item->book->price, 2, ',', ' ') }}€
             </p>
         </span>
             <span id="item-control" class="d-flex justify-content-start">
             <div id="stock-info" class="d-flex align-items-center gap-3">
                 <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
-                @if($item->state === 'je na sklade')
-                    <p id="in-stock">4 na sklade</p>
+                @if($item->book->state === 'je na sklade')
+                    <p id="in-stock">{{$item->book->state}}</p>
                 @else
-                    <p id="out-of-stock">0 na sklade</p>
+                    <p id="out-of-stock">{{$item->book->state}}</p>
                 @endif
                 <label>
                     <input id="item-count" type="number" min="1" max="10" value="1">
@@ -86,8 +95,10 @@
     <section id="cart-summary" class="d-flex justify-content-end">
         <div id="sum-prices">
             <p id="total-price-gross">
-                Suma: {{ number_format($item->sum('price'), 2, ',', ' ') }}€    <!-- TODO: vypocita sumu $book->price kazdej knihy v kosiku -->
+                Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
             </p>
+                <!-- TODO: vypocita sumu $book->price kazdej knihy v kosiku -->
+
         </div>
     </section>
 </article>

@@ -12,9 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('shopping__books', function (Blueprint $table) {
-            $table->uuid('id_card')->references('id')->on('shopping__cards')->onUpdate('cascade');
-            $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
+            $table->id();
+
+            $table->uuid('id_card');
+            $table->uuid('id_book');
             $table->unsignedInteger('number');
+
+            $table->foreign('id_card')->references('id')->on('shopping__cards')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_book')->references('id')->on('books')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
