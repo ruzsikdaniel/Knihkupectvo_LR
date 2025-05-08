@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\Shopping_Card;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -22,13 +23,28 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse //every time when someone try to login
+    public function store(LoginRequest $request): RedirectResponse // every time someone tries to log in
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
-        if($request->user()->role === '1'){ //if we have the admin
+        $sessionId = $request->session()->getId();  // get sessionId
+        $userId = $request->user()->id;             // get userId (if logged in)
+
+        // get the cart from both the session and the user
+        $sessionCart = Shopping_Card::where('session_id', $sessionId)->first();
+        $userCart = Shopping_Card::where('id_user', $userId)->first();
+
+        // merge two carts, if both exist
+        if($userCart && $sessionCart){
+            foreach($sessionCart->books as $sessionItem){
+                $item = $userCart->books()->
+                    where('id_', $sessionItem->book_id)->first();
+            }
+        }
+
+        // user is an admin
+        if($request->user()->role === '1'){
             return redirect('admin/dashboard');
         }
 

@@ -20,7 +20,6 @@
                     <input type="text" id="email" class="form-control" name="email" :value="old('email')" required
                     autofocus  autocomplete="username"/>
                 </div>
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <!-- <div id="form-group" class="d-lg-none flex-row justify-content-center align-items-center">
@@ -41,7 +40,6 @@
                         <img src="/images/eye-icon.png" alt="Zobraziť heslo">
                     </button>
                 </div>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
 
             <!-- <div id="form-group" class="d-lg-none flex-row justify-content-center align-items-center">
@@ -58,6 +56,8 @@
             <!-- <p id="login-error" class="error-message" style="color: red; display: none;">
                 Používateľské meno alebo heslo sú nesprávne!
             </p> -->
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <div id="login-info" class="text-center">
                 <p>Nemáte konto? <a href="{{ route('register') }}">Zaregistrujte sa</a></p>
@@ -68,6 +68,7 @@
                 </button>
             </div>
         </form>
+
     </section>
 </article>
 

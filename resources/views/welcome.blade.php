@@ -54,7 +54,7 @@
                                     <p id="item-price-gross" class="mb-0">
                                         {{number_format($books->price, 2, ',', ' ')}}€
                                     </p>
-                                    <button class="btn btn-outline-secondary">
+                                    <button class="btn btn-outline-secondary" id="add-to-cart">
                                         <img src="/images/cart-icon.png" alt="Košík">
                                     </button>
                                 </div>

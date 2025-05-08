@@ -2,7 +2,7 @@
     <article class="d-none d-lg-flex align-items-center">
         <div class="col-lg-4">
             <h1 id="site-title">
-                <a href="{{ url('/') }}">
+                <a href="{{ route('home') }}">
                     Kníhkupectvo LR
                 </a>
             </h1>
@@ -35,33 +35,23 @@
                 @endauth
                 <div id="cart-panel">
                     <button id="cart-button" class="btn btn-link">
-                        <a href="{{ url('/shoppingcart') }}">
+                        <a href="{{ route('cart') }}">
                             <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
                         </a>
                     </button>
                 </div>
             </nav>
            @endif
-
-
-<!--standart header-->
-            <!-- <a href="{{ url('/login') }}" class="btn btn-link">Prihláste sa</a>
-            <div id="cart-panel">
-                <button id="cart-button" class="btn btn-link">
-                    <a href="{{ url('/shoppingcart') }}">
-                        <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
-                    </a>
-                </button>
-                <button id="logout-button" class="btn btn-link">
-                    <img src="{{ asset('images/logout-icon.png') }}" alt="Odhlásenie">
-                </button>
-            </div> -->
         </div>
     </article>
 
     <article class="d-lg-none">
         <div class="col-12">
-            <h1 id="site-title"><a href="{{ url('/') }}">Kníhkupectvo LR</a></h1>
+            <h1 id="site-title">
+                <a href="{{ route('home') }}">
+                    Kníhkupectvo LR
+                </a>
+            </h1>
         </div>
         <div class="col-12">
             <div id="search-panel" class="gap-3 d-flex justify-content-center">
@@ -79,22 +69,19 @@
                     @auth
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button id="logout-button" class="btn btn-link">
-                                <img src="{{ asset('images/logout-icon.png') }}" alt="Odhlásenie">
-                            </button>
+                                <button id="logout-button" class="btn btn-link">
+                                    <img src="{{ asset('images/logout-icon.png') }}" alt="Odhlásenie">
+                                </button>
                         </form>
-
                     @else
                         <a href="{{ route('login') }}" class="btn btn-link">
                             Prihláste sa
                         </a>
                     @endauth
                     <div id="cart-panel">
-                        <button id="cart-button" class="btn btn-link">
-                            <a href="{{ url('/shoppingcart') }}">
-                                <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
-                            </a>
-                        </button>
+                        <a href="{{ route('cart') }}" id="cart-button" class="btn btn-link">
+                            <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
+                        </a>
                     </div>
                 </nav>
             @endif

@@ -16,17 +16,19 @@ class BookFind
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // user not logged in -> enable request to go through
         if(!Auth::check()){
             return $next($request);
         }
+
+        // user logged in with role '1' - admin
         if(Auth::user()->role == '1'){
+
+            // reroute directly to /findbook/{phrase}
             if(!$request->is('findbook')){
                 return redirect('/findbook/' . $request->search);
-
-                //return redirect('/findbook', $request->search);
             }
         }
-        // {route('category_details', $categories)}}">
-        return $next($request);
+        return $next($request);     // enable request
     }
 }

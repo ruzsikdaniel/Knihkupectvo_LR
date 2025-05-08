@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Shopping_Card extends Model
 {
-    protected $keyType = 'string'; //for using uuid we need to set to string
+    protected $keyType = 'string'; // for using uuid we need to set to string
     public $incrementing = false;
     public $timestamps = false;
 
@@ -21,7 +21,7 @@ class Shopping_Card extends Model
             }
         });
     }
-    
+
     protected $fillable = [
         'id_user',
         'session_id',
