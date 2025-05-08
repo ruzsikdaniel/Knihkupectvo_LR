@@ -1,4 +1,5 @@
 import './bootstrap';
+import './addBookToCart.js'
 
 import Alpine from 'alpinejs';
 

@@ -31,7 +31,7 @@
                             {{number_format($books->price, 2, ',', ' ')}}€
                         </p>
                         <button class="btn btn-outline-secondary">
-                            <img src="/images/cart-icon.png" alt="Košík">
+                            <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                         </button>
                     </div>
                 </span>

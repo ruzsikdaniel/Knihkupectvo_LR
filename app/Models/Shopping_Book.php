@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class Shopping_Book extends Model
 {
+    protected $table = 'shopping__books';
+
     public $timestamps = false;
     public $incrementing = false;
 
@@ -15,4 +17,15 @@ class Shopping_Book extends Model
         'id_book',
         'number',
     ];
+
+    public function card()
+    {
+        return $this->belongsTo(Shopping_Card::class, 'id_card', 'id');
+    }
+
+    public function book()
+    {
+        return $this->belongsTo(Book::class, 'id_book', 'id');
+    }
+
 }

@@ -61,7 +61,9 @@
                     </div>
                 </div>
                 <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                    <button id="add-to-cart">Pridať do košíka</button>
+                    <button class="add-to-cart" data-book-id="{{ $book->id }}">
+                        Pridať do košíka
+                    </button>
                 </div>
             </div>
 
@@ -111,7 +113,9 @@
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                        <button id="add-to-cart">Pridať do košíka</button>
+                        <button class="add-to-cart" data-book-id="{{ $book->id }}">
+                            Pridať do košíka
+                        </button>
                     </div>
                 </div>
             </section>
@@ -134,7 +138,8 @@
 
             <section id="item-desc">
                 <h2>Popis</h2>
-                <p>{{$book->detail}}
+                <p>
+                    {{$book->detail}}
                 </p>
             </section>
         </article>

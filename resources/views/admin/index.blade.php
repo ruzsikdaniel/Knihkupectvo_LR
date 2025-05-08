@@ -43,7 +43,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <p id="item-price-gross" class="mb-0">{{$books->price}}€</p>
                                     <button class="btn btn-outline-secondary">
-                                        <img src="/images/cart-icon.png" alt="Košík">
+                                        <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                                     </button>
                                 </div>
                             </span>

@@ -34,8 +34,8 @@
                         <p id="item-price-gross">
                             {{number_format($books->price, 2, ',', ' ')}}€
                         </p>
-                        <button class="btn btn-outline-secondary" id="add-to-cart">
-                            <img src="/images/cart-icon.png" alt="Košík">
+                        <button class="btn btn-outline-secondary add-to-cart" data-book-id="{{ $books->id }}">
+                            <img src="{{asset('images/cart-icon.png')}}" alt="Košík">
                         </button>
                     </div>
                 </span>

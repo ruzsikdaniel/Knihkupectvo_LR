@@ -38,8 +38,19 @@ class AuthenticatedSessionController extends Controller
         // merge two carts, if both exist
         if($userCart && $sessionCart){
             foreach($sessionCart->books as $sessionItem){
-                $item = $userCart->books()->
-                    where('id_', $sessionItem->book_id)->first();
+                $item = $userCart->books()
+                    ->where('id_book', $sessionItem->id_book)->first();
+
+                if($item){
+                    $item->number += $sessionItem->number;
+                    $item->save();
+                }
+                else{
+                    $userCart->books()->create([
+                        'id_book' => $sessionItem->id_book,
+                        'number' => $sessionItem->number,
+                    ]);
+                }
             }
         }
 

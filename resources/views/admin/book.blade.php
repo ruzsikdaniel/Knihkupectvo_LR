@@ -1,7 +1,7 @@
 @extends('layouts.main')
-    
+
     @section('title', 'Hlavná stránka')
-    
+
     @section('content')
 
 <div class="row d-none d-md-flex">
@@ -56,7 +56,9 @@
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                        <button id="add-to-cart">Pridať do košíka</button>
+                        <button class="add-to-cart" data-book-id="{{ $book->id }}">
+                            Pridať do košíka
+                        </button>
                     </div>
                 </div>
 
@@ -105,7 +107,9 @@
                         </div>
                     </div>
                     <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                        <button id="add-to-cart">Pridať do košíka</button>
+                        <button class="add-to-cart" data-book-id="{{ $book->id }}">
+                            Pridať do košíka
+                        </button>
                     </div>
                 </div>
             </section>
