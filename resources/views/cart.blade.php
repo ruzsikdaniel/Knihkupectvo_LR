@@ -101,6 +101,8 @@
                 </p>
             </div>
         </section>
+    @else
+        <p>Váš košík je prázdny.</p>
     @endif
     </article>
 

@@ -38,7 +38,7 @@ class CartController extends Controller
         if(!$cart){
             $cart = new ShoppingCart();
             $cart->id_user = $userId;
-            $cart->session_id = $userId ? null : $sessionId;
+            $cart->session_id = $sessionId;
             $cart->price = 0;
             $cart->save();
         }
@@ -158,6 +158,14 @@ class CartController extends Controller
     private function getUserCartTotal(ShoppingCart $cart)
     {
         $cart->load('books.book');
+        foreach ($cart->books as $item) {
+            \Log::info('Košíková položka:', [
+                'id_book' => $item->id_book,
+                'book_exists' => $item->book !== null,
+                'price' => $item->book->price ?? 'N/A',
+                'qty' => $item->number,
+            ]);
+        }
         return $cart->books->sum(
             fn($item) => $item->book?->price * $item->number
         );

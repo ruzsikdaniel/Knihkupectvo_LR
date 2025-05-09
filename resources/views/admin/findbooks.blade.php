@@ -128,7 +128,9 @@
                 <span id="page"><a href="#">4</a></span>
             <button class="btn btn-outline-secondary ms-2" aria-label="Next page">❯</button>
         </section> -->
-        {{$book->onEachSide(1)->links()}}
+        <div id="pagination-container" class="d-flex justify-content-center align-items-center">
+                {{$book->onEachSide(1)->links()}}
+            </div>
 
     </article>
 @endsection

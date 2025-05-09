@@ -11,7 +11,6 @@ class ShoppingCart extends Model
     public $incrementing = false;
     public $timestamps = false;
     protected $keyType = 'uuid';
-
     protected $fillable = [
         'id_user',
         'session_id',

@@ -51,7 +51,9 @@
                     @endforeach
                 </ul>
             </div>
-            {{$book->onEachSide(1)->links()}}
+            <div id="pagination-container" class="d-flex justify-content-center align-items-center">
+                {{$book->onEachSide(1)->links()}}
+            </div>
         </section>
     </article>
 @endsection

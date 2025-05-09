@@ -6,12 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const bookId = this.dataset.bookId;
             const quantity = parseInt(this.value);
 
-            if (isNaN(quantity) || quantity < 1) {
-                alert("Minimálny počet je 1 kus.");
-                this.value = 1;
-                return;
-            }
-
             fetch('/cart/update', {
                 method: 'POST',
                 headers: {
