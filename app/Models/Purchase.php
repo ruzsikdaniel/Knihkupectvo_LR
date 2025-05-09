@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Buy extends Model
+class Purchase extends Model
 {
-    protected $keyType = 'string'; //for using uuid we need to set to string
+    protected $table = 'purchases';
+    protected $keyType = 'string'; // uuid needs data type string
     public $incrementing = false;
     public $timestamps = false;
 

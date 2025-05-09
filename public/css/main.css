@@ -354,7 +354,7 @@ ul #carousel-list{
     color: red;
 }
 
-.item-price-gross{
+.item-price{
     font-weight: bold;
 }
 
@@ -368,7 +368,7 @@ ul #carousel-list{
     border-radius: 1px;
 }
 
-#total-price-gross{
+#total-price-lg, #total-price-md{
     font-weight: bolder;
 }
 

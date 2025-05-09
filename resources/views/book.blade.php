@@ -34,7 +34,7 @@
     </article>
 
     <article class="col-md-6 d-flex flex-column align-items-center">
-        <section id="item-page">
+        ;<section id="item-page">
             <div id="item-title" class="d-flex flex-column justify-content-start">
                 <h1 id="book-title">{{$book->name}}</h1>
                 <h3 id="book-author">{{$book->author}}</h3>
@@ -49,13 +49,13 @@
                 <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                     <div id="item-stock">
                         @if($book->state === 'je na sklade')
-                            <p id="in-stock">{{$book->state}}</p>
+                            <p class="in-stock">{{$book->state}}</p>
                         @else
-                            <p id="out-of-stock">{{$book->state}}</p>
+                            <p class="out-of-stock">{{$book->state}}</p>
                         @endif
                     </div>
-                    <div id="item-price">
-                        <h3 id="item-price-gross" class="mb-0">
+                    <div class="item-price">
+                        <h3 id="item-price-{{ $book->id }}" class="item-price"class="mb-0">
                             {{ number_format($book->price, 2, ',', ' ') }}€
                         </h3>
                     </div>
@@ -104,10 +104,10 @@
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">{{$book->state}}</p>
+                            <p class="in-stock">{{$book->state}}</p>
                         </div>
-                        <div id="item-price">
-                            <h3 id="item-price-gross">
+                        <div class="item-price">
+                            <h3 class="item-price">
                                 {{number_format($book->price, 2, ',', ' ')}}€
                             </h3>
                         </div>

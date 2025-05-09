@@ -7,10 +7,10 @@ use Illuminate\Support\Str;
 
 class ShoppingCart extends Model
 {
-    protected $table = 'shopping__cards';
+    protected $table = 'shopping_carts';
     public $incrementing = false;
     public $timestamps = false;
-    protected $keyType = 'uuid'; // uuid needs string as type
+    protected $keyType = 'uuid';
 
     protected $fillable = [
         'id_user',

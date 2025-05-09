@@ -1,0 +1,32 @@
+ALTER TABLE buys
+RENAME TO purchases;
+
+ALTER TABLE category__books 
+RENAME TO book_categories;
+
+ALTER TABLE delivers
+RENAME TO deliveries;
+
+ALTER TABLE pays
+RENAME TO payments;
+
+ALTER TABLE picture__books 
+RENAME TO book_pictures;
+
+ALTER TABLE shopping__books 
+RENAME TO shopping_books;
+
+ALTER TABLE shopping__cards 
+RENAME TO shopping_carts;
+
+
+-- books -> books
+-- buys -> purchases
+-- categories -> categories
+-- category__books -> book_categories
+-- delivers -> deliveries
+-- pays -> payments
+-- pictures -> pictures
+-- picture__books -> book_pictures
+-- shopping__books -> shopping_books	__ => _
+-- shopping__cards -> shopping_carts	__ => _

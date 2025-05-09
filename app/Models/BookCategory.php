@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Category_Book extends Model
+class BookCategory extends Model
 {
+    protected $table = 'book_categories';
+
     public $timestamps = false;
     public $incrementing = false;
     protected $fillable = [

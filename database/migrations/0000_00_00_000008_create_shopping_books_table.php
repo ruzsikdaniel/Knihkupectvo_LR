@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shopping__books', function (Blueprint $table) {
+        Schema::create('shopping_books', function (Blueprint $table) {
             $table->id();
 
             $table->uuid('id_card');
             $table->uuid('id_book');
             $table->unsignedInteger('number')->default(1);
 
-            $table->foreign('id_card')->references('id')->on('shopping__cards')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_card')->references('id')->on('shopping_carts')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_book')->references('id')->on('books')->onUpdate('cascade')->onDelete('cascade');
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shopping__books');
+        Schema::dropIfExists('shopping_books');
     }
 };

@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Picture_Book extends Model
+class BookPicture extends Model
 {
+    protected $table = 'book_pictures';
+
     public $timestamps = false;
     public $incrementing = false;
-
-    protected $table = 'picture__books';
 
     protected $fillable = [
         'id_book',

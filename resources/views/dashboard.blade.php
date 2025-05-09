@@ -40,7 +40,7 @@
                                     <p class="text-muted mb-0">{{$books->author}}</p>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p id="item-price-gross" class="mb-0">{{$books->price}}€</p>
+                                    <p id="item-price-{{ $item->book->id }}" class="item-price"class="mb-0">{{$books->price}}€</p>
                                     <button class="btn btn-outline-secondary">
                                         <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                                     </button>

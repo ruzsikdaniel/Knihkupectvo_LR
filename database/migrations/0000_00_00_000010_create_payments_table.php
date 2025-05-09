@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('delivers', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->unsignedInteger('id')->primary()->autoIncrement();
             $table->string('type', 20)->unique();
             $table->decimal('price', total:4, places:2);
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('delivers');
+        Schema::dropIfExists('payments');
     }
 };

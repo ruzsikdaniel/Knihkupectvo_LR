@@ -8,7 +8,7 @@ use App\Models\ShoppingCart;
 
 class ShoppingBook extends Model
 {
-    protected $table = 'shopping__books';
+    protected $table = 'shopping_books';
     public $incrementing = false;
     public $timestamps = false;
 

@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
-                        <p id="item-price-gross">
+                        <p class="item-price">
                             {{number_format($books->price, 2, ',', ' ')}} €
                         </p>
                         <button class="btn btn-outline-secondary">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">7,88€</p>
+                    <p class="item-price">7,88€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">19,99€</p>
+                    <p class="item-price">19,99€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">12,26€</p>
+                    <p class="item-price">12,26€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">14,31€</p>
+                    <p class="item-price">14,31€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">11,50€</p>
+                    <p class="item-price">11,50€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">14,25€</p>
+                    <p class="item-price">14,25€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>

@@ -1,15 +1,9 @@
 @extends('layouts.main')
 
-    @section('title', 'Hlavná stránka')
+@section('title', 'Hlavná stránka')
 
-    @section('content')
+@section('content')
     <article id="category">
-
-        <!-- <section id="filters">
-            <button class="filter">Filter 1</button>
-            <button class="filter">Filter 2</button>
-            <button class="filter">Filter 3</button>
-        </section>-->
         <section>
             <h1 id="category-title">
                 <a href="{{ route('category_details', $categoryName) }}" class="text-decoration-none">
@@ -19,22 +13,23 @@
         </section>
 
         <section id="category-grid">
-            @foreach($book as $books)
+            @foreach($book as $item)
                 <span id="grid-item" class="d-flex flex-column border book-item">
-                    <img src="{{$books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid">
+                    <img src="{{$item->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"
+                         class="img-fluid">
 
                     <div class="d-flex flex-column text-left">
                         <p id="item-title">
-                            <a href="{{ route('book_details', $books->id) }}">{{$books->name}}</a>
+                            <a href="{{ route('book_details', $item->id) }}">{{$item->name}}</a>
                         </p>
-                        <p class="text-muted">{{$books->author}}</p>
+                        <p class="text-muted">{{$item->author}}</p>
                     </div>
 
                     <div class="d-flex align-items-center gap-3">
-                        <p id="item-price-gross">
-                            {{number_format($books->price, 2, ',', ' ')}}€
+                        <p class="item-price">
+                            {{number_format($item->price, 2, ',', ' ')}}€
                         </p>
-                        <button class="btn btn-outline-secondary add-to-cart" data-book-id="{{ $books->id }}">
+                        <button class="btn btn-outline-secondary border-0 add-to-cart" data-book-id="{{ $item->id }}">
                             <img src="{{asset('images/cart-icon.png')}}" alt="Košík">
                         </button>
                     </div>
@@ -49,7 +44,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">7,88€</p>
+                    <p class="item-price">7,88€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -65,7 +60,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">19,99€</p>
+                    <p class="item-price">19,99€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -81,7 +76,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">12,26€</p>
+                    <p class="item-price">12,26€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -97,7 +92,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">14,31€</p>
+                    <p class="item-price">14,31€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -113,7 +108,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">11,50€</p>
+                    <p class="item-price">11,50€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -129,7 +124,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <p id="item-price-gross">14,25€</p>
+                    <p class="item-price">14,25€</p>
                     <button class="btn btn-outline-secondary">
                         <img src="/images/cart-icon.png" alt="Košík">
                     </button>
@@ -137,14 +132,14 @@
             </span>
         </section> -->
 
-        <!-- <section id="pagination" class="mt-4 d-flex justify-content-center">
-            <button class="btn btn-outline-secondary me-2" aria-label="Previous page">❮</button>
-                <span id="page"><a href="#">1</a></span>
-                <span id="page"><a href="#">2</a></span>
-                <span id="page"><a href="#">3</a></span>
-                <span id="page"><a href="#">4</a></span>
-            <button class="btn btn-outline-secondary ms-2" aria-label="Next page">❯</button>
-        </section> -->
+            <!-- <section id="pagination" class="mt-4 d-flex justify-content-center">
+                <button class="btn btn-outline-secondary me-2" aria-label="Previous page">❮</button>
+                    <span id="page"><a href="#">1</a></span>
+                    <span id="page"><a href="#">2</a></span>
+                    <span id="page"><a href="#">3</a></span>
+                    <span id="page"><a href="#">4</a></span>
+                <button class="btn btn-outline-secondary ms-2" aria-label="Next page">❯</button>
+            </section> -->
         {{$book->onEachSide(1)->links()}}
 
     </article>

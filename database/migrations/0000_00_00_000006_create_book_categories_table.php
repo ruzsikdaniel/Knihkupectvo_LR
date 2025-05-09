@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pays', function (Blueprint $table) {
-            $table->unsignedInteger('id')->primary()->autoIncrement();
-            $table->string('type', 20)->unique();
-            $table->decimal('price', total:4, places:2);
+        Schema::create('book_categories', function (Blueprint $table) {
+            $table->unsignedInteger('id_category')->references('id')->on('categories')->onUpdate('cascade');
+            $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
         });
     }
 
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pays');
+        Schema::dropIfExists('book_categories');
     }
 };

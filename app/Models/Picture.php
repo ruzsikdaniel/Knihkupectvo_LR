@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class Picture extends Model
 {
+    protected $table = 'pictures';
+
     public $timestamps = true;
     protected $primaryKey = 'id';
     protected $keyType = 'string';
@@ -33,7 +35,7 @@ class Picture extends Model
     public function books()
     {
         return $this->belongsToMany(Book::class,
-            'picture__books',
+            'book_pictures',
             'id_picture',
             'id_book');
     }

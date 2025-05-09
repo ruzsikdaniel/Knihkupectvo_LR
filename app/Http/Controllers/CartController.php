@@ -81,11 +81,53 @@ class CartController extends Controller
         $cart->price = $total;
         $cart->save();
 
+        // vrat spatnu vazbu
         return response()->json([
             'message' => 'Kniha bola úspešne pridaná do košíka.',
             'cart_total' => $total
         ]);
     }
 
+    public function updateQuantity(Request $request)
+    {
+        // validuj AJAX request od updateCart.js
+        $request->validate([
+            'book_id' => 'required|exists:books,id',
+            'quantity' => 'required|integer|min:1'
+        ]);
 
+        // nacitaj userId a sessionId
+        $userId = Auth::check() ? Auth::id() : null;
+        $sessionId = $request->session()->getId();
+
+        // najdi kosik pouzivatela
+        $cart = ShoppingCart::where('id_user', $userId)
+            ->orWhere('session_id', $userId ? null : $sessionId)
+            ->first();
+        if(!$cart)
+            return response()->json(['error' => 'Košík neexistuje'], 404);
+
+        // najdi knihu, ktorej chceme pocet zmenit
+        $item = ShoppingBook::where('id_card', $cart->id)
+            ->where('id_book', $request->book_id)
+            ->first();
+        if (!$item)
+            return response()->json(['error' => 'Položka neexistuje'], 404);
+
+        // prepis hodnotu poctu podla requestu
+        $item->number = $request->quantity;
+        $item->save();
+
+        // prepocitaj ceny
+        $cart->load('books.book');
+        $cart->price = $cart->books->sum(fn($i) => $i->book->price * $i->number);
+        $cart->save();
+
+        // vrat JSON odpoved pre updadeCart.js
+        return response()->json([
+            'item_total' => number_format($item->book->price * $item->number, 2, ',', ' '),
+            'cart_total' => number_format($cart->price, 2, ',', ' '),
+            'item_count' => $cart->books->sum('number')
+        ]);
+    }
 }

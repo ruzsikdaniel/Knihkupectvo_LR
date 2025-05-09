@@ -7,7 +7,8 @@ use Illuminate\Support\Str;
 
 class Book extends Model
 {
-    protected $keyType = 'string'; //for using uuid we need to set to string
+    protected $table = 'books';
+    protected $keyType = 'string'; // uuid need data type string
     public $incrementing = false;
     public $timestamps = false;
 
@@ -24,7 +25,7 @@ class Book extends Model
 
     public function pictures()
     {
-        return $this->belongsToMany(Picture::class, 'picture__books', 'id_book', 'id_picture');
+        return $this->belongsToMany(Picture::class, 'book_pictures', 'id_book', 'id_picture');
     }
 
     protected $fillable = [

@@ -35,8 +35,8 @@
                 @endauth
                 <div id="cart-panel">
                     <button class="btn btn-link cart-button">
-                        <a href="{{ route('cart') }}">
-                            <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
+                        <a href="{{ route('cart') }}" class="cart-link">
+                            <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                         </a>
                     </button>
                 </div>
@@ -79,8 +79,8 @@
                         </a>
                     @endauth
                     <div id="cart-panel">
-                        <a href="{{ route('cart') }}" class="btn btn-link cart-button">
-                            <img src=" {{ asset('images/cart-icon.png') }}" alt="Košík">
+                        <a href="{{ route('cart') }}" class="cart-link">
+                            <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
                         </a>
                     </div>
                 </nav>

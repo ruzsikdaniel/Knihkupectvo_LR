@@ -33,12 +33,12 @@
                     @endif
                 </div>
                 <label>
-                    <input class="item-count" type="number" min="1" max="10" value="1">
+                    <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
                 </label>
                 <button class="btn item-delete">
                     <img src="{{ asset('images/delete.png') }}"/>
                 </button>
-                <p class="item-price-gross">
+                <p id="item-total-{{ $item->book->id }}" class="item-price">
                     Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
                 </p>
             </span>
@@ -46,7 +46,7 @@
         @endforeach
         <section id="cart-summary" class="d-flex justify-content-end">
             <div id="sum-prices">
-                <p id="total-price-gross">
+                <p id="total-price-lg">
                     Suma: {{ number_format($total, 2, ',', ' ') }}€
                 </p>
             </div>
@@ -71,8 +71,8 @@
                             </p>
                         </div>
                     </div>
-                    <p id="item-price-gross">
-                        {{ number_format($item->book->price, 2, ',', ' ') }}€
+                    <p id="item-total-{{ $item->book->id }}" class="item-price">
+                        Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
                     </p>
                 </span>
                 <span class="d-flex justify-content-start item-control">
@@ -84,7 +84,7 @@
                             <p class="out-of-stock">{{$item->book->state}}</p>
                         @endif
                         <label>
-                            <input class="item-count" type="number" min="1" value="{{ $itemCount }}">
+                            <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
                         </label>
                         <button class="btn item-delete">
                             <img src="{{ asset('images/delete.png') }}"/>
@@ -96,7 +96,7 @@
 
         <section id="cart-summary" class="d-flex justify-content-end">
             <div id="sum-prices">
-                <p id="total-price-gross">
+                <p id="total-price-md">
                     Suma: {{ number_format($total, 2, ',', ' ') }}€
                 </p>
             </div>

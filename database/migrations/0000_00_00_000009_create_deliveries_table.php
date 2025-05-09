@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category__books', function (Blueprint $table) {
-            $table->unsignedInteger('id_category')->references('id')->on('categories')->onUpdate('cascade');
-            $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
+        Schema::create('deliveries', function (Blueprint $table) {
+            $table->unsignedInteger('id')->primary()->autoIncrement();
+            $table->string('type', 20)->unique();
+            $table->decimal('price', total:4, places:2);
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category__books');
+        Schema::dropIfExists('deliveries');
     }
 };

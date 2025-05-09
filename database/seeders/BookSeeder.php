@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Book;
-use App\Models\Category_Book;
+use App\Models\BookCategory;
 
 
 class BookSeeder extends Seeder
@@ -346,7 +346,7 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
         foreach($booksID as $bID){ //go throught list of book`s id
             $getCatId = array_rand($categoriesID, 5); //choose 5 random categories
             foreach($getCatId as $key){
-                Category_Book::create([
+                BookCategory::create([
                     'id_category'=>$categoriesID[$key], //get the category id by generated number
                     'id_book'=>$bID, //get the book`s id
                 ]);

@@ -47,9 +47,9 @@
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">{{$book->state}}</p>
+                            <p class="in-stock">{{$book->state}}</p>
                         </div>
-                        <div id="item-price">
+                        <div class="item-price">
                             <p id="book-price-gross">
                             <h3>{{$book->price}}</h3>
                             </p>
@@ -98,9 +98,9 @@
                 <div id="item-status">
                     <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                         <div id="item-stock">
-                            <p id="in-stock">{{$book->state}}</p>
+                            <p class="in-stock">{{$book->state}}</p>
                         </div>
-                        <div id="item-price">
+                        <div class="item-price">
                             <p id="book-price-gross">
                             <h3>{{$book->price}}€</h3>
                             </p>

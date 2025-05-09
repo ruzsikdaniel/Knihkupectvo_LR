@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Book;
 use App\Models\Picture;
-use App\Models\Picture_Book;
+use App\Models\BookPicture;
 
 class PictureSeeder extends Seeder
 {
@@ -221,7 +221,7 @@ class PictureSeeder extends Seeder
                     echo "Created picture with ID: {$picture->id}\n";
                     echo "Linked picture to book: {$book->name}\n";
 
-                    Picture_Book::create([
+                    BookPicture::create([
                         'id_book' => $book->id,
                         'id_picture' => $picture->id,
                     ]);
