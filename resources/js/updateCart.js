@@ -28,8 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return res.json();
                 })
                 .then(data => {
-                    document.querySelectorAll(`.item-count[data-book-id="${bookId}"]`)
-                    .forEach(
+                    document.querySelectorAll(`.item-count[data-book-id="${bookId}"]`).forEach(
                         el => {
                             el.value = quantity;
                         });
@@ -42,11 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const el = document.getElementById(id);
                         if (el) el.innerText = 'Suma: ' + data.cart_total + ' €';
                     });
-
-                    const itemCountElement = document.getElementById('item-count');
-                    if (itemCountElement) {
-                        itemCountElement.innerText = data.item_count;
-                    }
                 })
                 .catch(error => {
                     console.error("Chyba pri update cart:", error);

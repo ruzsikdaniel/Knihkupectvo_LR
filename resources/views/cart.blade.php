@@ -10,7 +10,7 @@
     <article id="cart" class="d-none d-lg-flex flex-column">
     @if(isset($cartItems) && count($cartItems) > 0)
         @foreach($cartItems as $item)
-        <section class="d-flex justify-content-between align-items-center cart-item">
+        <section class="d-flex justify-content-between align-items-center cart-item" id="cart-item-{{ $item->book->id }}">
             <span class="d-flex justify-content-start align-items-center item-data">
                 <img class="col-3 item-icon"
                      src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}"
@@ -35,7 +35,7 @@
                 <label>
                     <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
                 </label>
-                <button class="btn item-delete">
+                <button class="btn item-delete" data-book-id="{{ $item->book->id }}">
                     <img src="{{ asset('images/delete.png') }}"/>
                 </button>
                 <p id="item-total-{{ $item->book->id }}" class="item-price">
@@ -59,7 +59,7 @@
     <article id="cart" class="d-lg-none">
     @if(isset($cartItems) && count($cartItems) > 0)
         @foreach($cartItems as $item)
-            <section class="cart-item">
+            <section class="cart-item" id="cart-item-{{ $item->book->id }}">
                 <span class="d-flex justify-content-between align-items-center item-data">
                     <div class="d-flex flex-row">
                         <img class="col-3 item-icon" src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
@@ -86,8 +86,8 @@
                         <label>
                             <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
                         </label>
-                        <button class="btn item-delete">
-                            <img src="{{ asset('images/delete.png') }}"/>
+                        <button class="btn item-delete" data-book-id="{{ $item->book->id }}">
+                            <img src="{{ asset('images/delete.png') }}" alt="Odstrániť"/>
                         </button>
                     </div>
                 </span>

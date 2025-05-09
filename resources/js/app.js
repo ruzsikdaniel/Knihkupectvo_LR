@@ -1,5 +1,7 @@
 import './bootstrap';
-import './addBookToCart.js';
+import './addBookToCart';
+import './updateCart';
+import './removeBookFromCart';
 
 import Alpine from 'alpinejs';
 

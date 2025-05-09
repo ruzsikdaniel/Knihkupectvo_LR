@@ -37,6 +37,8 @@ Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 
 Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('cart.update');
 
+Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+
 Route::get('book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin
 
 Route::get('admin/book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin

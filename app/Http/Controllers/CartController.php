@@ -7,18 +7,11 @@ use App\Models\ShoppingBook;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class CartController extends Controller
 {
     public function show(Request $request){
-        $userId = Auth::check() ? Auth::id() : null;
-        $sessionId = $request->session()->getId();
-
-        $cart = ShoppingCart::with(['books.book'])
-            ->where('id_user', $userId)
-            ->orWhere('session_id', $userId ? null : $sessionId)
-            ->first();
+        $cart = $this->getUserCart($request);
 
         $cartItems = $cart ? $cart->books: collect();
         $priceTotal = $cartItems->sum(fn($item) => $item->book?->price * $item->number);
@@ -33,21 +26,14 @@ class CartController extends Controller
     }
 
     public function add(Request $request){
-        $request->validate([
-            'book_id' => 'required|exists:books,id',
-        ]);
+        $validated = $this->validateBookRequest($request);
 
         $bookId = $request->input('book_id');
         $sessionId = $request->session()->getId();
         $userId = Auth::check() ? Auth::id() : null;
 
-
-
         // najdi alebo vytvor kosik
-        $cart = ShoppingCart::with(['books.book'])
-            ->where('id_user', $userId)
-            ->orWhere('session_id', $userId ? null : $sessionId)
-            ->first();
+        $cart = $this->getUserCart($request);
 
         if(!$cart){
             $cart = new ShoppingCart();
@@ -74,36 +60,25 @@ class CartController extends Controller
         $bookInCart->save();
 
         // prepocitaj celkovu cenu kosika
-        $cart->load('books.book');
-        $total = $cart->books->sum(
-            fn($item) => $item->book?->price * $item->number
-        );
+        $this->recalculateCartPrice($cart);
+        $total = $this->getUserCartTotal($cart);
         $cart->price = $total;
         $cart->save();
 
         // vrat spatnu vazbu
         return response()->json([
             'message' => 'Kniha bola úspešne pridaná do košíka.',
-            'cart_total' => $total
+            'cart_total' => number_format($total, 2, ',', ' ')
         ]);
     }
 
     public function updateQuantity(Request $request)
     {
         // validuj AJAX request od updateCart.js
-        $request->validate([
-            'book_id' => 'required|exists:books,id',
-            'quantity' => 'required|integer|min:1'
-        ]);
-
-        // nacitaj userId a sessionId
-        $userId = Auth::check() ? Auth::id() : null;
-        $sessionId = $request->session()->getId();
+        $validated = $this->validateBookRequest($request, "UPDATE");
 
         // najdi kosik pouzivatela
-        $cart = ShoppingCart::where('id_user', $userId)
-            ->orWhere('session_id', $userId ? null : $sessionId)
-            ->first();
+        $cart = $this->getUserCart($request);
         if(!$cart)
             return response()->json(['error' => 'Košík neexistuje'], 404);
 
@@ -130,4 +105,68 @@ class CartController extends Controller
             'item_count' => $cart->books->sum('number')
         ]);
     }
+
+    public function remove(Request $request)
+    {
+        $validated = $this->validateBookRequest($request);
+
+        $cart = $this->getUserCart($request);
+        if (!$cart) {
+            return response()->json(['message' => 'Košík neexistuje.'], 404);
+        }
+
+        // odstran polozku z pivot tabulky
+        $cart->books()->where('id_book', $validated['book_id'])->delete();
+
+        // prepocítaj cenu
+        $this->recalculateCartPrice($cart);
+
+        return response()->json([
+            'message' => 'Kniha bola odstránená z košíka.',
+            'cart_total' => number_format($cart->price, 2, ',', ' '),
+            'item_count' => $cart->books->sum('number')
+        ]);
+    }
+
+
+
+    public function validateBookRequest(Request $request, string $requestType = ''){
+        if($requestType === 'UPDATE'){
+            $request->validate([
+                'book_id' => 'required|exists:books,id',
+                'quantity' => 'required|integer|min:1'
+            ]);
+        }
+        else{
+            return $request->validate([
+                'book_id' => 'required|exists:books,id',
+            ]);
+        }
+    }
+
+    private function getUserCart(Request $request)
+    {
+        $userId = Auth::check() ? Auth::id() : null;
+        $sessionId = $request->session()->getId();
+
+        return ShoppingCart::with('books.book')
+            ->where('id_user', $userId)
+            ->orWhere('session_id', $userId ? null : $sessionId)
+            ->first();
+    }
+
+    private function getUserCartTotal(ShoppingCart $cart)
+    {
+        $cart->load('books.book');
+        return $cart->books->sum(
+            fn($item) => $item->book?->price * $item->number
+        );
+    }
+
+    private function recalculateCartPrice(ShoppingCart $cart)
+    {
+        $cart->price = $this->getUserCartTotal($cart);
+        $cart->save();
+    }
+
 }
