@@ -36,26 +36,32 @@ p{
 button{
     color: #963235;
     background-color: #E7E7E7;
-    font-size:1rem;
+    font-size: 1rem;
     border-radius: 5px;
-    border:none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
 }
 button:hover{
-    color:#b83e42;
+    color: #b83e42;
     background-color: #d6d4d4;
-    border:none;
+    border: none;
+    outline: none;
 }
 
 button.filter{
-    color:#E7E7E7;
+    color: #E7E7E7;
     background-color: #963235;
-    border:none;
+    border: none;
     border-radius: 10px;
-    margin: 0px 5px;
+    margin: 0 5px;
+    outline: none;
 }
 
 button.filter:hover{
     text-decoration: underline;
+    outline: none;
 }
 
 /*style for links*/
@@ -290,27 +296,27 @@ ul #carousel-list{
 }
 
 @media (max-width: 768px) {
-    #cart-item {
+    .cart-item {
         flex-direction: row;
     }
-    #item-icon{
+    .item-icon{
         max-height: 125px;
     }
   }
 
-#cart-item{
+.cart-item{
     border-style: solid;
     border-radius: 1px;
     margin-bottom: 0.5rem;
     padding: 1rem;
 }
 
-#cart-item > *{
+.cart-item > *{
     padding: 0.5em;
     flex-direction: column;
 }
 
-#item-icon{
+.item-icon{
     max-height: 180px;
     width: auto;
     height: auto;
@@ -318,7 +324,7 @@ ul #carousel-list{
 }
 
 @media (max-width: 991px) {
-    #item-icon{
+    .item-icon{
         max-width: 64px;
         min-width: 64px;
         width: auto;
@@ -327,28 +333,28 @@ ul #carousel-list{
     }
 }
 
-#item-data{
+.item-data{
     display: flex;
     flex-direction: row;
 }
 
-#item-control{
+.item-control{
     flex-direction: row;
 }
 
-#item-control > *{
+.item-control > *{
     padding-inline: 0.5rem;
 }
 
-#in-stock{
+.in-stock{
     color: green;
 }
 
-#out-of-stock{
+.out-of-stock{
     color: red;
 }
 
-#item-price-gross{
+.item-price-gross{
     font-weight: bold;
 }
 

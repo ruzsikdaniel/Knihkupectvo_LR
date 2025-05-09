@@ -21,23 +21,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             })
 
-            // check for correct response
-            .then(response => {
-                if (!response.ok)
-                    throw new Error('HTTP chyba: ' + response.status);
-                return response.json();
-            })
+            // collect the JSON response and
+            .then(response =>
+                response.json().then(data => ({
+                    ok: response.ok,
+                    status: response.status,
+                    body: data
+                }))
+            )
+            .then(({ ok, body }) => {
+                if (!ok) {
+                    alert(body.message || 'Chyba pri pridávaní do košíka.');
+                    return;
+                }
 
-            // show feedback to user for adding book to cart
-            .then(data => {
-                alert(data.message);
-                // TODO: print amount of books in cart to #cart-button
+                alert(body.message); // úspešná hláška
+                // TODO: aktualizuj počet kníh v #cart-button
             })
 
             // catch error during adding process
             .catch(error => {
                 console.error('Chyba pri pridávaní do košíka:', error);
-                alert('Chyba pri pridávaní do košíka.')
+                alert('Nepodarilo sa spojiť so serverom.')
             });
         });
     })

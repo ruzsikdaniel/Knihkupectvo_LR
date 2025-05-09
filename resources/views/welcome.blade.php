@@ -6,60 +6,50 @@
     <article>
         <section>
             <div class="flex-row d-flex justify-content-between align-items-center gap-5" id="intro">
-                <div class="">
-                    <h1>Vitajte!</h1>
-                </div>
+                <h1>Vitajte!</h1>
                 <div class="d-flex justify-content-end">
-                    <!-- image from: https://www.freepik.com/free-photo/high-angle-books-with-copy-space_12151836.htm-->
-                    <img id="banner" src="/images/banner.png" alt="Banner" class="img-fluid">
+                    <img id="banner" alt="Banner" class="img-fluid"
+                         src="https://img.freepik.com/free-photo/high-angle-books-with-copy-space_23-2148827189.jpg?t=st=1746749949~exp=1746753549~hmac=608227947be6fe3324b6416cc37d251f688778f60790e6003666bff7f6d0245f&w=996">
                 </div>
             </div>
         </section>
 
         <section id="category">
-                <div>
-                    @foreach($category as $categories)
-                        <a href="{{route('category_details', $categories)}}">
-                            <button class="btn btn-outline-primary filter" style="margin-bottom:5px">{{$categories}}</button>
-                        </a>
-                    @endforeach
-                </div>
-
-            <!-- <div id="category-header" class="d-flex align-items-center mb-3 gap-5">
-
-                <h2 id="category-name">
-                    <a href="/html/category.html" class="text-decoration-none">Fantasy</a>
-                </h2>
-
-            </div> -->
-
-
+            <div>
+                @foreach($category as $categories)
+                    <a href="{{route('category_details', $categories)}}">
+                        <button class="btn btn-outline-primary filter" style="margin-bottom:5px">
+                            {{$categories}}
+                        </button>
+                    </a>
+                @endforeach
+            </div>
 
             <div id="carousel" class="d-flex align-items-center overflow-scroll">
                 <ul id="carousel-list">
                     @foreach($book as $books)
-                        <li class="book-item">
-                            <span class="d-flex flex-column border p-2">
-                                <a href="{{route('book_details', $books->id)}}" class="text-decoration-none">
-                                <img src="{{$books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid mb-2"></a>
-                                <div class="d-flex flex-column text-start mb-2">
-                                    <p id="item-title" class="mb-1 fw-bold">
-                                        <a href="{{route('book_details', $books->id)}}"
-                                           class="text-decoration-none">{{$books->name}}
-                                        </a>
-                                    </p>
-                                    <p class="text-muted mb-0">{{$books->author}}</p>
-                                </div>
-                                <div class="d-flex align-items-center gap-3">
-                                    <p id="item-price-gross" class="mb-0">
-                                        {{ number_format($books->price, 2, ',', ' ') }}€
-                                    </p>
-                                    <button class="btn btn-outline-secondary add-to-cart"  data-book-id="{{ $books->id }} ">
-                                        <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
-                                    </button>
-                                </div>
-                            </span>
-                        </li>
+                    <li class="book-item">
+                        <span class="d-flex flex-column border p-2">
+                            <a href="{{route('book_details', $books->id)}}" class="text-decoration-none">
+                            <img src="{{$books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid mb-2"></a>
+                            <div class="d-flex flex-column text-start mb-2">
+                                <p id="item-title" class="mb-1 fw-bold">
+                                    <a href="{{route('book_details', $books->id)}}"
+                                       class="text-decoration-none">{{$books->name}}
+                                    </a>
+                                </p>
+                                <p class="text-muted mb-0">{{$books->author}}</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <p id="item-price-gross" class="mb-0">
+                                    {{ number_format($books->price, 2, ',', ' ') }}€
+                                </p>
+                                <button class="btn btn-outline-secondary border-0 add-to-cart"  data-book-id="{{ $books->id }} ">
+                                    <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">
+                                </button>
+                            </div>
+                        </span>
+                    </li>
                     @endforeach
                 </ul>
             </div>

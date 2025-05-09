@@ -21,12 +21,14 @@ class CartController extends Controller
             ->first();
 
         $cartItems = $cart ? $cart->books: collect();
-        $total = $cartItems->sum(fn($item) => $item->book?->price * $item->number);
+        $priceTotal = $cartItems->sum(fn($item) => $item->book?->price * $item->number);
 
+        $itemCount = $cartItems->sum('number');
 
         return view('cart', [
             'cartItems' => $cartItems,
-            'total' => $total,
+            'total' => $priceTotal,
+            'itemCount' => $itemCount,
         ]);
     }
 
@@ -38,6 +40,8 @@ class CartController extends Controller
         $bookId = $request->input('book_id');
         $sessionId = $request->session()->getId();
         $userId = Auth::check() ? Auth::id() : null;
+
+
 
         // najdi alebo vytvor kosik
         $cart = ShoppingCart::with(['books.book'])
@@ -53,8 +57,13 @@ class CartController extends Controller
             $cart->save();
         }
 
-        // najdi knihu, ktoru chce pouzivatel pridat do kosika
+        // pozri, ci je kniha dostupna
         $book = Book::findOrFail($bookId);
+        if ($book->state === 'nie je na sklade') {
+            return response()->json([
+                'message' => 'Kniha nie je momentálne na sklade.',
+            ], 400);
+        }
 
         // pridaj / aktualizuj knihu v kosiku
         $bookInCart = ShoppingBook::firstOrNew([
@@ -76,6 +85,7 @@ class CartController extends Controller
             'message' => 'Kniha bola úspešne pridaná do košíka.',
             'cart_total' => $total
         ]);
-
     }
+
+
 }
