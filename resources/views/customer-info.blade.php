@@ -71,7 +71,7 @@
             </div>
             <div id="btn-register" class="text-center">
                 <button type="submit">
-                    <a href="{{ route('home') }}">
+                    <a href="{{ route('delivery') }}">
                         Pokračovať na spôsob platby
                     </a>
                 </button>

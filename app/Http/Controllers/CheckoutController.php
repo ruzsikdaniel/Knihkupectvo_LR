@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class CheckoutController extends Controller
 {
-    public function show(){
+    public function customer_info(){
         return view('customer-info');
+    }
+
+    public function delivery(){
+        return view('delivery');
+    }
+
+    public function payment(){
+        return view('payment');
     }
 }
