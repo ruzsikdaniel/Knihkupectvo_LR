@@ -1,16 +1,20 @@
 @extends('layouts.main')
 
-@section('title', 'Doprava a platba')
+@section('title', 'Nákup - Doprava a platba')
 
 @section('content')
 
 <article class="cart">
     <section class="deliver-style">
         <div class="row">
-            <h1 class="col-4">Váš košík</h1>
+            <h1 class="col-4">
+                Váš košík
+            </h1>
 
             <div id="change-shoppingcart-link" class="col-4">
-                <a href="{{ route('cart') }}">Upraviť</a>
+                <a href="{{ route('cart') }}">
+                    Upraviť
+                </a>
             </div>
 
             <div id="suma-shoppingcart" class="col-4">
@@ -24,21 +28,29 @@
     <form method="POST" action="{{ route('checkout.delivery.store') }}">
         @csrf
         <section class="deliver-style container">
-            <h1>Spôsob doručenia</h1>
+            <h1>
+                Spôsob doručenia
+            </h1>
             @foreach ($deliveries as $delivery)
                 <div class="book-about-add">
                     <input id="delivery-{{ $delivery->id }}" type="radio" name="delivery_id" value="{{ $delivery->id }}" required>
-                    <label for="delivery-{{ $delivery->id }}">{{ $delivery->method }} ({{ $delivery->price }} €)</label>
+                    <label for="delivery-{{ $delivery->id }}">
+                        {{ $delivery->method }} ({{ $delivery->price }} €)
+                    </label>
                 </div>
             @endforeach
         </section>
 
         <section class="deliver-style container">
-            <h1>Spôsob platby</h1>
+            <h1>
+                Spôsob platby
+            </h1>
             @foreach ($payments as $payment)
                 <div class="book-about-add">
                     <input id="payment-{{ $payment->id }}" type="radio" name="payment_id" value="{{ $payment->id }}" required>
-                    <label for="payment-{{ $payment->id }}">{{ $payment->method }} ({{ $payment->price }} €)</label>
+                    <label for="payment-{{ $payment->id }}">
+                        {{ $payment->method }} ({{ $payment->price }} €)
+                    </label>
                 </div>
             @endforeach
         </section>
@@ -49,7 +61,5 @@
             </button>
         </section>
     </form>
-
-
 </article>
 @endsection

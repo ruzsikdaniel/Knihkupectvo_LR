@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
-use App\Models\ShoppingCart;
 
 class ShoppingBook extends Model
 {
@@ -18,13 +16,11 @@ class ShoppingBook extends Model
         'number',
     ];
 
-    public function card()
-    {
+    public function card(){
         return $this->belongsTo(ShoppingCart::class, 'id_card', 'id');
     }
 
-    public function book()
-    {
+    public function book(){
         return $this->belongsTo(Book::class, 'id_book', 'id');
     }
 

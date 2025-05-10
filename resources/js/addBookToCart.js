@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // load and verify #add-to-cart button
+    // nacitaj a over .add-to-cart
     const button = document.querySelectorAll('.add-to-cart');
     if(!button.length)
         return;
 
+    // pozri ktory .add-to-cart bol kliknuty
     button.forEach(button => {
-        // button #add-to-cart is clicked
         button.addEventListener('click', function (){
-            const bookId = this.getAttribute('data-book-id');   // get data-book-id attribute of book
+            const bookId = this.getAttribute('data-book-id');   // najdi data-book-id atribut knihy
 
-            // send POST to backend route
+            // posli POST spravu na backend
             fetch('/cart/add', {
                 method: 'POST',
                 headers: {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             })
 
-            // collect the JSON response and
+            // ziskaj JSON odpoved a spracuj
             .then(response =>
                 response.json().then(data => ({
                     ok: response.ok,
@@ -35,11 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
 
-                alert(body.message); // úspešná hláška
-                // TODO: aktualizuj počet kníh v #cart-button
+                alert(body.message);
             })
 
-            // catch error during adding process
+            // zachyt error pocas JSON komunikacie
             .catch(error => {
                 console.error('Chyba pri pridávaní do košíka:', error);
                 alert('Nepodarilo sa spojiť so serverom.')

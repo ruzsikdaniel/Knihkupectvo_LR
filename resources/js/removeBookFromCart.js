@@ -1,47 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("removeFromCart.js načítaný");
+    // nacitaj a over .item-delete
+    const button = document.querySelectorAll('.item-delete');
+    if(!button.length)
+        return;
 
-    document.querySelectorAll('.item-delete').forEach(button => {
+    // pozri ktory .add-to-cart je kliknuty
+    button.forEach(button => {
         button.addEventListener('click', function () {
-            const bookId = this.dataset.bookId;
+            const bookId = this.getAttribute('data-book-id');   // najdi data-book-id atribut knihy
 
-            if (!bookId) {
-                console.warn('Chýba data-book-id');
-                return;
-            }
-
+            // posli POST spravu na backend
             fetch('/cart/remove', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
                 },
-                body: JSON.stringify({ book_id: bookId })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    const item = document.getElementById(`cart-item-${bookId}`);
-                    if (item) item.remove();
-
-                    // aktualizuj celkovu sumu
-                    ['total-price-lg', 'total-price-md'].forEach(id => {
-                        const el = document.getElementById(id);
-                        if (el) el.innerText = 'Suma: ' + data.cart_total + ' €';
-                    });
-
-                    const count = document.getElementById('item-count');
-                    if (count) count.innerText = data.item_count;
-
-                    if (data.item_count === 0) {
-                        document.getElementById('cart').innerHTML = '<p>Váš košík je prázdny.</p>';
-                    }
-
-                    alert(data.message);
+                body: JSON.stringify({
+                    book_id: bookId
                 })
-                .catch(err => {
-                    console.error('Chyba pri odstraňovaní:', err);
-                    alert("Nepodarilo sa odstrániť produkt.");
+            })
+
+            // ziskaj JSON odpoved a spracuj
+            .then(res => res.json())
+            .then(data => {
+                // najdi element so spravnym #cart-item-${bookId}, a odstran ho
+                const item = document.getElementById(`cart-item-${bookId}`);
+                if(item)
+                    item.remove();
+
+                // aktualizuj celkovu sumu (obe formaty)
+                ['total-price-lg', 'total-price-md'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el)
+                        el.innerText = 'Suma: ' + data.cart_total + ' €';
                 });
+
+                // aktualizuj pocet knih
+                const count = document.getElementById('item-count');
+                if(count)
+                    count.innerText = data.item_count;
+
+                // ak po vymazani knihy bude kosik prazdny, zobraz vypis
+                if(data.item_count === 0)
+                    document.getElementById('cart').innerHTML = '<p>Váš košík je prázdny.</p>';
+
+                alert(data.message);
+            })
+            // zachyt error pocas JSON komunikacie
+            .catch(err => {
+                console.error('Chyba pri odstraňovaní:', err);
+                alert("Nepodarilo sa odstrániť produkt.");
+            });
         });
     });
 });

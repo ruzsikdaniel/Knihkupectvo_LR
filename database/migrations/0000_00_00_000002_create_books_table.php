@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(){
         Schema::create('books', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name', 50);
@@ -29,8 +28,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
+    public function down(){
         Schema::dropIfExists('books');
     }
 };

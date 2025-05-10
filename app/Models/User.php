@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,16 +15,15 @@ class User extends Authenticatable
     protected $table = 'users';
     public $incrementing = false;
     protected $keyType = 'string';
+
     public $timestamps = false;
 
-    protected static function boot()
-    {
+    protected static function boot(){
         parent::boot();
 
-        static::creating(function ($model) {
-            if (empty($model->{$model->getKeyName()})) {
+        static::creating(function ($model){
+            if(empty($model->{$model->getKeyName()}))
                 $model->{$model->getKeyName()} = (string) Str::uuid();
-            }
         });
     }
 
@@ -56,8 +54,7 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
+    protected function casts(){
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',

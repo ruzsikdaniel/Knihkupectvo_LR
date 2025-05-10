@@ -1,29 +1,23 @@
 <?php
 
-use App\Http\Controllers\ProfileController; //we created a home controller
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UserController::class, 'show']
-// function () {
-//     return view('welcome');
-// }
-)->name('home');
+require __DIR__.'/auth.php';
 
-Route::get('/dashboard', [UserController::class, 'show_logged'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [UserController::class, 'show'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__.'/auth.php';
 
 Route::get('admin/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'admin']);
 
@@ -45,9 +39,11 @@ Route::get('/checkout/customer-info', [CheckoutController::class, 'customer_info
 Route::post('/checkout/customer-info', [CheckoutController::class, 'storeCustomerInfo'])->name('checkout.customer.store');
 
 Route::get('/checkout/delivery', [CheckoutController::class, 'delivery'])->name('checkout.delivery');
+
 Route::post('/checkout/delivery', [CheckoutController::class, 'storeDeliveryInfo'])->name('checkout.delivery.store');
 
 Route::get('/checkout/payment', [CheckoutController::class, 'payment'])->name('checkout.payment');
+
 Route::post('/checkout/payment', [CheckoutController::class, 'processPayment'])->name('checkout.payment.process');
 
 

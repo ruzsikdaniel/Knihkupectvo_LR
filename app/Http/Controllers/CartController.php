@@ -26,7 +26,6 @@ class CartController extends Controller
     }
 
     public function add(Request $request){
-
         $bookId = $request->input('book_id');
         $sessionId = $request->session()->getId();
         $userId = Auth::check() ? Auth::id() : null;
@@ -59,7 +58,6 @@ class CartController extends Controller
         $bookInCart->save();
 
         // prepocitaj celkovu cenu kosika
-        $this->recalculateCartPrice($cart);
         $total = $this->getUserCartTotal($cart);
         $cart->price = $total;
         $cart->save();
@@ -83,7 +81,7 @@ class CartController extends Controller
 
         // najdi knihu, ktorej chceme pocet zmenit
         $item = ShoppingBook::where('id_card', $cart->id)
-            ->where('id_book', $request->book_id)
+            ->where('id_book', $validated['book_id'])
             ->first();
         if (!$item)
             return response()->json(['error' => 'Položka neexistuje'], 404);
@@ -94,7 +92,7 @@ class CartController extends Controller
 
         // prepocitaj ceny
         $cart->load('books.book');
-        $cart->price = $cart->books->sum(fn($i) => $i->book->price * $i->number);
+        $this->getUserCartTotal($cart);
         $cart->save();
 
         // vrat JSON odpoved pre updadeCart.js
@@ -118,7 +116,8 @@ class CartController extends Controller
         $cart->books()->where('id_book', $validated['book_id'])->delete();
 
         // prepocítaj cenu
-        $this->recalculateCartPrice($cart);
+        $cart->price = $this->getUserCartTotal($cart);
+        $cart->save();
 
         return response()->json([
             'message' => 'Kniha bola odstránená z košíka.',
@@ -127,8 +126,6 @@ class CartController extends Controller
         ]);
     }
 
-
-
     public function validateBookRequest(Request $request, string $requestType = ''){
         if($requestType === 'UPDATE'){
             $request->validate([
@@ -136,11 +133,10 @@ class CartController extends Controller
                 'quantity' => 'required|integer|min:1'
             ]);
         }
-        else{
-            return $request->validate([
-                'book_id' => 'required|exists:books,id',
-            ]);
-        }
+
+        return $request->validate([
+            'book_id' => 'required|exists:books,id',
+        ]);
     }
 
     private function getUserCart(Request $request)
@@ -157,23 +153,9 @@ class CartController extends Controller
     private function getUserCartTotal(ShoppingCart $cart)
     {
         $cart->load('books.book');
-        foreach ($cart->books as $item) {
-            \Log::info('Košíková položka:', [
-                'id_book' => $item->id_book,
-                'book_exists' => $item->book !== null,
-                'price' => $item->book->price ?? 'N/A',
-                'qty' => $item->number,
-            ]);
-        }
+
         return $cart->books->sum(
             fn($item) => $item->book?->price * $item->number
         );
     }
-
-    private function recalculateCartPrice(ShoppingCart $cart)
-    {
-        $cart->price = $this->getUserCartTotal($cart);
-        $cart->save();
-    }
-
 }

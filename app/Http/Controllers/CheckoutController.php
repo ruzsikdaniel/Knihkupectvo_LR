@@ -7,7 +7,6 @@ use App\Models\Payment;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
 use App\Models\Purchase;
-use Illuminate\Support\Facades\Log;
 
 class CheckoutController extends Controller
 {
@@ -16,8 +15,7 @@ class CheckoutController extends Controller
         return view('checkout.customer-info', compact('total'));
     }
 
-    public function delivery()
-    {
+    public function delivery(){
         $deliveries = Delivery::all();
         $payments = Payment::all();
         $total = $this->getCartTotal();
@@ -58,11 +56,6 @@ class CheckoutController extends Controller
         $purchase->save();
 
         session(['purchase_id' => $purchase->id]);
-
-        Log::info('Session updated:', [
-            'purchase_id' => session('purchase_id'),
-            'customer_info' => $validated
-        ]);
 
         return redirect()->route('checkout.delivery');
     }
@@ -108,8 +101,7 @@ class CheckoutController extends Controller
         return redirect()->route('home')->with('status', 'Objednávka bola úspešne zaplatená.');
     }
 
-    public function getCartTotal(): float
-    {
+    public function getCartTotal(){
         return ShoppingCart::where('session_id', session()->getId())
             ->value('price') ?? 0.0;
     }

@@ -14,8 +14,7 @@ class BookSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
+    public function run(){
         $books = [
             [
                 'name' => 'Ľúbostný list',
@@ -339,35 +338,31 @@ As financial markets become increasingly unpredictable and chaotic, The Stoic Pa
                 'state' => 'nie je na sklade',
             ],
         ];
-
         foreach($books as $book){
             Book::create($book);
         }
 
-        //create categories
         $categories = ['Fantasy', 'Romantika', 'Zmiznutie', 'Zločin', 'Vyšetrovanie', 'Vraždy', 'Thriller',
                         'Dobro a zlo', 'Nepriatelia', 'Tajomstvo', 'Láska', 'Mágia', 'Minulosť', 'Pomsta',
                         'Osud', 'Svadba', 'Páchateľ', 'Tragédia', 'Dobrodružstvo', 'Neočakávané', 'Prekvapenie',
                         'Motivácia', 'Nový život', 'Komunikácia', 'Nádej', 'Strach', 'Biografia', 'Financie',
                         'Horror'
         ];
-
         foreach($categories as $category){
             Category::create([
                 'name'=>$category,
             ]);
         }
 
-        //create category_book
-        $categoriesID = Category::pluck('id')->toArray(); //get the categories id
-        $booksID = Book::pluck('id')->toArray(); //get the books id
+        $categoriesID = Category::pluck('id')->toArray();
+        $booksID = Book::pluck('id')->toArray();
 
-        foreach($booksID as $bID){ //go throught list of book`s id
-            $getCatId = array_rand($categoriesID, 5); //choose 5 random categories
+        foreach($booksID as $bID){
+            $getCatId = array_rand($categoriesID, 5);
             foreach($getCatId as $key){
                 BookCategory::create([
-                    'id_category'=>$categoriesID[$key], //get the category id by generated number
-                    'id_book'=>$bID, //get the book`s id
+                    'id_category'=>$categoriesID[$key],
+                    'id_book'=>$bID,
                 ]);
             }
         }

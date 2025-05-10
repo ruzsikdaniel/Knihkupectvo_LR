@@ -17,6 +17,7 @@
                 </form>
             </div>
         </div>
+
         <div class="col-lg-4 d-flex justify-content-center align-items-center gap-3">
             @if (Route::has('login'))
             <nav class="d-flex justify-content-between align-items-center">
@@ -27,7 +28,6 @@
                         <img src="{{ asset('images/logout-icon.png') }}" alt="Odhlásenie">
                     </button>
                 </form>
-
                 @else
                     <a href="{{ route('login') }}" class="btn btn-link">
                         Prihláste sa

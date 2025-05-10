@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PictureSeeder::class,
             CheckoutSeeder::class
         ]);
+
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',

@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(){
         Schema::create('book_categories', function (Blueprint $table) {
             $table->unsignedInteger('id_category')->references('id')->on('categories')->onUpdate('cascade');
             $table->uuid('id_book')->references('id')->on('books')->onUpdate('cascade');
@@ -20,8 +19,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
+    public function down(){
         Schema::dropIfExists('book_categories');
     }
 };

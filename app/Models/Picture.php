@@ -21,19 +21,16 @@ class Picture extends Model
         'source',
     ];
 
-    protected static function boot()
-    {
+    protected static function boot(){
         parent::boot();
 
         static::creating(function ($model) {
-            if (empty($model->{$model->getKeyName()})) {
+            if (empty($model->{$model->getKeyName()}))
                 $model->{$model->getKeyName()} = (string) Str::uuid();
-            }
         });
     }
 
-    public function books()
-    {
+    public function books(){
         return $this->belongsToMany(Book::class,
             'book_pictures',
             'id_picture',

@@ -16,8 +16,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
-    {
+    public function create(): View{
         return view('auth.login');
     }
 
@@ -25,13 +24,14 @@ class AuthenticatedSessionController extends Controller
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request){
+        // ak su prihlasovacie udaje nespravne, vrat error
         if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             return back()->withErrors([
                 'email' => 'Prihlasovacie údaje sú nesprávne.',
             ])->onlyInput('email');
         }
 
-        // získaj sessionId pred regeneraciou
+        // ziskaj sessionId pred regeneraciou
         $sessionId = $request->session()->getId();
 
         // over a prihlas pouzívatela
@@ -72,15 +72,6 @@ class AuthenticatedSessionController extends Controller
 
         // pouzivatel ma oba kosíky -> spojime obe kosiky do userCart
         elseif ($userCart && $sessionCart) {
-            Log::info('Mergenutie userCart a sessionCart', [
-                'user_id' => $userId,
-                'session_cart_id' => $sessionCart->id,
-                'user_cart_id' => $userCart->id,
-                'session_books_count' => $sessionCart->books()->count(),
-                'user_books_count_before' => $userCart->books()->count(),
-                'user_cart_price_before' => $userCart->price,
-            ]);
-
             foreach ($sessionCart->books()->get() as $sessionBook) {
                 $existingBook = $userCart->books()
                     ->where('id_book', $sessionBook->id_book)
@@ -131,7 +122,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         // po odhlaseni sa vygeneruje novy session ID

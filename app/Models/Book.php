@@ -8,23 +8,20 @@ use Illuminate\Support\Str;
 class Book extends Model
 {
     protected $table = 'books';
-    protected $keyType = 'string'; // uuid need data type string
+    protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
 
-    protected static function boot()
-    {
+    protected static function boot(){
         parent::boot();
 
         static::creating(function ($model) {
-            if (empty($model->{$model->getKeyName()})) {
+            if (empty($model->{$model->getKeyName()}))
                 $model->{$model->getKeyName()} = (string) Str::uuid();
-            }
         });
     }
 
-    public function pictures()
-    {
+    public function pictures(){
         return $this->belongsToMany(Picture::class, 'book_pictures', 'id_book', 'id_picture');
     }
 

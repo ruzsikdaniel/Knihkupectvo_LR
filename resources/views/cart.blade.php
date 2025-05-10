@@ -4,7 +4,9 @@
 
 @section('content')
     <section>
-        <h1>Nákupný košík</h1>
+        <h1>
+            Nákupný košík
+        </h1>
     </section>
 
     <article id="cart" class="d-none d-lg-flex flex-column">
@@ -17,9 +19,13 @@
                      alt="Obálka knihy"/>
                 <div class="col-12">
                     <p class="item-title">
-                        <a href="{{ route('book_details', $item->book->id) }}"> {{ $item->book->name }} </a>
+                        <a href="{{ route('book_details', $item->book->id) }}">
+                            {{ $item->book->name }}
+                        </a>
                         <br>
-                        <a> {{ $item->book->author }} </a>
+                        <a>
+                            {{ $item->book->author }}
+                        </a>
                     </p>
                 </div>
             </span>
@@ -27,9 +33,13 @@
                 <div>
                     <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                     @if($item->book->state === 'je na sklade')
-                        <p class="in-stock">{{ $item->book->state }}</p>
+                        <p class="in-stock">
+                            {{ $item->book->state }}
+                        </p>
                     @else
-                        <p class="out-of-stock">{{ $item->book->state }}</p>
+                        <p class="out-of-stock">
+                            {{ $item->book->state }}
+                        </p>
                     @endif
                 </div>
                 <label>
@@ -52,7 +62,9 @@
             </div>
         </section>
     @else
-        <p>Váš košík je prázdny.</p>
+        <p>
+            Váš košík je prázdny.
+        </p>
     @endif
     </article>
 
@@ -65,9 +77,13 @@
                         <img class="col-3 item-icon" src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
                         <div class="d-flex align-items-center">
                             <p class="item-title">
-                                <a href="{{ route('book_details', $item->book->id) }}"> {{ $item->book->name }} </a>
+                                <a href="{{ route('book_details', $item->book->id) }}">
+                                    {{ $item->book->name }}
+                                </a>
                                 <br>
-                                <a> {{ $item->book->author }} </a>
+                                <a>
+                                    {{ $item->book->author }}
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -79,9 +95,13 @@
                     <div class="d-flex align-items-center gap-3">
                         <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                         @if($item->book->state === 'je na sklade')
-                            <p class="in-stock">{{$item->book->state}}</p>
+                            <p class="in-stock">
+                                {{$item->book->state}}
+                            </p>
                         @else
-                            <p class="out-of-stock">{{$item->book->state}}</p>
+                            <p class="out-of-stock">
+                                {{$item->book->state}}
+                            </p>
                         @endif
                         <label>
                             <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
@@ -102,13 +122,14 @@
             </div>
         </section>
     @else
-        <p>Váš košík je prázdny.</p>
+        <p>
+            Váš košík je prázdny.
+        </p>
     @endif
     </article>
 
     <section id="navigation-buttons" class="d-flex justify-content-around">
         <button onclick="window.location.href=' {{ route('home') }} '">Späť na nákup</button>
         <button onclick="window.location.href=' {{ route('checkout.customer-info') }}'">Pokračovať na platbu</button>
-        <!-- TODO: pridat route na addData.html -->
     </section>
 @endsection

@@ -8,19 +8,18 @@ use Illuminate\Support\Str;
 class Purchase extends Model
 {
     protected $table = 'purchases';
-    protected $keyType = 'string'; // uuid needs data type string
+    protected $keyType = 'string';
     protected $primaryKey= 'id';
     public $incrementing = false;
+
     public $timestamps = false;
 
-    protected static function boot()
-    {
+    protected static function boot(){
         parent::boot();
 
         static::creating(function ($model) {
-            if (empty($model->{$model->getKeyName()})) {
+            if (empty($model->{$model->getKeyName()}))
                 $model->{$model->getKeyName()} = (string) Str::uuid();
-            }
         });
     }
 

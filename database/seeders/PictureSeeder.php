@@ -207,11 +207,11 @@ class PictureSeeder extends Seeder
         ];
 
 
-        foreach ($imageMap as $bookTitle => $images) {
+        foreach($imageMap as $bookTitle => $images){
             $book = Book::where('name', 'like', "%{$bookTitle}%")->first();
 
-            if ($book) {
-                foreach ($images as $imgData) {
+            if($book){
+                foreach ($images as $imgData){
                     $picture = Picture::create([
                         'title' => $imgData['title'],
                         'url' => $imgData['url'],

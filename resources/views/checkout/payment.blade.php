@@ -1,12 +1,14 @@
 @extends('layouts.main')
 
-@section('title', 'Povinnosť platby')
+@section('title', 'Nákup - Povinnosť platby')
 
 @section('content')
 
 <article id="payment-screen">
     <section>
-        <h1>Platba kartou</h1>
+        <h1>
+            Platba kartou
+        </h1>
     </section>
 
     <section>
@@ -16,7 +18,9 @@
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <li>
+                                {{ $error }}
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -41,6 +45,7 @@
                 </label>
                 <input type="password" id="cvv" name="cvv" required autocomplete="cvv"/>
             </div>
+
             <div class="payment-button">
                 <button type="submit" class="btn btn-success">
                     Zaplatiť

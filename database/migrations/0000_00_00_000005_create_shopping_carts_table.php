@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(){
         Schema::create('shopping_carts', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('id_user')->nullable();
@@ -24,8 +23,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
+    public function down(){
         Schema::dropIfExists('shopping_carts');
     }
 };

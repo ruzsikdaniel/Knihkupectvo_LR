@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(){
         Schema::create('categories', function (Blueprint $table) {
             $table->unsignedInteger('id')->primary()->autoIncrement();
             $table->string('name', 20);
@@ -20,8 +19,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
+    public function down(){
         Schema::dropIfExists('categories');
     }
 };
