@@ -217,7 +217,7 @@ ul #carousel-list{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-#payment-screen .pay-group{
+#payment-screen .payment-button{
     place-self: center;
     display: block;
     margin: 5px;

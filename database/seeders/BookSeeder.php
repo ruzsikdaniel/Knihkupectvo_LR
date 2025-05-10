@@ -16,7 +16,6 @@ class BookSeeder extends Seeder
      */
     public function run(): void
     {
-        //create books
         $books = [
             [
                 'name' => 'Ľúbostný list',
@@ -33,7 +32,8 @@ class BookSeeder extends Seeder
                 'publisher' => 'Tatran',
                 'year' => 2020,
                 'state' => 'je na sklade',
-            ],[
+            ],
+            [
                 'name' => 'Bezmocná',
                 'author' => 'Lauren Roberts',
                 'price' => 15.80,
@@ -44,7 +44,8 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2023,
                 'state' => 'je na sklade',
-            ],[
+            ],
+            [
                 'name' => 'Bezohledná',
                 'author' => 'Lauren Roberts',
                 'price' => 11.80,
@@ -55,7 +56,8 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2025,
                 'state' => 'je na sklade',
-            ],[
+            ],
+            [
                 'name' => 'Odvážná',
                 'author' => 'Lauren Roberts',
                 'price' => 14.99,
@@ -66,7 +68,8 @@ class BookSeeder extends Seeder
                 'publisher' => 'YOLi CZ',
                 'year' => 2023,
                 'state' => 'je na sklade',
-            ],[
+            ],
+            [
                 'name' => 'Fearless',
                 'author' => 'Lauren Roberts',
                 'price' => 13.80,
@@ -80,7 +83,8 @@ class BookSeeder extends Seeder
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Reckless',
                 'author' => 'Lauren Roberts',
                 'price' => 23.80,
@@ -102,7 +106,8 @@ Be swept away by this bestselling, dagger-to-the-throat romantasy trilogy taking
                 'year' => 2025,
                 'state' => 'nie je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Powerful',
                 'author' => 'Lauren Roberts',
                 'price' => 19.80,
@@ -116,7 +121,8 @@ But now Paedyn – an Ordinary – has been selected for The Purging Trials, whi
                 'year' => 2025,
                 'state' => 'nie je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Kráľovná ničoho',
                 'author' => 'Holly Black',
                 'price' => 13.80,
@@ -128,7 +134,8 @@ But now Paedyn – an Ordinary – has been selected for The Purging Trials, whi
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Krutý princ',
                 'author' => 'Holly Black',
                 'price' => 16.93,
@@ -142,7 +149,8 @@ Jude mala len sedem rokov, keď jej rodičov brutálne zavraždili a spolu s jej
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Skazený kráľ',
                 'author' => 'Holly Black',
                 'price' => 14.93,
@@ -154,7 +162,8 @@ Jude mala len sedem rokov, keď jej rodičov brutálne zavraždili a spolu s jej
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Ukradnutý dedič',
                 'author' => 'Holly Black',
                 'price' => 17.43,
@@ -168,7 +177,8 @@ Suren o pomoc. Jej súhlas by však znamenal, že mladá kráľovná bude musie�
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Väzňov trón',
                 'author' => 'Holly Black',
                 'price' => 14.23,
@@ -183,7 +193,8 @@ Bestsellerová autorka Holly Black prináša pútavé zakončenie dilógie Ukrad
                 'year' => 2025,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Mor',
                 'author' => 'Laura Thalassa',
                 'price' => 20.70,
@@ -200,7 +211,8 @@ Sara má pořád naději zachránit svět, možná však bude muset obětovat sv
                 'year' => 2023,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Válka',
                 'author' => 'Laura Thalassa',
                 'price' => 19.70,
@@ -214,7 +226,8 @@ Když Jeruzalém padne do rukou armády nájezdníků, Miriam Elmahdyová je př
                 'year' => 2023,
                 'state' => 'nie je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'The Ever King',
                 'author' => 'L.J. Andrews',
                 'price' => 29.35,
@@ -232,7 +245,8 @@ She’s innocent. He’s vicious. But he will take back what he lost, no matter 
                 'year' => 2025,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Večný kráľ',
                 'author' => 'L.J. Andrews',
                 'price' => 19.35,
@@ -244,7 +258,8 @@ She’s innocent. He’s vicious. But he will take back what he lost, no matter 
                 'year' => 2025,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Večná kráľovná',
                 'author' => 'L.J. Andrews',
                 'price' => 19,
@@ -262,7 +277,8 @@ Nepriatelia ho zradili pre chamtivosť a túžbu po korune. Uniesli mu ženu, kt
                 'year' => 2025,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'I Hope This Doesn\'t Find You',
                 'author' => 'Ann Liang',
                 'price' => 12.95,
@@ -277,7 +293,8 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'year' => 2024,
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Sunrise on the Reaping',
                 'author' => 'Suzanne Collins',
                 'price' => 21.28,
@@ -289,7 +306,8 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'year' => '2025',
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'Psychológia peňazí',
                 'author' => 'Morgan Housel',
                 'price' => 25.28,
@@ -301,7 +319,8 @@ From the author of THIS TIME IT\'S REAL comes another own-voices love story with
                 'year' => '2019',
                 'state' => 'je na sklade',
 
-            ],[
+            ],
+            [
                 'name' => 'The Stoic Path to Wealth',
                 'author' => 'Darius Foroux',
                 'price' => 15.78,

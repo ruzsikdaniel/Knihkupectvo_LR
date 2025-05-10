@@ -55,7 +55,7 @@
         </div>
         <div class="col-12">
             <div id="search-panel" class="gap-3 d-flex justify-content-center">
-                <form action="{{url('book_search')}}" method="get" class="d-flex justify-content-between align-items-center">
+                <form action="{{ url('book_search') }}" method="get" class="d-flex justify-content-between align-items-center">
                     <input name="search" type="text" class="form-control flex-grow-1 me-2 search-input" placeholder="Hľadať...">
                     <button class="btn flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">

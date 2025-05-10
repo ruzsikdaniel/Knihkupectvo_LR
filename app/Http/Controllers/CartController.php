@@ -26,7 +26,6 @@ class CartController extends Controller
     }
 
     public function add(Request $request){
-        $validated = $this->validateBookRequest($request);
 
         $bookId = $request->input('book_id');
         $sessionId = $request->session()->getId();

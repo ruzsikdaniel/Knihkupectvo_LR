@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->unsignedInteger('id')->primary()->autoIncrement();
-            $table->string('type', 20)->unique();
-            $table->decimal('price', total:4, places:2);
+            $table->id();
+            $table->string('method', 20);
+            $table->decimal('price', 4, 2)->nullable();
         });
     }
 

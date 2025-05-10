@@ -10,7 +10,6 @@
                     <h1>Vitajte!</h1>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <!-- image from: https://www.freepik.com/free-photo/high-angle-books-with-copy-space_12151836.htm-->
                     <img id="banner" src="/images/banner.png" alt="Banner" class="img-fluid">
                 </div>
             </div>

@@ -13,7 +13,7 @@ class Delivery extends Model
 
     protected $fillable = [
         'id',
-        'type',
+        'method',
         'price',
     ];
 }

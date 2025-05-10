@@ -9,6 +9,7 @@ class Purchase extends Model
 {
     protected $table = 'purchases';
     protected $keyType = 'string'; // uuid needs data type string
+    protected $primaryKey= 'id';
     public $incrementing = false;
     public $timestamps = false;
 
@@ -24,16 +25,15 @@ class Purchase extends Model
     }
 
     protected $fillable = [
-        'id',
         'name_u',
         'surname_u',
         'telephone',
         'email',
         'address',
         'city',
-        'psc',
-        'deliver',
-        'pay',
-        'payed',
+        'postcode',
+        'isPaid',
+        'delivery_id',
+        'payment_id',
     ];
 }

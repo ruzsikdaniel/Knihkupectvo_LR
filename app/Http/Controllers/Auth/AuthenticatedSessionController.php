@@ -24,8 +24,13 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request)
-    {
+    public function store(LoginRequest $request){
+        if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
+            return back()->withErrors([
+                'email' => 'Prihlasovacie údaje sú nesprávne.',
+            ])->onlyInput('email');
+        }
+
         // získaj sessionId pred regeneraciou
         $sessionId = $request->session()->getId();
 
@@ -118,7 +123,6 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
-
     /**
      * Destroy an authenticated session.
      */
@@ -129,6 +133,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        // po odhlaseni sa vygeneruje novy session ID
+        $request->session()->regenerate();
 
         return redirect()->route('home');
     }

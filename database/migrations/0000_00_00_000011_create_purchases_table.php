@@ -19,10 +19,15 @@ return new class extends Migration
             $table->string('email', 20);
             $table->string('address', 20);
             $table->string('city', 20);
-            $table->string('psc', 5);
-            $table->unsignedInteger('deliver')->references('id')->on('delivers')->onUpdate('cascade');
-            $table->unsignedInteger('pay')->references('id')->on('pays')->onUpdate('cascade');
-            $table->string('payed', 20);
+            $table->string('postcode', 5);
+
+            $table->unsignedBigInteger('delivery_id')->nullable()->default(null);
+            $table->unsignedBigInteger('payment_id')->nullable()->default(null);
+
+            $table->foreign('delivery_id')->references('id')->on('deliveries');
+            $table->foreign('payment_id')->references('id')->on('payments');
+
+            $table->boolean('isPaid')->default(false)->nullable();
         });
     }
 

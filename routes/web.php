@@ -40,11 +40,16 @@ Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('ca
 
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
 
-Route::get('/customer-info', [CheckoutController::class, 'customer_info'])->name('customer-info');
+Route::get('/checkout/customer-info', [CheckoutController::class, 'customer_info'])->name('checkout.customer-info');
 
-Route::get('/delivery', [CheckoutController::class, 'delivery'])->name('delivery');
+Route::post('/checkout/customer-info', [CheckoutController::class, 'storeCustomerInfo'])->name('checkout.customer.store');
 
-Route::get('/payment', [CheckoutController::class, 'payment'])->name('payment');
+Route::get('/checkout/delivery', [CheckoutController::class, 'delivery'])->name('checkout.delivery');
+Route::post('/checkout/delivery', [CheckoutController::class, 'storeDeliveryInfo'])->name('checkout.delivery.store');
+
+Route::get('/checkout/payment', [CheckoutController::class, 'payment'])->name('checkout.payment');
+Route::post('/checkout/payment', [CheckoutController::class, 'processPayment'])->name('checkout.payment.process');
+
 
 Route::get('book_search', [BookController::class, 'book_search'])->middleware(['find']); //check if the user is admin
 

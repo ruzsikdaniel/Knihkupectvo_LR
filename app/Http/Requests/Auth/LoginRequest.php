@@ -24,11 +24,19 @@ class LoginRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
+    public function rules(){
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'email' => 'required|string|email',
+            'password' => 'required|min:8',
+        ];
+    }
+
+    public function messages(){
+        return [
+            'email.required' => 'Email je povinný.',
+            'email.email' => 'Email musí byť v platnom formáte.',
+            'password.required' => 'Heslo je povinné.',
+            'password.min' => 'Heslo musí obsahovať aspoň 8 znakov.',
         ];
     }
 

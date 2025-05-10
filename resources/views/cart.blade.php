@@ -108,7 +108,7 @@
 
     <section id="navigation-buttons" class="d-flex justify-content-around">
         <button onclick="window.location.href=' {{ route('home') }} '">Späť na nákup</button>
-        <button onclick="window.location.href=' {{ route('customer-info') }}'">Pokračovať na platbu</button>
+        <button onclick="window.location.href=' {{ route('checkout.customer-info') }}'">Pokračovať na platbu</button>
         <!-- TODO: pridat route na addData.html -->
     </section>
 @endsection

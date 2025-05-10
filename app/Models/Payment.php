@@ -13,7 +13,7 @@ class Payment extends Model
 
     protected $fillable = [
         'id',
-        'type',
+        'method',
         'price',
     ];
 }

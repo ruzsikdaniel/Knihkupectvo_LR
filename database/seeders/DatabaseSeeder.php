@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BookSeeder::class,
             PictureSeeder::class,
+            CheckoutSeeder::class
         ]);
         User::factory()->create([
             'name' => 'Test User',
