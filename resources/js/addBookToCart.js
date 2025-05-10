@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('addBookToCart.js načítaný'); // TEST
+
+
     // nacitaj a over .add-to-cart
     const button = document.querySelectorAll('.add-to-cart');
     if(!button.length)

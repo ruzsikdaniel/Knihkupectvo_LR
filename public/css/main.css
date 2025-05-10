@@ -368,7 +368,7 @@ ul #carousel-list{
     border-radius: 1px;
 }
 
-#total-price-lg, #total-price-md{
+.total-price-cart{
     font-weight: bolder;
 }
 

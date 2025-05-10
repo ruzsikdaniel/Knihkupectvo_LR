@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    console.log('removeBookFromCart.js načítaný'); // TEST
+
     // nacitaj a over .item-delete
     const button = document.querySelectorAll('.item-delete');
     if(!button.length)
@@ -30,10 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.remove();
 
                 // aktualizuj celkovu sumu (obe formaty)
-                ['total-price-lg', 'total-price-md'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if(el)
-                        el.innerText = 'Suma: ' + data.cart_total + ' €';
+                document.querySelectorAll('.total-price-cart').forEach(el => {
+                    el.innerText = 'Suma: ' + data.cart_total + ' €';
                 });
 
                 // aktualizuj pocet knih

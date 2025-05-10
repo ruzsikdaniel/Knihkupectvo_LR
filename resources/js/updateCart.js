@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('updateCart.js načítaný'); // TEST
+
     // nacitaj a over .item-count
     const counter = document.querySelectorAll('.item-count');
     if(!counter.length)
@@ -26,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // ziskaj JSON odpoved a spracuj
             .then(res => {
-                if (!res.ok) throw new Error("Chyba servera");
+                if(!res.ok)
+                    throw new Error("Chyba servera");
                 return res.json();
             })
             .then(data => {
@@ -42,10 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     el.innerText = 'Suma: ' + data.item_total + ' €';
                 });
 
+                console.log('Aktualizujem kosik:', data.cart_total);
+
                 // aktualizuj celkovu cenu kosika
-                ['total-price-lg', 'total-price-md'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.innerText = 'Suma: ' + data.cart_total + ' €';
+                document.querySelectorAll('.total-price-cart').forEach(el => {
+                    el.innerText = 'Suma: ' + data.cart_total + ' €';
                 });
             })
             // zachyt error pocas JSON komunikacie

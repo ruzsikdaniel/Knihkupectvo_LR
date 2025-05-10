@@ -92,7 +92,7 @@ class CartController extends Controller
 
         // prepocitaj ceny
         $cart->load('books.book');
-        $this->getUserCartTotal($cart);
+        $cart->price = $this->getUserCartTotal($cart);
         $cart->save();
 
         // vrat JSON odpoved pre updadeCart.js
@@ -108,9 +108,9 @@ class CartController extends Controller
         $validated = $this->validateBookRequest($request);
 
         $cart = $this->getUserCart($request);
-        if (!$cart) {
+        if(!$cart)
             return response()->json(['message' => 'Košík neexistuje.'], 404);
-        }
+
 
         // odstran polozku z pivot tabulky
         $cart->books()->where('id_book', $validated['book_id'])->delete();

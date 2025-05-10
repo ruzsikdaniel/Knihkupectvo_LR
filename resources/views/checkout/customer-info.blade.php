@@ -15,7 +15,7 @@
             </a>
         </div>
         <div id="suma-shoppingcart" class="col-4">
-            <p id="total-price-gross" class="col-4">
+            <p class="total-price-book" class="col-4">
                 Suma: {{ number_format($total, 2, ',', ' ') }} €
             </p>
         </div>

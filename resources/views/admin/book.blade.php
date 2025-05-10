@@ -51,7 +51,9 @@
                         </div>
                         <div class="item-price">
                             <p id="book-price-gross">
-                            <h3>{{$book->price}}</h3>
+                                <h3>
+                                    {{$book->price}}
+                                </h3>
                             </p>
                         </div>
                     </div>
@@ -102,7 +104,9 @@
                         </div>
                         <div class="item-price">
                             <p id="book-price-gross">
-                            <h3>{{$book->price}}€</h3>
+                                <h3>
+                                    {{$book->price}}€
+                                </h3>
                             </p>
                         </div>
                     </div>

@@ -48,7 +48,7 @@
                 <button class="btn item-delete" data-book-id="{{ $item->book->id }}">
                     <img src="{{ asset('images/delete.png') }}"/>
                 </button>
-                <p id="item-total-{{ $item->book->id }}" class="item-price">
+                <p id="item-total-{{ $item->book->id }}" class="total-price-book">
                     Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
                 </p>
             </span>
@@ -56,7 +56,7 @@
         @endforeach
         <section id="cart-summary" class="d-flex justify-content-end">
             <div id="sum-prices">
-                <p id="total-price-lg">
+                <p class="total-price-cart">
                     Suma: {{ number_format($total, 2, ',', ' ') }}€
                 </p>
             </div>
@@ -87,7 +87,7 @@
                             </p>
                         </div>
                     </div>
-                    <p id="item-total-{{ $item->book->id }}" class="item-price">
+                    <p id="item-total-{{ $item->book->id }}" class="total-price-book">
                         Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
                     </p>
                 </span>
@@ -116,7 +116,7 @@
 
         <section id="cart-summary" class="d-flex justify-content-end">
             <div id="sum-prices">
-                <p id="total-price-md">
+                <p class="total-price-cart">
                     Suma: {{ number_format($total, 2, ',', ' ') }}€
                 </p>
             </div>
