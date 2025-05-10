@@ -31,17 +31,17 @@ class AuthenticatedSessionController extends Controller
             ])->onlyInput('email');
         }
 
+        // pouzivatel je admin -> presmeruj na admin rozhranie
+        if ($request->user()->role === '1')
+            return redirect('/admin');
+
+
         // ziskaj sessionId pred regeneraciou
         $sessionId = $request->session()->getId();
 
         // over a prihlas pouzívatela
         $request->authenticate();
         $request->session()->regenerate();
-
-        // pouzivatel je admin -> presmeruj na admin rozhranie
-        if ($request->user()->role === '1') {
-            return redirect('admin/dashboard');
-        }
 
         $userId = $request->user()->id;
 

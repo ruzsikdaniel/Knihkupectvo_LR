@@ -16,7 +16,8 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->role != '1'){
+        // ak pouzivatel nie je admin, posli ho na pouzivatelsku stranku
+        if(!Auth::check() || Auth::user()->role !== '1'){
             return redirect('/');
         }
         return $next($request);

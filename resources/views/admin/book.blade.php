@@ -1,145 +1,82 @@
 @extends('layouts.main')
 
-    @section('title', 'Hlavná stránka')
+@section('title', 'Upraviť knihu: ' . $book->name)
 
-    @section('content')
+@section('content')
+    <article class="d-flex flex-column flex-lg-row">
+        <div class="w-100 w-md-50">
+            <section id="item-gallery" class="d-flex flex-column align-items-center mb-4">
+                <label for="image-upload" class="btn btn-secondary border-0">Pridať obrázok</label>
+                <input id="image-upload" name="images[]" type="file" accept="image/jpeg, image/png" multiple style="display: none;">
 
-<div class="row d-none d-md-flex">
-        <article class="col-md-6 d-flex flex-column align-items-center">
-            <section id="item-gallery" class="d-flex flex-column align-items-center">
-                <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obalka knihy" class="img-fluid" id="item-image" />
-                <div id="thumbnail-gallery">
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 1" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 2" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 3" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 4" class="img-thumbnail" />
+                <div id="thumbnail-gallery" class="d-flex flex-wrap justify-content-center mt-3">
+                    @forelse($book->pictures as $picture)
+                        <img src="{{ $picture->path ? asset('storage/' . $picture->path) : $picture->url }}" alt="{{ $picture->title }}"
+                             class="img-thumbnail m-1" style="max-width: 100px;">
+                    @empty
+                        <img src="{{ asset('images/book_128.png') }}" alt="Placeholder" class="img-thumbnail m-1" style="max-width: 100px;">
+                    @endforelse
                 </div>
             </section>
-            <section id="item-details">
-                <h2>Základné údaje</h2>
-                <dl>
-                    <dt>Žáner:</dt>
-                    <dd id="book-genre">{{$book->genre}}</a></dd>
-                    <dt>Jazyk:</dt>
-                    <dd id="book-lang">{{$book->language}}</dd>
-                    <dt>Počet strán:</dt>
-                    <dd id="book-pages"><a>{{$book->pages}}</a></dd>
-                    <dt>Vydavateľstvo:</dt>
-                    <dd id="book-publisher">{{$book->publisher}}</dd>
-                    <dt>Rok vydania:</dt>
-                    <dd id="book-year">{{$book->year}}</dd>
-                </dl>
-            </section>
-        </article>
+        </div>
 
-        <article class="col-md-6 d-flex flex-column align-items-center">
+        <div class="w-100 w-md-50">
             <section id="item-page">
-                <div id="item-title" class="d-flex flex-column justify-content-start">
-                    <h1 id="book-title">{{$book->name}}</h1>
-                    <h3 id="book-author">{{$book->author}}</h3>
-                </div>
-                <div id="item-abstract">
-                    <h2>Abstrakt</h2>
-                    <p>
-                        {!!Str::limit($book->detail, 300)!!}
-                    </p>
-                </div>
-                <div id="item-status">
-                    <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
-                        <div id="item-stock">
-                            <p class="in-stock">{{$book->state}}</p>
-                        </div>
-                        <div class="item-price">
-                            <p id="book-price-gross">
-                                <h3>
-                                    {{$book->price}}
-                                </h3>
-                            </p>
-                        </div>
-                    </div>
-                    <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                        <button class="add-to-cart" data-book-id="{{ $book->id }}">
-                            Pridať do košíka
-                        </button>
-                    </div>
-                </div>
+                <h1>Úprava knihy</h1>
 
-            </section>
-            <section id="item-desc">
-                <h2>Popis</h2>
-                <p>{{$book->detail}}
-                </p>
-            </section>
-        </article>
-    </div>
+                <label for="book-title">Názov knihy:</label>
+                <input type="text" class="form-control" name="book-title" value="{{ old('book-title', $book->name) }}" required />
 
+                <label for="book-author">Autor knihy:</label>
+                <input type="text" class="form-control" name="book-author" value="{{ old('book-author', $book->author) }}" required />
 
-    <div class="row d-flex d-md-none">
-        <article>
-            <section id="item-gallery" class="d-flex flex-column align-items-center">
-                <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obalka knihy" class="img-fluid" id="item-image" />
-                <div id="thumbnail-gallery">
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 1" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 2" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 3" class="img-thumbnail" />
-                    <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Miniatúra 4" class="img-thumbnail" />
+                <label for="book-abstract">Abstrakt:</label>
+                <textarea name="book-abstract" rows="5" class="form-control" required>{{ old('book-abstract', $book->detail) }}</textarea>
+
+                <label for="book-genre">Žáner:</label>
+                <input type="text" class="form-control" name="book-genre" value="{{ old('book-genre', $book->genre) }}" required />
+
+                <label for="book-lang">Jazyk:</label>
+                <input type="text" class="form-control" name="book-lang" value="{{ old('book-lang', $book->language) }}" required />
+
+                <label for="book-pages">Počet strán:</label>
+                <input type="number" class="form-control" name="book-pages" value="{{ old('book-pages', $book->pages) }}" required />
+
+                <label for="book-publisher">Vydavateľstvo:</label>
+                <input type="text" class="form-control" name="book-publisher" value="{{ old('book-publisher', $book->publisher) }}" required />
+
+                <label for="book-year">Rok vydania:</label>
+                <input type="number" class="form-control" name="book-year" value="{{ old('book-year', $book->year) }}" required />
+
+                <label for="book-price">Cena (€):</label>
+                <input type="number" class="form-control" name="book-price" step="0.01"
+                       value="{{ old('book-price', $book->price) }}" required />
+
+                <label>Dostupnosť:</label>
+                <div class="mb-3">
+                    <input type="radio" id="in-stock" name="book-stock" value="1"
+                        {{ old('book-stock', $book->stock) == 1 ? 'checked' : '' }}>
+                    <label for="in-stock">Je na sklade</label>
+
+                    <input type="radio" id="out-of-stock" name="book-stock" value="0"
+                        {{ old('book-stock', $book->stock) == 0 ? 'checked' : '' }}>
+                    <label for="out-of-stock">Nie je na sklade</label>
                 </div>
             </section>
 
-            <section id="item-page">
-                <span id="item-title" class="d-flex flex-column justify-content-start">
-                    <h1 id="book-title">{{$book->name}}</h1>
-                    <h3 id="book-author">{{$book->author}}</h3>
-                </span>
-                <span id="item-abstract">
-                    <h2>Abstrakt</h2>
-                    <p>
-                        {!!Str::limit($book->detail, 300)!!}
-                    </p>
-                </span>
-                <div id="item-status">
-                    <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
-                        <div id="item-stock">
-                            <p class="in-stock">{{$book->state}}</p>
-                        </div>
-                        <div class="item-price">
-                            <p id="book-price-gross">
-                                <h3>
-                                    {{$book->price}}€
-                                </h3>
-                            </p>
-                        </div>
-                    </div>
-                    <div id="item-to-cart" class="d-flex flex-row justify-content-end">
-                        <button class="add-to-cart" data-book-id="{{ $book->id }}">
-                            Pridať do košíka
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <section id="submit" class="d-flex justify-content-between mt-4">
+                <form action="{{ route('admin.book.update', $book->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                <button type="submit" class="btn btn-primary">Uložiť zmeny</button>
+                </form>
 
-            <section id="item-details">
-            <h2>Základné údaje</h2>
-                <dl>
-                    <dt>Žáner:</dt>
-                    <dd id="book-genre">{{$book->genre}}</a></dd>
-                    <dt>Jazyk:</dt>
-                    <dd id="book-lang">{{$book->language}}</dd>
-                    <dt>Počet strán:</dt>
-                    <dd id="book-pages"><a>{{$book->pages}}</a></dd>
-                    <dt>Vydavateľstvo:</dt>
-                    <dd id="book-publisher">{{$book->publisher}}</dd>
-                    <dt>Rok vydania:</dt>
-                    <dd id="book-year">{{$book->year}}</dd>
-                </dl>
+                <form action="{{ route('admin.book.delete', $book->id) }}" method="POST" onsubmit="return confirm('Naozaj chceš zmazať túto knihu?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Vymazať knihu</button>
+                </form>
             </section>
-
-            <section id="item-desc">
-                <h2>Popis</h2>
-                <p>{{$book->detail}}
-                </p>
-            </section>
-        </article>
-    </div>
-
+        </div>
+    </article>
 @endsection
