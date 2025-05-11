@@ -2,17 +2,16 @@
     <article class="d-none d-lg-flex align-items-center">
         <div class="col-lg-4">
             <h1 id="site-title">
-                <a href="{{ Auth::check() && Auth::user()->role === '1' ? url('/admin') : route('home') }}">
+                <a href="{{ route('home') }}">
                     Kníhkupectvo LR
                 </a>
             </h1>
         </div>
         <div class="col-lg-4">
-            <div id="search-panel" class="gap-3 d-flex justify-content-center">
-                <form action="{{ Auth::check() && Auth::user()->role === '1' ? route('admin.book.search') : url('book_search') }}"
-                      method="GET" class="d-flex justify-content-between align-items-center w-100">
+            <div id="search-panel" class="d-flex justify-content-center">
+                <form action="{{ url('book_search') }}" method="GET" class="d-flex justify-content-between align-items-center w-100">
                     <input name="search" type="text" class="form-control flex-grow-1 me-2 search-input" placeholder="Hľadať...">
-                    <button class="btn flex-shrink-0">
+                    <button class="btn border-0 flex-shrink-0">
                         <img src="{{ asset('images/search-icon.png') }}" alt="Hľadať">
                     </button>
                 </form>

@@ -16,19 +16,21 @@ class BookFind
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // user not logged in -> enable request to go through
         if(!Auth::check()){
-            return $next($request);
+            return $next($request); // pre neprihlasenych userov
         }
 
         // user logged in with role '1' - admin
-        if(Auth::user()->role == '1'){
+        if(Auth::user()->role === '1'){
+            // ak poziadavka je na /admin/...  presmeruj ho na /admin/book_search
+            if(!$request->is('admin/*')){
+                $query = $request->getQueryString();
+                $redirect = '/admin/book_search' . ($query ? '?'.$query : '');
 
-            // reroute directly to /findbook/{phrase}
-            if(!$request->is('findbook')){
-                return redirect('/findbook/' . $request->search);
+                return redirect($redirect);     // pre admina
             }
         }
-        return $next($request);     // enable request
+
+        return $next($request);     // pre prihlasenych userov
     }
 }
