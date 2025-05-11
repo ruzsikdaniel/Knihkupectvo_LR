@@ -30,7 +30,7 @@
                     </p>
                 </div>
 
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex justify-content-between align-items-center gap-3">
                     <p class="item-price">
                         {{number_format($item->price, 2, ',', ' ')}}€
                     </p>

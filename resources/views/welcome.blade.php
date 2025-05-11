@@ -49,7 +49,7 @@
                             </p>
                         </div>
 
-                        <div class="d-flex align-items-center gap-3">
+                        <div class="d-flex justify-content-between align-items-center gap-3">
                             <p id="item-price-{{ $item->id }}" class="item-price" class="mb-0">
                                 {{ number_format($item->price, 2, ',', ' ') }}€
                             </p>

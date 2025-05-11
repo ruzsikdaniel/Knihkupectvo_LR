@@ -11,13 +11,10 @@ class BookController extends Controller
 {
     public function book_search(Request $request){ //for user return books
         $search1 = $request->search;
-        $book = Book::with('pictures')->where('name', 'LIKE', '%'.$search1.'%')->paginate(10);
+        $book = Book::with('pictures')
+            ->where('title', 'ILIKE', '%'.$search1.'%')
+            ->paginate(10);
         return view('findbooks', compact('book'));
-    }
-
-    public function findbook($request){
-        $book = Book::with('pictures')->where('name', 'LIKE', '%'.$request.'%')->paginate(10);
-        return view('admin.findbooks', compact('book'));
     }
 
     public function book_details($id){

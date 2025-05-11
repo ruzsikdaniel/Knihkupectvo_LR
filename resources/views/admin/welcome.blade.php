@@ -53,7 +53,7 @@
 
     <section id="books">
         <div id="books-change">
-            <button onclick="window.location.href='{{ route('admin.addBook') }}';" id="add-book" class="btn btn-primary border-0" aria-label="Pridať Knihu">
+            <button onclick="window.location.href='{{ route('admin') }}';" id="add-book" class="btn btn-primary border-0" aria-label="Pridať Knihu">
                 Pridať Knihu
             </button>
         </div>

@@ -28,6 +28,16 @@ class AdminController extends Controller
         return view('admin.book', compact('book', 'category'));
     }
 
+    public function book_search(Request $request){
+        $search = $request->search;
+
+        $book = Book::with('pictures')
+            ->where('title', 'ILIKE', '%'.$search.'%')
+            ->paginate(10);
+
+        return view('admin.findbooks', compact('book', 'search'));
+    }
+
     public function updateBook(Request $request, $id)
     {
         $book = Book::findOrFail($id);
@@ -87,9 +97,19 @@ class AdminController extends Controller
     public function deleteBook($id)
     {
         $book = Book::findOrFail($id);
-        $book->pictures()->detach();
+
+        foreach($book->pictures as $picture){
+            $book->pictures()->detach($picture->id);
+
+            if($picture->books()->count() === 0)
+                if ($picture->path && file_exists(public_path($picture->path)))
+                    unlink(public_path($picture->path));
+
+            $picture->delete();
+        }
+
         $book->delete();
-        return route('admin');
+        return redirect()->route('admin')->with('success', 'Kniha bola úspešne vymazaná.');
     }
 
 }

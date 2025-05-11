@@ -82,12 +82,10 @@ Route::delete('/admin/book/{id}', [AdminController::class, 'deleteBook'])
     ->middleware(['admin'])
     ->name('admin.book.delete');
 
+Route::get('/admin/book_search', [AdminController::class, 'book_search'])
+    ->middleware(['admin'])
+    ->name('admin.book.search'); //check if the user is admin
 
-
-Route::get('/admin/book_search', [BookController::class, 'book_search'])
-    ->middleware(['find']); //check if the user is admin
-
-Route::get('/findbook/{id}', [BookController::class, 'findbook']); //if the user is admin
 
 Route::get('/book_details/{id}', [BookController::class, 'book_details'])
     ->name('book_details');
