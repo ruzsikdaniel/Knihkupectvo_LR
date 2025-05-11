@@ -34,11 +34,11 @@
                     <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                     @if($item->book->stock)
                         <p class="in-stock">
-                            {{ $item->book->stock }}
+                            je na sklade
                         </p>
                     @else
                         <p class="out-of-stock">
-                            {{ $item->book->stock }}
+                            nie je na sklade
                         </p>
                     @endif
                 </div>

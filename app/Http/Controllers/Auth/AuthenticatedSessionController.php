@@ -24,6 +24,10 @@ class AuthenticatedSessionController extends Controller
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request){
+
+        // ziskaj sessionId pred regeneraciou
+        $sessionId = $request->session()->getId();
+
         // ak su prihlasovacie udaje nespravne, vrat error
         if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
             return back()->withErrors([
@@ -35,9 +39,6 @@ class AuthenticatedSessionController extends Controller
         if ($request->user()->role === '1')
             return redirect('/admin');
 
-
-        // ziskaj sessionId pred regeneraciou
-        $sessionId = $request->session()->getId();
 
         // over a prihlas pouzívatela
         $request->authenticate();
@@ -101,11 +102,6 @@ class AuthenticatedSessionController extends Controller
 
             $userCart->price = $total;
             $userCart->save();
-
-            Log::info('Cena prepocítana', [
-                'user_id' => $userId,
-                'price' => $total
-            ]);
         }
 
         return redirect('/');
