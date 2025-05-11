@@ -12,7 +12,6 @@
         <div class="w-100 w-md-50">
             <section id="item-gallery" class="d-flex flex-column align-items-center mb-4">
                 <label for="image-upload" class="btn btn-secondary border-0">Pridať obrázok</label>
-                <!-- TODO: style to css-->
                 <input id="image-upload" name="images[]" type="file" accept="image/jpeg, image/png" multiple style="display: none;">
 
                 <div id="thumbnail-gallery" class="d-flex flex-wrap justify-content-center mt-3">

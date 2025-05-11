@@ -4,7 +4,7 @@
 
 @section('content')
 
-<article class="cart">
+<article class="car">
     <section class="deliver-style">
         <div class="row">
             <h1 class="col-4">
@@ -25,7 +25,7 @@
         </div>
     </section>
 
-    <form method="POST" action="{{ route('checkout.delivery.store') }}">
+    <form method="POST" action="{{ route('checkout.delivery.store') }}" class="d-flex flex-column align-items-center gap-3">
         @csrf
         <section class="deliver-style container">
             <h1>

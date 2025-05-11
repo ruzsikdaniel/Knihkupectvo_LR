@@ -3,13 +3,13 @@
 @section('title', 'Nákupný košík')
 
 @section('content')
-    <section>
+    <section class="container">
         <h1>
             Nákupný košík
         </h1>
     </section>
 
-    <article id="cart" class="d-none d-lg-flex flex-column">
+    <article id="cart" class="d-none d-lg-flex flex-column container">
     @if(isset($cartItems) && count($cartItems) > 0)
         @foreach($cartItems as $item)
         <section class="d-flex justify-content-between align-items-center cart-item" id="cart-item-{{ $item->book->id }}">
@@ -31,7 +31,6 @@
             </span>
             <span class="d-flex justify-content-end align-items-center item-control">
                 <div>
-                    <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                     @if($item->book->stock)
                         <p class="in-stock">
                             je na sklade
@@ -68,7 +67,7 @@
     @endif
     </article>
 
-    <article id="cart" class="d-lg-none">
+    <article id="cart" class="d-lg-none container">
     @if(isset($cartItems) && count($cartItems) > 0)
         @foreach($cartItems as $item)
             <section class="cart-item" id="cart-item-{{ $item->book->id }}">
@@ -93,7 +92,6 @@
                 </span>
                 <span class="d-flex justify-content-start item-control">
                     <div class="d-flex align-items-center gap-3">
-                        <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                         @if($item->book->stock)
                             <p class="in-stock">
                                 je na sklade

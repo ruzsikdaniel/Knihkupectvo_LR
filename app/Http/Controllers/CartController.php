@@ -51,7 +51,7 @@ class CartController extends Controller
 
         // pridaj / aktualizuj knihu v kosiku
         $bookInCart = ShoppingBook::firstOrNew([
-            'id_card' => $cart->id,
+            'id_cart' => $cart->id,
             'id_book' => $bookId
         ]);
         $bookInCart->amount = $bookInCart->exists ? $bookInCart->amount + 1 : 1;    // zvys pocet danej knihy o 1
@@ -80,7 +80,7 @@ class CartController extends Controller
             return response()->json(['error' => 'Košík neexistuje'], 404);
 
         // najdi knihu, ktorej chceme pocet zmenit
-        $item = ShoppingBook::where('id_card', $cart->id)
+        $item = ShoppingBook::where('id_cart', $cart->id)
             ->where('id_book', $validated['book_id'])
             ->first();
         if (!$item)

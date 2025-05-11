@@ -10,7 +10,6 @@
             <img src="{{ $book->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obalka knihy" class="img-fluid" id="item-image" />
             <div id="thumbnail-gallery">
                 @forelse($book->pictures as $picture)
-                    <!--TODO: remove style attribute and add to main.css -->
                     <img src="{{ $picture->url }}" alt="{{ $picture->title }}" class="img-thumbnail" style="max-width: 100px;">
                 @empty
                     <img src="{{ asset('images/book_128.png') }}" alt="Placeholder" class="img-thumbnail" style="max-width: 100px;">
@@ -109,7 +108,6 @@
             <img src="{{ $book->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obalka knihy" class="img-fluid" id="item-image" />
             <div id="thumbnail-gallery">
                 @forelse($book->pictures as $picture)
-                    <!--TODO: remove style attribute and add to main.css -->
                     <img src="{{ $picture->url }}" alt="{{ $picture->title }}" class="img-thumbnail" style="max-width: 100px;">
                 @empty
                     <img src="{{ asset('images/book_128.png') }}" alt="Placeholder" class="img-thumbnail" style="max-width: 100px;">

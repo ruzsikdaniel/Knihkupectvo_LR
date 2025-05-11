@@ -21,7 +21,6 @@
         <div>
             @foreach($category as $categories)
                 <a href="{{route('category', $categories)}}">
-                    <!-- TODO: remove style and add to main.css-->
                     <button class="btn btn-outline-primary filter" style="margin-bottom:5px">
                         {{$categories}}
                     </button>

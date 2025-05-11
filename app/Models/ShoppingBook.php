@@ -11,13 +11,13 @@ class ShoppingBook extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id_card',
+        'id_cart',
         'id_book',
         'amount',
     ];
 
     public function card(){
-        return $this->belongsTo(ShoppingCart::class, 'id_card', 'id');
+        return $this->belongsTo(ShoppingCart::class, 'id_cart', 'id');
     }
 
     public function book(){

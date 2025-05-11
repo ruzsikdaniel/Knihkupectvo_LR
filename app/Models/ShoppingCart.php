@@ -31,7 +31,7 @@ class ShoppingCart extends Model
     }
 
     public function books(){
-        return $this->hasMany(ShoppingBook::class, 'id_card', 'id');
+        return $this->hasMany(ShoppingBook::class, 'id_cart', 'id');
     }
 
 }
