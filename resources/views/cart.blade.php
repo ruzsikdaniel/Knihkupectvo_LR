@@ -19,7 +19,7 @@
                      alt="Obálka knihy"/>
                 <div class="col-12">
                     <p class="item-title">
-                        <a href="{{ route('book_details', $item->book->id) }}">
+                        <a href="{{ route('book', $item->book->id) }}">
                             {{ $item->book->title }}
                         </a>
                         <br>
@@ -77,7 +77,7 @@
                         <img class="col-3 item-icon" src="{{ optional($item->book->pictures->first())->url ?? asset('images/book_128.png') }}" alt="Obálka knihy"/>
                         <div class="d-flex align-items-center">
                             <p class="item-title">
-                                <a href="{{ route('book_details', $item->book->id) }}">
+                                <a href="{{ route('book', $item->book->id) }}">
                                     {{ $item->book->title }}
                                 </a>
                                 <br>
@@ -96,17 +96,17 @@
                         <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
                         @if($item->book->stock)
                             <p class="in-stock">
-                                {{$item->book->stock}}
+                                je na sklade
                             </p>
                         @else
                             <p class="out-of-stock">
-                                {{$item->book->stock}}
+                                nie je na sklade
                             </p>
                         @endif
                         <label>
                             <input type="number" class="item-count" value="{{ $item->amount }}" min="1" data-book-id="{{ $item->book->id }}">
                         </label>
-                        <button class="btn item-delete" data-book-id="{{ $item->book->id }}">
+                        <button class="btn border-0 item-delete" data-book-id="{{ $item->book->id }}">
                             <img src="{{ asset('images/delete.png') }}" alt="Odstrániť"/>
                         </button>
                     </div>

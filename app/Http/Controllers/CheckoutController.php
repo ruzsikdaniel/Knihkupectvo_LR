@@ -98,6 +98,12 @@ class CheckoutController extends Controller
             $purchase->isPaid = true;
             $purchase->save();
         }
+
+        ShoppingCart::where('session_id', session()->getId())->delete();
+
+        session()->forget('cart');
+        session()->forget('purchase_id');
+
         return redirect()->route('home')->with('status', 'Objednávka bola úspešne zaplatená.');
     }
 

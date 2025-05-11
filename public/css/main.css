@@ -120,6 +120,7 @@ ul #carousel-list{
     background-color: #f8f8f8;
     flex: 1 1 auto;
     min-width: 175px;
+    max-width: 175px;
     padding: 10px;
     margin: 5px;
     vertical-align: top;

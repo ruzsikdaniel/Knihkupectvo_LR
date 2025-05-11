@@ -14,17 +14,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [UserController::class, 'show'])->middleware(Root::class)->name('home');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])
-        ->name('profile.edit');
-
-    Route::patch('/profile', [ProfileController::class, 'update'])
-        ->name('profile.update');
-
-    Route::delete('/profile', [ProfileController::class, 'destroy'])
-        ->name('profile.destroy');
-});
-
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
@@ -87,18 +76,15 @@ Route::get('/admin/book_search', [AdminController::class, 'book_search'])
     ->name('admin.book.search'); //check if the user is admin
 
 
-Route::get('/book_details/{id}', [BookController::class, 'book_details'])
-    ->name('book_details');
+Route::get('/book/{id}', [BookController::class, 'book'])
+    ->name('book');
 
-Route::get('admin_book_det/{id}', [BookController::class, 'admin_book_details'])
-    ->name('admin_book_det');
+Route::get('/category/{name}', [BookController::class, 'category'])
+    ->name('category'); //get the category details
 
-Route::get('/category_details/{name}', [BookController::class, 'category'])
-    ->name('category_details'); //get the category details
+Route::get('/category_log/{name}', [BookController::class, 'category_log'])
+    ->name('category_log'); //get the category details for logged user
 
-Route::get('/category_details_log/{name}', [BookController::class, 'category_log'])
-    ->name('category_details_log'); //get the category details for logged user
-
-Route::get('/category_details_admin/{name}', [BookController::class, 'category_admin'])
-    ->name('category_details_admin'); //get the category details
+Route::get('/category_admin/{name}', [BookController::class, 'category_admin'])
+    ->name('category_admin'); //get the category details
 

@@ -9,7 +9,7 @@ use App\Models\BookCategory; //get the book model
 
 class BookController extends Controller
 {
-    public function book_search(Request $request){ //for user return books
+    public function book_search(Request $request){
         $search1 = $request->search;
         $book = Book::with('pictures')
             ->where('title', 'ILIKE', '%'.$search1.'%')
@@ -17,14 +17,9 @@ class BookController extends Controller
         return view('findbooks', compact('book'));
     }
 
-    public function book_details($id){
+    public function book($id){
         $book = Book::with('pictures')->find($id);
         return view('book', compact('book'));
-    }
-
-    public function admin_book_details($id){
-        $book = Book::with('pictures')->find($id);
-        return view('admin.book', compact('book'));
     }
 
     public function category($name){

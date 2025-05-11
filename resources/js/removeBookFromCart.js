@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('cart').innerHTML = '<p>Váš košík je prázdny.</p>';
 
                 alert(data.message);
+                window.location.href = '/cart'
             })
             // zachyt error pocas JSON komunikacie
             .catch(err => {

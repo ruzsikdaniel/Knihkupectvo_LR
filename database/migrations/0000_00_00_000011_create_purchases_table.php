@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(){
         Schema::create('purchases', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('firstname', 20);
-            $table->string('surname', 20);
-            $table->string('telephone', 10);
-            $table->string('email', 20);
-            $table->string('address', 20);
-            $table->string('city', 20);
-            $table->string('postcode', 5);
+            $table->string('firstname');
+            $table->string('surname');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('address');
+            $table->string('city');
+            $table->string('postcode');
 
             $table->unsignedBigInteger('delivery_id')->nullable()->default(null);
             $table->unsignedBigInteger('payment_id')->nullable()->default(null);
