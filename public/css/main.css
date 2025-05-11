@@ -119,7 +119,7 @@ ul #carousel-list{
     display: inline-block;
     background-color: #f8f8f8;
     flex: 1 1 auto;
-    max-width: 175px;
+    min-width: 175px;
     padding: 10px;
     margin: 5px;
     vertical-align: top;
@@ -444,7 +444,7 @@ div .foto-add-book{
     display: block;
     margin: 5px;
 }
-#add-book-title, #add-book-author, #add-book-genre, #add-book-lang, #add-book-pages, #add-book-publisher, #add-book-year, #book-more{
+#add-book-title, #add-book-author, #add-book-genre, #add-book-language, #add-book-pages, #add-book-publisher, #add-book-year, #book-more{
     width: 50%;
 }
 

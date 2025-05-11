@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $book->name)
+@section('title', $book->title)
 
 @section('content')
 
@@ -22,7 +22,7 @@
         <section id="item-page">
             <span id="item-title" class="d-flex flex-column justify-content-start">
                 <h1 id="book-title">
-                    {{$book->name}}
+                    {{$book->title}}
                 </h1>
                 <h3 id="book-author">
                     {{$book->author}}
@@ -33,13 +33,13 @@
                     Abstrakt
                 </h2>
                 <p>
-                    {!!Str::limit($book->detail, 300)!!}
+                    {!!Str::limit($book->abstract, 300)!!}
                 </p>
             </span>
             <div id="item-status">
                 <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                     <div id="item-stock">
-                        <p class="in-stock">{{$book->state}}</p>
+                        <p class="in-stock">{{$book->stock}}</p>
                     </div>
                     <div class="item-price">
                         <h3 class="item-price">
@@ -65,7 +65,7 @@
                     <a>{{$book->genre}}</a>
                 </dd>
                 <dt>Jazyk:</dt>
-                <dd id="book-lang">
+                <dd id="book-language">
                     {{$book->language}}
                 </dd>
                 <dt>Počet strán:</dt>
@@ -88,7 +88,7 @@
                 Popis
             </h2>
             <p>
-                {{$book->detail}}
+                {{$book->abstract}}
             </p>
         </section>
     </article>
@@ -117,7 +117,7 @@
                     <a>{{$book->genre}}</a>
                 </dd>
                 <dt>Jazyk:</dt>
-                <dd id="book-lang">
+                <dd id="book-language">
                     {{$book->language}}
                 </dd>
                 <dt>Počet strán:</dt>
@@ -140,7 +140,7 @@
         <section id="item-page">
             <div id="item-title" class="d-flex flex-column justify-content-start">
                 <h1 id="book-title">
-                    {{$book->name}}
+                    {{$book->title}}
                 </h1>
                 <h3 id="book-author">
                     {{$book->author}}
@@ -151,19 +151,19 @@
                     Abstrakt
                 </h2>
                 <p>
-                    {!!Str::limit($book->detail, 300)!!}
+                    {!!Str::limit($book->abstract, 300)!!}
                 </p>
             </div>
             <div id="item-status">
                 <div id="item-info" class="d-flex flex-row justify-content-between align-items-center">
                     <div id="item-stock">
-                        @if($book->state === 'je na sklade')
+                        @if($book->stock)
                             <p class="in-stock">
-                                {{$book->state}}
+                                {{$book->stock}}
                             </p>
                         @else
                             <p class="out-of-stock">
-                                {{$book->state}}
+                                {{$book->stock}}
                             </p>
                         @endif
                     </div>
@@ -186,7 +186,7 @@
                 Popis
             </h2>
             <p>
-                {{$book->detail}}
+                {{$book->abstract}}
             </p>
         </section>
     </article>

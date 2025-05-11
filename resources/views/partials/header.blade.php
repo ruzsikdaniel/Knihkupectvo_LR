@@ -2,7 +2,7 @@
     <article class="d-none d-lg-flex align-items-center">
         <div class="col-lg-4">
             <h1 id="site-title">
-                <a href="{{ route('home') }}">
+                <a href="{{ Auth::check() && Auth::user()->role === '1' ? url('/admin') : route('home') }}">
                     Kníhkupectvo LR
                 </a>
             </h1>

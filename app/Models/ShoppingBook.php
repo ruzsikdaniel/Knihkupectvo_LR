@@ -13,7 +13,7 @@ class ShoppingBook extends Model
     protected $fillable = [
         'id_card',
         'id_book',
-        'number',
+        'amount',
     ];
 
     public function card(){

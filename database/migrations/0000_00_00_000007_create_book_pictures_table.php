@@ -17,8 +17,6 @@ return new class extends Migration
 
             $table->foreign('id_book')->references('id')->on('books')->onDelete('cascade');
             $table->foreign('id_picture')->references('id')->on('pictures')->onDelete('cascade');
-
-            $table->timestamps();
         });
     }
 

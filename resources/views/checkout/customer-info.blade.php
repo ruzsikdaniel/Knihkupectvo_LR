@@ -39,18 +39,18 @@
         <form method="POST" action="{{ route('checkout.customer.store') }}">
             @csrf
             <div class="row align-items-center">
-                <label for="name_u" class="col-md-4 col-form-label">
+                <label for="firstname" class="col-md-4 col-form-label">
                     Meno
                 </label>
                 <div class="col-md-8">
-                    <input type="text" class="form-control" id="name_u" name="name_u" required>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
                 </div>
 
-                <label for="surname_u" class="col-md-4 col-form-label">
+                <label for="surname" class="col-md-4 col-form-label">
                     Priezvisko
                 </label>
                 <div class="col-md-8">
-                    <input type="text" class="form-control" id="surname_u" name="surname_u" required>
+                    <input type="text" class="form-control" id="surname" name="surname" required>
                 </div>
 
                 <label for="telephone" class="col-md-4 col-form-label">

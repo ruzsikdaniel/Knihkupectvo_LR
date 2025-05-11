@@ -41,7 +41,7 @@
                         <div class="d-flex flex-column text-start mb-2">
                             <p id="item-title" class="mb-1 fw-bold">
                                 <a href="{{ route('book_details', $item->id) }}" class="text-decoration-none">
-                                    {{ $item->name }}
+                                    {{ $item->title }}
                                 </a>
                             </p>
                             <p class="text-muted mb-0">

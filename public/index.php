@@ -3,6 +3,12 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 0);
+error_reporting(E_ALL);
+
+ini_set('upload_tmp_dir', sys_get_temp_dir()); // pouzi systemovy tmp na ukladanie pridanich obrazkov
+
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...

@@ -78,12 +78,12 @@ class AuthenticatedSessionController extends Controller
                     ->first();
 
                 if ($existingBook) {
-                    $existingBook->number += $sessionBook->number;
+                    $existingBook->amount += $sessionBook->amount;
                     $existingBook->save();
                 } else {
                     $userCart->books()->create([
                         'id_book' => $sessionBook->id_book,
-                        'number' => $sessionBook->number,
+                        'amount' => $sessionBook->amount,
                         'price' => $sessionBook->price,
                     ]);
                 }
@@ -99,7 +99,7 @@ class AuthenticatedSessionController extends Controller
             $userCart->load('books.book');
 
             $total = $userCart->books->sum(function ($item) {
-                return $item->book?->price * $item->number;
+                return $item->book?->price * $item->amount;
             });
 
             $userCart->price = $total;

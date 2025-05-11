@@ -22,7 +22,7 @@
                 <div class="d-flex flex-column text-left">
                     <p id="item-title">
                         <a href="{{ route('book_details', $item->id) }}">
-                            {{$item->name}}
+                            {{$item->title}}
                         </a>
                     </p>
                     <p class="text-muted">

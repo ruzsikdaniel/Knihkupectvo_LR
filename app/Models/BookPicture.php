@@ -8,8 +8,8 @@ class BookPicture extends Model
 {
     protected $table = 'book_pictures';
 
-    public $timestamps = false;
     public $incrementing = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'id_book',

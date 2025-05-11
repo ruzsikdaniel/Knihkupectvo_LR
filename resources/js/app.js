@@ -2,6 +2,7 @@ import './bootstrap';
 import './addBookToCart';
 import './updateCart';
 import './removeBookFromCart';
+import './addImageToBook'
 
 import Alpine from 'alpinejs';
 

@@ -6,20 +6,20 @@
 
 <article id="category">
     <section id="category-grid">
-        @foreach($book as $books)
+        @foreach($book as $item)
             <span id="grid-item" class="d-flex flex-column border book-item">
-                <img src="{{ $books->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid">
+                <img src="{{ $item->pictures->first()->url ?? asset('images/book_128.png') }}" alt="Obálka knihy" class="img-fluid">
 
                 <div class="d-flex flex-column text-left">
                     <p id="item-title">
-                        <a href="{{ route('book_details', $books->id) }}">{{$books->name}}</a>
+                        <a href="{{ route('book_details', $item->id) }}">{{$item->title}}</a>
                     </p>
-                    <p class="text-muted">{{$books->author}}</p>
+                    <p class="text-muted">{{$item->author}}</p>
                 </div>
 
                 <div class="d-flex align-items-center gap-3">
                     <p class="item-price">
-                        {{number_format($books->price, 2, ',', ' ')}}€
+                        {{number_format($item->price, 2, ',', ' ')}}€
                     </p>
                     <button class="btn btn-outline-secondary">
                         <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">

@@ -6,18 +6,18 @@
     <article id="category">
 
         <section id="category-grid">
-            @foreach($book as $books)
+            @foreach($book as $item)
                 <span id="grid-item" class="d-flex flex-column border">
                     <img src="https://mrtns.sk/tovar/_l/2531/l2531895.jpg?v=17433329282" alt="Obálka knihy" class="img-fluid">
 
                     <div class="d-flex flex-column text-left">
-                        <p id="item-title"><a href="/html/item.html">{{$books->name}}</a></p>
-                        <p class="text-muted">{{$books->author}}</p>
+                        <p id="item-title"><a href="/html/item.html">{{$item->title}}</a></p>
+                        <p class="text-muted">{{$item->author}}</p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
                         <p class="item-price">
-                            {{$books->price}} €
+                            {{$item->price}} €
                         </p>
                         <button class="btn btn-outline-secondary">
                             <img src="{{ asset('images/cart-icon.png') }}" alt="Košík">

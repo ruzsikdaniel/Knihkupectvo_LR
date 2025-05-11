@@ -24,8 +24,8 @@ class Purchase extends Model
     }
 
     protected $fillable = [
-        'name_u',
-        'surname_u',
+        'firstname',
+        'surname',
         'telephone',
         'email',
         'address',

@@ -13,9 +13,9 @@ return new class extends Migration
         Schema::create('pictures', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title', 50)->nullable();
-            $table->string('url', 1000);
-            //$table->string('path', 1000)->nullable();
-            $table->string('source', 1000);
+            $table->string('url', 1000)->nullable();
+            $table->string('path', 1000)->nullable();
+            $table->string('source', 1000)->nullable();
             $table->timestamps();
         });
     }

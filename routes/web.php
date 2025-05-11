@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Middleware\Root;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CartController;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [UserController::class, 'show'])->name('home');
+Route::get('/', [UserController::class, 'show'])->middleware(Root::class)->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])
@@ -63,7 +64,7 @@ Route::get('/book_search', [BookController::class, 'book_search'])
     ->middleware(['find']);
 
 Route::get('/admin', [AdminController::class, 'index'])
-    ->middleware(['admin']);
+    ->middleware(['admin'])->name('admin');
 
 Route::get('/admin/addBook', [AdminController::class, 'addBook'])
     ->middleware(['admin'])

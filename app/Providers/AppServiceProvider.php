@@ -18,5 +18,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(){
         Paginator::useBootstrap();
+
+        if(app()->environment('local')){
+            ini_set('display_startup_errors', '0');
+            error_reporting(E_ALL & ~E_NOTICE);
+        }
     }
 }

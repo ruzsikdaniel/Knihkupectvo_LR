@@ -18,6 +18,7 @@ class Picture extends Model
         'id',
         'title',
         'url',
+        'path',
         'source',
     ];
 

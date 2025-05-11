@@ -15,7 +15,7 @@ return new class extends Migration
 
             $table->uuid('id_card');
             $table->uuid('id_book');
-            $table->unsignedInteger('number')->default(1);
+            $table->unsignedInteger('amount')->default(1);
 
             $table->foreign('id_card')->references('id')->on('shopping_carts')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_book')->references('id')->on('books')->onUpdate('cascade')->onDelete('cascade');

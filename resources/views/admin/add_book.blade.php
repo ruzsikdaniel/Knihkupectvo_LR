@@ -29,19 +29,19 @@
                     <h1>Úprava knihy</h1>
 
                     <label for="book-title">Názov knihy:</label>
-                    <input type="text" class="form-control" name="book-title" value="{{ old('book-title', $book->name) }}" required />
+                    <input type="text" class="form-control" name="book-title" value="{{ old('book-title', $book->title) }}" required />
 
                     <label for="book-author">Autor knihy:</label>
                     <input type="text" class="form-control" name="book-author" value="{{ old('book-author', $book->author) }}" required />
 
                     <label for="book-abstract">Abstrakt:</label>
-                    <textarea name="book-abstract" rows="5" class="form-control" required>{{ old('book-abstract', $book->detail) }}</textarea>
+                    <textarea name="book-abstract" rows="5" class="form-control" required>{{ old('book-abstract', $book->abstract) }}</textarea>
 
                     <label for="book-genre">Žáner:</label>
                     <input type="text" class="form-control" name="book-genre" value="{{ old('book-genre', $book->genre) }}" required />
 
-                    <label for="book-lang">Jazyk:</label>
-                    <input type="text" class="form-control" name="book-lang" value="{{ old('book-lang', $book->language) }}" required />
+                    <label for="book-language">Jazyk:</label>
+                    <input type="text" class="form-control" name="book-language" value="{{ old('book-language', $book->language) }}" required />
 
                     <label for="book-pages">Počet strán:</label>
                     <input type="number" class="form-control" name="book-pages" value="{{ old('book-pages', $book->pages) }}" required />

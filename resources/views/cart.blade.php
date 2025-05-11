@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <p class="item-title">
                         <a href="{{ route('book_details', $item->book->id) }}">
-                            {{ $item->book->name }}
+                            {{ $item->book->title }}
                         </a>
                         <br>
                         <a>
@@ -32,13 +32,13 @@
             <span class="d-flex justify-content-end align-items-center item-control">
                 <div>
                     <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
-                    @if($item->book->state === 'je na sklade')
+                    @if($item->book->stock)
                         <p class="in-stock">
-                            {{ $item->book->state }}
+                            {{ $item->book->stock }}
                         </p>
                     @else
                         <p class="out-of-stock">
-                            {{ $item->book->state }}
+                            {{ $item->book->stock }}
                         </p>
                     @endif
                 </div>
@@ -49,7 +49,7 @@
                     <img src="{{ asset('images/delete.png') }}"/>
                 </button>
                 <p id="item-total-{{ $item->book->id }}" class="total-price-book">
-                    Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
+                    Suma: {{ number_format($item->book->price * $item->amount, 2, ',', ' ') }}€
                 </p>
             </span>
         </section>
@@ -78,7 +78,7 @@
                         <div class="d-flex align-items-center">
                             <p class="item-title">
                                 <a href="{{ route('book_details', $item->book->id) }}">
-                                    {{ $item->book->name }}
+                                    {{ $item->book->title }}
                                 </a>
                                 <br>
                                 <a>
@@ -88,23 +88,23 @@
                         </div>
                     </div>
                     <p id="item-total-{{ $item->book->id }}" class="total-price-book">
-                        Suma: {{ number_format($item->book->price * $item->number, 2, ',', ' ') }}€
+                        Suma: {{ number_format($item->book->price * $item->amount, 2, ',', ' ') }}€
                     </p>
                 </span>
                 <span class="d-flex justify-content-start item-control">
                     <div class="d-flex align-items-center gap-3">
                         <!-- TODO: pridat vypocet knih na sklade / staticky pocet pre kazdu knihu -->
-                        @if($item->book->state === 'je na sklade')
+                        @if($item->book->stock)
                             <p class="in-stock">
-                                {{$item->book->state}}
+                                {{$item->book->stock}}
                             </p>
                         @else
                             <p class="out-of-stock">
-                                {{$item->book->state}}
+                                {{$item->book->stock}}
                             </p>
                         @endif
                         <label>
-                            <input type="number" class="item-count" value="{{ $item->number }}" min="1" data-book-id="{{ $item->book->id }}">
+                            <input type="number" class="item-count" value="{{ $item->amount }}" min="1" data-book-id="{{ $item->book->id }}">
                         </label>
                         <button class="btn item-delete" data-book-id="{{ $item->book->id }}">
                             <img src="{{ asset('images/delete.png') }}" alt="Odstrániť"/>

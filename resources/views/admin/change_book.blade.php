@@ -29,7 +29,7 @@
                         <h1>Základné údaje</h1>
                         <div id="item-title">
                             <dl>
-                                <dt><label for="add-book-title">Názov knihy:</label></dt>
+                                <dt><label for="book-title">Názov knihy:</label></dt>
                                 <dd><input id = "add-book-title" type="text" maxlength="20"></dd>
                                 <dt><label for="add-book-author">Autor knihy:</label></dt>
                                 <dd><input id="add-book-author" type="text" maxlength="20"></dd>
@@ -42,7 +42,7 @@
                             <dd id="book-genre"><input id = "add-book-genre" type="text" maxlength="30"></dd>
 
                             <dt>Jazyk:</dt>
-                            <dd id="book-lang"><input id = "add-book-lang" type="text" maxlength="14"></dd>
+                            <dd id="book-language"><input id = "add-book-language" type="text" maxlength="14"></dd>
 
                             <dt>Počet strán:</dt>
                             <dd id="book-pages"><input id = "add-book-pages" type="text" maxlength="20"></dd>

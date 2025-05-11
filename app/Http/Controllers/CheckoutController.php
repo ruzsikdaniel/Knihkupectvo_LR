@@ -31,16 +31,16 @@ class CheckoutController extends Controller
 
     public function storeCustomerInfo(){
         $validated = request()->validate([
-            'name_u' => 'required|string|max:50|alpha',
-            'surname_u' => 'required|string|max:50|alpha',
+            'firstname' => 'required|string|max:50|alpha',
+            'surname' => 'required|string|max:50|alpha',
             'telephone' => 'required|digits_between:8,15',
             'email' => 'required|email|max:100',
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100|alpha',
             'postcode' => 'required|digits:5',
         ],[
-            'name_u.alpha' => 'Meno musí obsahovať iba písmená.',
-            'surname_u.alpha' => 'Priezvisko musí obsahovať iba písmená.',
+            'firstname.alpha' => 'Meno musí obsahovať iba písmená.',
+            'surname.alpha' => 'Priezvisko musí obsahovať iba písmená.',
             'telephone.digits_between' => 'Telefónne číslo musí mať 8 až 15 číslic.',
             'postcode.digits' => 'PSČ musí mať presne 5 číslic.',
             'city.alpha' => 'Mesto/dedina musí obsahovať iba písmená.'

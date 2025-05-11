@@ -14,9 +14,9 @@ class CartController extends Controller
         $cart = $this->getUserCart($request);
 
         $cartItems = $cart ? $cart->books: collect();
-        $priceTotal = $cartItems->sum(fn($item) => $item->book?->price * $item->number);
+        $priceTotal = $cartItems->sum(fn($item) => $item->book?->price * $item->amount);
 
-        $itemCount = $cartItems->sum('number');
+        $itemCount = $cartItems->sum('amount');
 
         return view('cart', [
             'cartItems' => $cartItems,
@@ -43,7 +43,7 @@ class CartController extends Controller
 
         // pozri, ci je kniha dostupna
         $book = Book::findOrFail($bookId);
-        if ($book->state === 'nie je na sklade') {
+        if(!$book->stock){
             return response()->json([
                 'message' => 'Kniha nie je momentálne na sklade.',
             ], 400);
@@ -54,7 +54,7 @@ class CartController extends Controller
             'id_card' => $cart->id,
             'id_book' => $bookId
         ]);
-        $bookInCart->number = $bookInCart->exists ? $bookInCart->number + 1 : 1;    // zvys pocet danej knihy o 1
+        $bookInCart->amount = $bookInCart->exists ? $bookInCart->amount + 1 : 1;    // zvys pocet danej knihy o 1
         $bookInCart->save();
 
         // prepocitaj celkovu cenu kosika
@@ -87,7 +87,7 @@ class CartController extends Controller
             return response()->json(['error' => 'Položka neexistuje'], 404);
 
         // prepis hodnotu poctu podla requestu
-        $item->number = $request->quantity;
+        $item->amount = $request->quantity;
         $item->save();
 
         // prepocitaj ceny
@@ -97,9 +97,9 @@ class CartController extends Controller
 
         // vrat JSON odpoved pre updadeCart.js
         return response()->json([
-            'item_total' => number_format($item->book->price * $item->number, 2, ',', ' '),
+            'item_total' => number_format($item->book->price * $item->amount, 2, ',', ' '),
             'cart_total' => number_format($cart->price, 2, ',', ' '),
-            'item_count' => $cart->books->sum('number')
+            'item_count' => $cart->books->sum('amount')
         ]);
     }
 
@@ -122,7 +122,7 @@ class CartController extends Controller
         return response()->json([
             'message' => 'Kniha bola odstránená z košíka.',
             'cart_total' => number_format($cart->price, 2, ',', ' '),
-            'item_count' => $cart->books->sum('number')
+            'item_count' => $cart->books->sum('amount')
         ]);
     }
 
@@ -155,7 +155,7 @@ class CartController extends Controller
         $cart->load('books.book');
 
         return $cart->books->sum(
-            fn($item) => $item->book?->price * $item->number
+            fn($item) => $item->book?->price * $item->amount
         );
     }
 }
