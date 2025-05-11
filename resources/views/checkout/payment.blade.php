@@ -29,21 +29,21 @@
                 <label for="card_number">
                     Číslo karty:
                 </label>
-                <input type="text" id="card_number" name="card_number" required autocomplete="card_number"/>
+                <input type="text" id="card_number" name="card_number" required autocomplete="card_number" maxlength="19"/>
             </div>
 
             <div class="form-group">
                 <label for="expiry">
                     Platnosť:
                 </label>
-                <input type="text" id="expiry" name="expiry" required autocomplete="expiry"/>
+                <input type="text" id="expiry" name="expiry" required autocomplete="expiry" maxlength="5"/>
             </div>
 
             <div class="form-group">
                 <label for="cvv">
                     CVC/CVV:
                 </label>
-                <input type="password" id="cvv" name="cvv" required autocomplete="cvv"/>
+                <input type="password" id="cvv" name="cvv" required autocomplete="cvv" maxlength="3"/>
             </div>
 
             <div class="payment-button">

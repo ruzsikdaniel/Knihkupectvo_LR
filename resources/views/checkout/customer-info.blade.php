@@ -57,7 +57,7 @@
                     Telefónne číslo
                 </label>
                 <div class="col-md-8">
-                    <input type="text" class="form-control" id="telephone" name="telephone" required>
+                    <input type="text" class="form-control" id="telephone" name="telephone" required maxlength="15">
                 </div>
 
                 <label for="email" class="col-md-4 col-form-label">

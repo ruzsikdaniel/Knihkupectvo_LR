@@ -33,7 +33,7 @@ class CheckoutController extends Controller
         $validated = request()->validate([
             'firstname' => 'required|string|max:50|alpha',
             'surname' => 'required|string|max:50|alpha',
-            'telephone' => 'required|digits_between:8,15',
+            'telephone' => ['required', 'regex:/^\+?[0-9]{7,15}$/'],
             'email' => 'required|email|max:100',
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100|alpha',
@@ -41,7 +41,7 @@ class CheckoutController extends Controller
         ],[
             'firstname.alpha' => 'Meno musí obsahovať iba písmená.',
             'surname.alpha' => 'Priezvisko musí obsahovať iba písmená.',
-            'telephone.digits_between' => 'Telefónne číslo musí mať 8 až 15 číslic.',
+            'telephone.regex' => 'Telefónne číslo musí mať 7 až 15 číslic.',
             'postcode.digits' => 'PSČ musí mať presne 5 číslic.',
             'city.alpha' => 'Mesto/dedina musí obsahovať iba písmená.'
         ]);
@@ -84,9 +84,9 @@ class CheckoutController extends Controller
 
     public function processPayment(){
         $validated = request()->validate([
-            'card_number' => ['required', 'regex:/^(\d{4}[\s\-]?){4}$/'],
-            'expiry' => ['required', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],
-            'cvv' => 'required|digits:3'
+            'card_number' => ['required', 'regex:/^(\d{4}\s){3}\d{4}$/'],   // 'xxxx xxxx xxxx ' a potom 'xxxx', kde x su cislice
+            'expiry' => ['required', 'regex:/^(0[1-9]|1[0-2])\/\d{2}$/'],   // '0x/xx', alebo '1y/xx', kde x su cislice, a y je {1,2}
+            'cvv' => 'required|digits:3'    // 'xxx', kde x su cislice
         ],[
             'card_number.regex' => "Číslo karty musí mať formát 'xxxx xxxx xxxx xxxx'.",
             'expiry.regex' => "Platnosť musí mať formát 'MM/YY.'",

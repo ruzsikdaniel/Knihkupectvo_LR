@@ -45,42 +45,39 @@ class AuthenticatedSessionController extends Controller
 
         $userId = $request->user()->id;
 
-        // najdi session a user kosiky
+        // najdi anonymny a user kosiky
         $sessionCart = ShoppingCart::where('session_id', $sessionId)
             ->whereNull('id_user')
             ->first();
         $userCart = ShoppingCart::where('id_user', $userId)->first();
 
-        // pouzivatel este nema kosik – sessionCart sa nacita do userCart
+        // prihlaseny pouzivatel este nema kosik
+        //  - anonymny kosik sa prepise, ulozi sa do userCart a vynuluje sa
         if (!$userCart && $sessionCart) {
             $sessionCart->id_user = $userId;
+            $sessionCart->session_id = null;
             $sessionCart->save();
 
             $userCart = $sessionCart;
-
-            Log::info('Prevod sessionCart na userCart', [
-                'user_id' => $userId,
-                'session_id' => $sessionId,
-                'session_cart_id' => $sessionCart->id,
-                'books_count' => $sessionCart->books()->count(),
-                'cart_price_before' => $sessionCart->price,
-            ]);
-
-            // vynulujeme $sessionCart, nevymazeme
             $sessionCart = null;
         }
 
         // pouzivatel ma oba kosíky -> spojime obe kosiky do userCart
         elseif ($userCart && $sessionCart) {
+            // kazda kniha v anonymnom kosiku je priradena do user kosiku
             foreach ($sessionCart->books()->get() as $sessionBook) {
-                $existingBook = $userCart->books()
+                // najdi knihu v user kosiku, co je zaroven v anonymnom kosiku
+                $bookFound = $userCart->books()
                     ->where('id_book', $sessionBook->id_book)
                     ->first();
 
-                if ($existingBook) {
-                    $existingBook->amount += $sessionBook->amount;
-                    $existingBook->save();
-                } else {
+                // ak si nasiel taku knihu, prepis jej pocet
+                if($bookFound){
+                    $bookFound->amount += $sessionBook->amount;
+                    $bookFound->save();
+                }
+                // nenasiel si zhodujucu knihu, tak ju pridaj podla anonymneho kosiku
+                else{
                     $userCart->books()->create([
                         'id_book' => $sessionBook->id_book,
                         'amount' => $sessionBook->amount,
@@ -89,7 +86,7 @@ class AuthenticatedSessionController extends Controller
                 }
             }
 
-            // SessionCart uz nepotrebujeme
+            // sessionCart uz nepotrebujeme
             $sessionCart->books()->delete();
             $sessionCart->delete();
         }
