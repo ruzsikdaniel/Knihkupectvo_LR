@@ -1,0 +1,32 @@
+footer{
+    background-color: #f8f8f8;
+    border-top: 2px solid #ddd;
+    padding: 0.5rem;
+}
+
+footer article{
+    position: relative;
+}
+
+#authors{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#authors-text{
+    margin-bottom: 0;
+}
+
+#backToTop{
+    position: absolute;
+    right: 0;
+}
+#btnBackToTop{
+    text-align: center;
+    float:right;
+}
+
+footer section *{
+    text-align: center;
+    padding-inline: 0.5rem;
+}

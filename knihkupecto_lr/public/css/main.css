@@ -1,0 +1,486 @@
+/*default style for the document*/
+html, body, main{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background-color: #ffffffbe;
+}
+
+main{
+    padding-block: 2rem;
+    flex-grow: 1;
+}
+
+
+main article section{
+    margin: 1rem;
+    padding: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+}
+
+p{
+    margin-bottom: 0 !important;
+}
+
+/*style for buttons*/
+button{
+    color: #963235;
+    background-color: #E7E7E7;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+button:hover{
+    color: #b83e42;
+    background-color: #d6d4d4;
+    border: none;
+    outline: none;
+}
+
+button.filter{
+    color: #E7E7E7;
+    background-color: #963235;
+    border: none;
+    border-radius: 10px;
+    margin: 0 5px;
+    outline: none;
+}
+
+button.filter:hover{
+    text-decoration: underline;
+    outline: none;
+}
+
+/*style for links*/
+a:link{
+    color: #0000EE;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#551A8B;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/*style for homepage.html*/
+#banner{
+    max-height: 15rem;
+}
+
+#intro{
+    flex-direction: row;
+}
+
+@media (max-width: 768px) {
+    #intro{
+        flex-direction: column;
+    }
+}
+
+#carousel-list {
+    display: flex;
+    width: 100%;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    padding-left: 0;
+}
+
+
+#carousel{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+ul #carousel-list{
+    padding-inline-start: 0;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+#item-page > *{
+}
+
+.book-item{
+    display: inline-block;
+    background-color: #f8f8f8;
+    flex: 1 1 auto;
+    min-width: 175px;
+    max-width: 175px;
+    padding: 10px;
+    margin: 5px;
+    vertical-align: top;
+}
+
+#button-left, #button-left{
+    margin: 0 5px;
+}
+
+/*style for category.html*/
+#category-title{
+    font-weight: bold;
+}
+
+#category-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    justify-items: center;
+}
+
+#grid-item > *{
+    padding: 0.5rem;
+}
+
+#page{
+    padding-inline: 0.5rem;
+}
+
+/*style for buttons */
+#books-change{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-book{
+    width:fit-content;
+    margin: 5% 20%;
+}
+#change-book{
+    width:fit-content;
+    margin: 5% 20%;
+}
+
+/*style for item.html*/
+#item-gallery, #item-details{
+    margin: 1rem;
+    margin-inline: 2rem;
+}
+
+#item-image, #thumbnail-gallery{
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    object-fit: contain;
+    max-height: 400px;
+}
+
+#thumbnail-gallery > *{
+    max-width: 100px;
+}
+
+#item-page, #item-desc{
+    margin: 2.5rem;
+    padding: 0.5rem;
+}
+
+#item-page > *, #item-desc > *{
+    margin-top: 1rem;
+    text-decoration: none;
+    padding-inline: 0.5rem;
+}
+
+#book-title{
+    font-weight: bold;
+}
+
+/*style for checkout.html */
+#payment-screen{
+    display: block;
+    place-self: center;
+    place-items: center;
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 1px;
+    width: 65%;
+    background-color: #969696;
+}
+#payment-screen .form-group input{
+    border-style: solid;
+}
+
+#payment-screen .form-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#payment-screen .payment-button{
+    place-self: center;
+    display: block;
+    margin: 5px;
+}
+
+/*style for login.html */
+#login-screen, #register-screen{
+    display: block;
+    place-self: center;
+    place-items: center;
+    border-style: solid;
+    border-radius: 1px;
+    width: 55%;
+    background-color: #969696;
+}
+
+#login-screen form > *{
+    margin-block: 1rem;
+}
+
+#login-screen #submit-password-button{
+    place-self: center;
+    display: block;
+    margin: 5px;
+}
+
+#login-screen #password-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#login-info *{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0.5em;
+}
+
+#login-error{
+    text-align: center;
+}
+
+
+/*style for register.html */
+#register-screen form > *{
+    margin-block: 1rem;
+}
+#register-error{
+    display: none; /* basically hide the error message */
+}
+
+#register-screen #form-group{
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media (max-width: 991px) {
+    #register-screen #form-group{
+        flex-direction: column;
+        justify-content: start;
+        align-content: start;
+    }
+
+    #register-screen #form-group > *{
+        width: auto;
+    }
+}
+
+/*styles for shoppingcart.html */
+#cart{
+    display: grid;
+    border-style: solid;
+    border-radius: 1px;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: row;
+    }
+    .item-icon{
+        max-height: 125px;
+    }
+  }
+
+.cart-item{
+    border-style: solid;
+    border-radius: 1px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+.cart-item > *{
+    padding: 0.5em;
+    flex-direction: column;
+}
+
+.item-icon{
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    margin-right: 2rem;
+}
+
+@media (max-width: 991px) {
+    .item-icon{
+        max-width: 64px;
+        min-width: 64px;
+        width: auto;
+        height: auto;
+        margin-right: 2rem;
+    }
+}
+
+.item-data{
+    display: flex;
+    flex-direction: row;
+}
+
+.item-control{
+    flex-direction: row;
+}
+
+.item-control > *{
+    padding-inline: 0.5rem;
+}
+
+.in-stock{
+    color: green;
+}
+
+.out-of-stock{
+    color: red;
+}
+
+.item-price{
+    font-weight: bold;
+}
+
+#cart-summary{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#sum-prices{
+    border-style: solid;
+    border-radius: 1px;
+}
+
+.total-price-cart{
+    font-weight: bolder;
+}
+
+#navigation-buttons{
+    margin-top: 3em;
+}
+
+#navigation-buttons *{
+    margin-inline: 0.5em;
+}
+
+
+/*style for add book page*/
+#foto-add-label{
+    color: #963235;
+    background-color: #E7E7E7;
+    font-size:2rem;
+    border-radius: 5px;
+    border:none;
+    width: 100%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+#foto-add-label:hover{
+    color:#b83e42;
+    background-color: #d6d4d4;
+    border:none;
+}
+
+#add-book-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#book-add-galery{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+#book-add-galery-foto *{
+    margin: 5px;
+}
+#book-add-galery-foto{
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1px;
+}
+div .foto-add-book{
+    height: 50%;
+    width: 50%;
+}
+
+#dd-foto-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-details, #item-status p{
+    margin: 5px;
+}
+.book-about-add{
+    margin: 5px;
+}
+
+#submit-to-catalog{
+    place-self: center;
+    display: block;
+    margin: 5px;
+}
+#add-book-title, #add-book-author, #add-book-genre, #add-book-language, #add-book-pages, #add-book-publisher, #add-book-year, #book-more{
+    width: 50%;
+}
+
+#item-page-add, #item-status, #item-details{
+    padding: 1rem;
+}
+#item-status > *{
+    margin-top: 0.5rem;
+}
+
+.book-about-add #ano-stock{
+    color: #198754;
+}
+.book-about-add #nie-stock{
+    color: #dc3545;
+}
+
+
+/*style for deliver.html*/
+.deliver-style{
+    border-radius: 1px;
+    border-style: solid;
+    border-radius: 1px;
+    margin: 5px;
+    padding: 5px;
+}
+#suma-shoppingcart, #change-shoppingcart-link{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+#form-group div{
+    margin-bottom: 5px;
+}
+
+#pagination-container{
+    margin: 1rem;
+}
